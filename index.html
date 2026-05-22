@@ -35,7 +35,6 @@ img{max-width:100%;display:block}
 ul{list-style:none}
 .container{max-width:1160px;margin:0 auto;padding:0 28px}
 .section{padding:110px 0}
-.section-sm{padding:70px 0}
 h1,h2,h3,h4{font-family:var(--font-h);color:var(--wh);line-height:1.1}
 h1{font-size:clamp(2.6rem,5.5vw,4.8rem);font-weight:800;letter-spacing:-0.03em}
 h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;letter-spacing:-0.02em}
@@ -62,7 +61,6 @@ nav.scrolled{background:rgba(8,12,10,.92);backdrop-filter:blur(20px);border-bott
 .lang-btn{font-family:var(--font-h);font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--tx2);background:transparent;border:none;cursor:pointer;padding:5px 12px;border-radius:100px;transition:.2s}
 .lang-btn.active{background:var(--g);color:var(--bk)}
 .lang-btn:hover:not(.active){color:var(--wh)}
-/* Visibilité bilingue */
 .en{display:none}
 body.lang-en .fr{display:none}
 body.lang-en .en{display:revert}
@@ -80,7 +78,6 @@ body.lang-en .en{display:revert}
 .hero-title .accent{color:var(--g)}
 .hero-title .accent2{color:var(--or)}
 .hero-sub{font-size:1.08rem;color:var(--tx);margin:24px 0 40px;max-width:500px;line-height:1.8}
-.hero-sub em{color:var(--tx2);font-style:italic;font-size:.93rem}
 .hero-stats{display:flex;gap:32px;margin:40px 0}
 .hstat-val{display:block;font-family:var(--font-h);font-size:2rem;font-weight:800;color:var(--wh)}
 .hstat-val span{color:var(--g)}
@@ -95,269 +92,67 @@ body.lang-en .en{display:revert}
 /* MOCKUP */
 .hero-mockup{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r2);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6)}
 .mock-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;background:var(--bk4);border-bottom:1px solid var(--bd)}
-.mock-dot{width:10px;height:10px;border-radius:50%}
 .mock-dot.r{background:#FF5F57}.mock-dot.y{background:#FEBC2E}.mock-dot.g{background:#28C840}
 .mock-url{margin-left:10px;font-size:.75rem;color:var(--tx2);background:rgba(0,0,0,.3);padding:4px 12px;border-radius:100px;display:flex;align-items:center;gap:6px}
-.mock-url i{color:var(--g);font-size:.65rem}
 .mock-body{padding:16px}
 .mock-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .mock-logo{font-family:var(--font-h);font-weight:800;font-size:.9rem;color:var(--wh)}
 .mock-pills{display:flex;gap:6px}
 .mpill{font-size:.68rem;padding:3px 10px;border-radius:100px;background:var(--bk4);border:1px solid var(--bd);color:var(--tx2)}
 .mpill.active{background:rgba(0,192,96,.15);border-color:var(--g);color:var(--g)}
-.mock-search{display:flex;align-items:center;gap:8px;background:var(--bk4);border:1px solid var(--bd);border-radius:10px;padding:8px 14px;margin-bottom:14px;font-size:.78rem;color:var(--tx2)}
 .mock-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .mcard{background:var(--bk4);border:1px solid var(--bd);border-radius:10px;padding:12px 10px}
 .mcard-ico{font-size:1.4rem;margin-bottom:6px}
 .mcard-title{font-family:var(--font-h);font-size:.78rem;font-weight:700;color:var(--wh)}
-.mcard-sub{font-size:.68rem;color:var(--tx2);margin:2px 0}
-.mcard-price{font-size:.72rem;color:var(--g);font-weight:600}
-.hero-float{display:flex;flex-direction:column;gap:10px;margin-top:14px}
-.fcard{display:flex;align-items:center;gap:12px;background:var(--bk4);border:1px solid var(--bd);border-radius:12px;padding:10px 14px}
-.fcard-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.fcard-ico.green{background:rgba(0,192,96,.15);color:var(--g)}
-.fcard-ico.orange{background:rgba(255,122,0,.15);color:var(--or)}
-.fcard strong{display:block;font-family:var(--font-h);font-size:.8rem;color:var(--wh)}
-.fcard span{font-size:.68rem;color:var(--tx2)}
 
-/* ── SECTION LABELS ── */
+/* ── SECTIONS ── */
+.section-head{text-align:center;margin-bottom:60px}
 .slabel{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);background:rgba(0,192,96,.08);border:1px solid rgba(0,192,96,.18);padding:6px 14px;border-radius:100px;margin-bottom:18px}
 .slabel.orange{color:var(--or);background:rgba(255,122,0,.08);border-color:rgba(255,122,0,.2)}
-.section-head{text-align:center;margin-bottom:60px}
-.section-head p{max-width:600px;margin:14px auto 0;font-size:1.05rem;color:var(--tx)}
 
-/* ── PROBLEMS ── */
+/* ── GRIDS ── */
 .prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .prob-card{background:var(--bk2);border:1px solid rgba(255,122,0,.1);border-radius:var(--r);padding:30px 26px;transition:.35s}
-.prob-card:hover{border-color:rgba(255,122,0,.3);transform:translateY(-4px)}
-.prob-ico{font-size:1.8rem;margin-bottom:16px}
-.prob-card h3{font-size:1.05rem;color:var(--wh);margin-bottom:10px}
-.prob-card p{font-size:.9rem;color:var(--tx)}
-
-/* ── MODULES ── */
 .mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.mod-card{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r);padding:32px 28px;position:relative;overflow:hidden;transition:.35s}
-.mod-card:hover{border-color:rgba(0,192,96,.4);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
-.mod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--g),transparent)}
-.mod-num{position:absolute;top:18px;right:22px;font-family:var(--font-h);font-size:3rem;font-weight:800;color:rgba(0,192,96,.06);line-height:1}
-.mod-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,192,96,.1);border:1px solid rgba(0,192,96,.2);display:flex;align-items:center;justify-content:center;color:var(--g);font-size:1.3rem;margin-bottom:20px}
-.mod-card h3{margin-bottom:10px;font-size:1.1rem}
-.mod-card p{font-size:.88rem;color:var(--tx)}
-.badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-top:14px}
-.badge-g{background:rgba(0,192,96,.12);color:var(--g);border:1px solid rgba(0,192,96,.2)}
-.badge-or{background:rgba(255,122,0,.12);color:var(--or);border:1px solid rgba(255,122,0,.2)}
+.mod-card{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r);padding:32px 28px;position:relative;overflow:hidden}
+.mod-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,192,96,.1);display:flex;align-items:center;justify-content:center;color:var(--g);font-size:1.3rem;margin-bottom:20px}
 
-/* ── REVENUE ── */
-.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:60px}
-.rev-card{background:var(--bk2);border:1px solid var(--bd);border-radius:var(--r);padding:30px 26px;transition:.35s;position:relative}
-.rev-card:hover{border-color:rgba(0,192,96,.4);box-shadow:0 8px 40px rgba(0,0,0,.4)}
-.rev-card .rnum{font-family:var(--font-h);font-size:2.5rem;font-weight:800;color:rgba(0,192,96,.1);position:absolute;top:16px;right:20px;line-height:1}
+/* ── REVENUE CARDS ── */
+.rev-card{background:var(--bk2);border:1px solid var(--bd);border-radius:var(--r);padding:24px;transition:.35s;position:relative}
 .rev-icon{width:44px;height:44px;border-radius:12px;background:rgba(0,192,96,.1);display:flex;align-items:center;justify-content:center;color:var(--g);font-size:1.1rem;margin-bottom:16px}
 .rev-icon.or{background:rgba(255,122,0,.1);color:var(--or)}
-.rev-card h3{font-size:1rem;color:var(--wh);margin-bottom:8px}
-.rev-card p{font-size:.87rem;color:var(--tx)}
-.rev-tag{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;color:var(--g);background:rgba(0,192,96,.08);border:1px solid rgba(0,192,96,.15);padding:4px 12px;border-radius:100px}
-.rev-tag.or{color:var(--or);background:rgba(255,122,0,.08);border-color:rgba(255,122,0,.15)}
 
-/* ── CHARTS ── */
-.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.chart-card{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r2);padding:32px}
-.chart-card h3{font-size:1rem;color:var(--wh);margin-bottom:6px}
-.chart-card .csub{font-size:.8rem;color:var(--tx2);margin-bottom:24px}
-.chart-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px}
-.cl-item{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--tx)}
-.cl-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
-
-/* ── PROTECT ── */
-.protect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.protect-card{background:rgba(0,192,96,.04);border:1px solid rgba(0,192,96,.12);border-radius:var(--r);padding:32px 26px;transition:.4s}
-.protect-card:hover{background:rgba(0,192,96,.08);border-color:rgba(0,192,96,.3);transform:translateY(-6px)}
-.protect-ico{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#00C060,#007a3c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;margin-bottom:22px}
-.protect-card h3{font-size:1rem;color:var(--wh);margin-bottom:10px}
-.protect-card p{font-size:.87rem;color:var(--tx)}
-
-/* ── TIMELINE ── */
-.timeline{position:relative;padding-left:40px}
-.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(var(--g),transparent)}
-.tl-item{position:relative;padding:0 0 48px 40px}
-.tl-item:last-child{padding-bottom:0}
-.tl-dot{position:absolute;left:-28px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--g);border:3px solid var(--bk);box-shadow:0 0 0 4px rgba(0,192,96,.2)}
-.tl-year{display:inline-block;font-family:var(--font-h);font-size:.8rem;font-weight:700;color:var(--g);background:rgba(0,192,96,.1);border:1px solid rgba(0,192,96,.2);padding:4px 12px;border-radius:100px;margin-bottom:10px}
-.tl-item h3{color:var(--wh);font-size:1.1rem;margin-bottom:8px}
-.tl-item p{font-size:.88rem;color:var(--tx)}
-.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.tl-tag{font-size:.68rem;color:var(--tx2);background:var(--bk4);border:1px solid var(--bd);padding:3px 10px;border-radius:100px}
-
-/* ── BUDGET ── */
+/* ── BUDGET TABLE ── */
 .budget-table{width:100%;border-collapse:collapse}
-.budget-table th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);text-align:left;padding:0 0 16px;border-bottom:1px solid var(--bd)}
-.budget-table td{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;vertical-align:middle}
-.budget-table td:last-child{text-align:right;font-family:var(--font-h);font-weight:700;color:var(--wh);white-space:nowrap}
-.bbar-wrap{height:4px;background:var(--bk4);border-radius:2px;width:120px;margin:4px 0}
+.budget-table th{font-size:.72rem;color:var(--tx2);text-align:left;padding-bottom:16px;border-bottom:1px solid var(--bd)}
+.budget-table td{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem}
+.bbar-wrap{height:4px;background:var(--bk4);border-radius:2px;width:120px;margin-top:8px}
 .bbar{height:4px;border-radius:2px;background:var(--g);transition:width 1s ease}
-.bbar.or{background:var(--or)}
 .budget-total{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding:20px 28px;background:rgba(0,192,96,.07);border:1px solid rgba(0,192,96,.15);border-radius:14px}
-.budget-total span:first-child{font-family:var(--font-h);font-weight:700;color:var(--wh);font-size:1rem}
-.budget-total span:last-child{font-family:var(--font-h);font-weight:800;color:var(--g);font-size:1.4rem}
 
 /* ── TEAM ── */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.team-card{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r2);padding:40px 32px;text-align:center;transition:.35s}
-.team-card:hover{border-color:rgba(0,192,96,.3);transform:translateY(-6px)}
-.team-avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,rgba(0,192,96,.3),rgba(0,192,96,.1));border:2px solid rgba(0,192,96,.3);display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 auto 22px}
+.team-card{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r2);padding:40px 32px;text-align:center}
+.team-avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,rgba(0,192,96,.3),rgba(0,192,96,.1));border:2px solid rgba(0,192,96,.3);margin:0 auto 22px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .team-avatar img{width:100%;height:100%;object-fit:cover}
-.team-avatar .initials{font-family:var(--font-h);font-weight:800;font-size:1.6rem;color:var(--g);}
-.team-card h3{color:var(--wh);font-size:1.2rem;margin-bottom:6px}
-.team-role{font-size:.82rem;color:var(--g);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
-.team-card p{font-size:.87rem;color:var(--tx)}
-
-/* ── TERRAIN QUOTE ── */
-.terrain-section{background:linear-gradient(135deg,rgba(0,192,96,.08),rgba(0,192,96,.02));border:1px solid rgba(0,192,96,.15);border-radius:var(--r2);padding:56px 60px;position:relative;overflow:hidden}
-.terrain-section::before{content:'"';position:absolute;top:-20px;left:24px;font-family:var(--font-h);font-size:12rem;color:rgba(0,192,96,.06);line-height:1}
-.terrain-section blockquote{position:relative;font-size:1.2rem;color:var(--wh);line-height:1.7;font-weight:400;max-width:720px;font-style:italic}
-.terrain-section cite{display:block;margin-top:20px;font-size:.85rem;color:var(--tx2);font-style:normal}
-.terrain-section cite strong{color:var(--g)}
-
-/* ── WHY NOW ── */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.why-card{background:var(--bk3);border:1px solid var(--bd);border-radius:var(--r);padding:24px 20px;text-align:center;transition:.3s}
-.why-card:hover{border-color:rgba(0,192,96,.3)}
-.why-ico{font-size:2rem;margin-bottom:14px}
-.why-card h4{font-family:var(--font-h);font-size:.95rem;color:var(--wh);margin-bottom:8px}
-.why-card p{font-size:.82rem;color:var(--tx)}
-
-/* ── ADVANTAGES ── */
-.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.adv-card{background:var(--bk2);border:1px solid var(--bd);border-radius:var(--r);padding:28px 24px;display:flex;gap:18px;transition:.3s}
-.adv-card:hover{border-color:rgba(0,192,96,.3)}
-.adv-ico{width:48px;height:48px;border-radius:12px;background:rgba(0,192,96,.1);border:1px solid rgba(0,192,96,.15);display:flex;align-items:center;justify-content:center;color:var(--g);font-size:1.2rem;flex-shrink:0}
-.adv-card h4{color:var(--wh);font-size:.95rem;margin-bottom:8px}
-.adv-card p{font-size:.85rem;color:var(--tx)}
-
-/* ── CTA INVEST ── */
-.cta-invest{background:linear-gradient(135deg,rgba(0,192,96,.15),rgba(0,60,30,.2));border:1px solid rgba(0,192,96,.2);border-radius:var(--r2);padding:80px 60px;text-align:center;position:relative;overflow:hidden}
-.cta-invest::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at center,rgba(0,192,96,.05) 0%,transparent 60%);pointer-events:none}
-.cta-invest h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:16px}
-.cta-invest h2 .amt{color:var(--g)}
-.cta-invest p{font-size:1.08rem;color:var(--tx);max-width:540px;margin:0 auto 40px}
-.cta-invest .btn-row{justify-content:center}
-
-/* ── CHAT ── */
-#chatWidget{position:fixed;bottom:28px;right:28px;z-index:9999;font-family:var(--font-b)}
-.chat-bubble{width:56px;height:56px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 32px rgba(0,192,96,.4);transition:.3s}
-.chat-bubble:hover{transform:scale(1.08)}
-.chat-bubble i{font-size:1.3rem;color:var(--bk)}
-.chat-notif{position:absolute;top:-4px;right:-4px;width:20px;height:20px;background:#FF4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff;border:2px solid var(--bk);animation:cbounce 2s infinite}
-@keyframes cbounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-.chat-win{position:absolute;bottom:70px;right:0;width:340px;background:#111;border:1px solid rgba(0,192,96,.2);border-radius:20px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.8)}
-.chat-win.open{display:flex;animation:copen .2s ease}
-@keyframes copen{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.chat-hdr{background:linear-gradient(135deg,#0A1F12,#071008);border-bottom:1px solid rgba(0,192,96,.12);padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
-.chat-ag{display:flex;align-items:center;gap:10px}
-.ag-av{width:34px;height:34px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-weight:800;color:var(--bk);font-size:.85rem;flex-shrink:0}
-.ag-info strong{display:block;font-size:.84rem;font-weight:600;color:var(--wh)}
-.ag-status{font-size:.7rem;color:var(--g);display:flex;align-items:center;gap:5px}
-.ag-status::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s infinite}
-.chat-close-btn{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.08);border:none;color:var(--tx2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:.2s}
-.chat-close-btn:hover{background:rgba(255,255,255,.15);color:var(--wh)}
-.chat-msgs{max-height:320px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,192,96,.2) transparent}
-.cmsg{max-width:85%}
-.cmsg.agent{align-self:flex-start}
-.cmsg.user{align-self:flex-end}
-.cmsg-bub{padding:9px 13px;border-radius:14px;font-size:.82rem;line-height:1.5}
-.cmsg.agent .cmsg-bub{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--tx);border-bottom-left-radius:4px}
-.cmsg.user .cmsg-bub{background:rgba(0,192,96,.15);border:1px solid rgba(0,192,96,.2);color:var(--wh);border-bottom-right-radius:4px}
-.chat-typing{display:none;align-items:center;gap:8px;padding:0 14px 4px}
-.chat-typing.show{display:flex}
-.typing-dots{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:9px 14px;display:flex;gap:4px}
-.typing-dots span{width:5px;height:5px;background:var(--tx2);border-radius:50%;animation:typ 1.2s infinite ease-in-out}
-.typing-dots span:nth-child(2){animation-delay:.2s}
-.typing-dots span:nth-child(3){animation-delay:.4s}
-@keyframes typ{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-5px);opacity:1}}
-.chat-input-area{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(255,255,255,.06)}
-#chatInput{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:8px 14px;font-size:.8rem;color:var(--wh);outline:none;font-family:var(--font-b);transition:.2s}
-#chatInput:focus{border-color:rgba(0,192,96,.4)}
-#chatInput::placeholder{color:var(--tx2)}
-#chatSend{width:32px;height:32px;background:var(--g);border-radius:50%;border:none;color:var(--bk);font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s}
-#chatSend:hover{background:var(--g2)}
-.chat-foot-note{padding:7px 12px 10px;font-size:.7rem;color:var(--tx2);display:flex;align-items:center;gap:6px;border-top:1px solid rgba(255,255,255,.04)}
-.chat-foot-note a{color:#25D366;font-weight:600}
+.team-avatar .initials{font-family:var(--font-h);font-weight:800;font-size:1.6rem;color:var(--g)}
 
 /* ── FOOTER ── */
 footer{background:var(--bk2);border-top:1px solid var(--bd);padding:60px 0 30px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px}
-.footer-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-h);font-weight:800;font-size:1.3rem;color:var(--wh);margin-bottom:14px}
-footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
-.footer-social{display:flex;gap:10px;margin-top:18px}
-.footer-social a{width:36px;height:36px;border-radius:10px;background:var(--bk4);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--tx2);font-size:.9rem;transition:.2s}
-.footer-social a:hover{background:rgba(0,192,96,.15);border-color:rgba(0,192,96,.3);color:var(--g)}
-.footer-col h4{font-family:var(--font-h);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--wh);margin-bottom:16px}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{font-size:.87rem;color:var(--tx2);transition:.2s}
-.footer-col ul li a:hover{color:var(--g)}
-.footer-contact p{font-size:.85rem;color:var(--tx2);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.footer-contact p i{color:var(--g);width:14px}
-.footer-contact a{color:var(--tx)}
-.footer-contact a:hover{color:var(--g)}
-.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:9px 18px;border-radius:100px;font-size:.82rem;font-weight:600;margin-top:12px;transition:.2s}
-.wa-btn:hover{background:#1ebe5d;transform:translateY(-1px)}
-.footer-bottom{padding-top:28px;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--tx2);flex-wrap:wrap;gap:10px}
-.footer-bottom strong{color:var(--wh)}
-.footer-bottom a{color:var(--tx2);transition:.2s}
-.footer-bottom a:hover{color:var(--g)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px}
 
 /* ── ANIMATIONS ── */
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-.fade-left{opacity:0;transform:translateX(-30px);transition:opacity .8s ease,transform .8s ease}
-.fade-left.visible{opacity:1;transform:translateX(0)}
-.fade-right{opacity:0;transform:translateX(30px);transition:opacity .8s ease,transform .8s ease}
-.fade-right.visible{opacity:1;transform:translateX(0)}
-.stagger .fade-up:nth-child(1){transition-delay:.05s}
-.stagger .fade-up:nth-child(2){transition-delay:.15s}
-.stagger .fade-up:nth-child(3){transition-delay:.25s}
-.stagger .fade-up:nth-child(4){transition-delay:.35s}
-.stagger .fade-up:nth-child(5){transition-delay:.45s}
-.stagger .fade-up:nth-child(6){transition-delay:.55s}
 
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .charts-grid{grid-template-columns:1fr}
-  .adv-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
+@media(max-width:960px){ .hero-inner{grid-template-columns:1fr} .hero-visual{display:none} .footer-grid{grid-template-columns:1fr 1fr} }
 @media(max-width:640px){
-  .section{padding:72px 0}
-  .nav-links{display:none}
-  .ham{display:flex}
-  .nav-links.open {
-    display: flex !important;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(8, 12, 10, 0.98);
-    padding: 100px 28px;
-    gap: 30px;
-    border-bottom: none;
-    z-index: 1000;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  .hero-stats{flex-wrap:wrap;gap:20px}
-  .terrain-section{padding:36px 28px}
-  .cta-invest{padding:50px 28px}
+  .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(8, 12, 10, 0.98); padding: 100px 28px; z-index: 1000; text-align: center; }
   .footer-grid{grid-template-columns:1fr}
-  .chat-win{width:calc(100vw - 32px)}
-  .lang-switcher{margin-left:0}
 }
 </style>
 </head>
-<body>
+<body class="lang-fr">
 
 <!-- NAV -->
 <nav id="navbar">
@@ -365,8 +160,8 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     <a href="#" class="nav-logo"><span class="dot"></span>MOBILIX</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#solution"><span class="fr">Solution</span><span class="en">Solution</span></a></li>
-      <li><a href="#revenus"><span class="fr">Modèle</span><span class="en">Model</span></a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#market-intel"><span class="fr">Marché</span><span class="en">Market</span></a></li>
+      <li><a href="#budget"><span class="fr">Budget</span><span class="en">Budget</span></a></li>
       <li><a href="#equipe"><span class="fr">Équipe</span><span class="en">Team</span></a></li>
       <li><a href="#investir" class="nav-cta"><span class="fr">Investir →</span><span class="en">Invest →</span></a></li>
     </ul>
@@ -375,354 +170,257 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
         <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">FR</button>
         <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
       </div>
-      <button class="ham" id="ham" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-glow2"></div>
-  </div>
+  <div class="hero-bg"><div class="hero-grid"></div><div class="hero-glow"></div></div>
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-text fade-left">
+      <div class="hero-text fade-up">
         <div class="hero-badge">
-          <span class="fr">Startup BTP &amp; Logistique — Bénin 🇧🇯</span>
-          <span class="en">Construction &amp; Logistics Startup — Benin 🇧🇯</span>
+            <span class="fr">Startup BTP &amp; Logistique — Bénin 🇧🇯</span>
+            <span class="en">Construction &amp; Logistics Startup — Benin 🇧🇯</span>
         </div>
-        <h1 class="hero-title">
-          MOBILIX<br>
-          <span class="accent">
-            <span class="fr">Hub Digital</span>
-            <span class="en">Digital Hub</span>
-          </span><br>
-          <span class="accent2">
-            <span class="fr">BTP &amp; Logistique</span>
-            <span class="en">Construction &amp; Logistics</span>
-          </span>
-        </h1>
+        <h1 class="hero-title">MOBILIX<br><span class="accent">Digital Hub</span></h1>
         <p class="hero-sub">
-          <span class="fr">Connecter les engins lourds, les experts qualifiés et les transporteurs pour accélérer les chantiers et structurer la logistique au Bénin.</span>
-          <span class="en">Connecting heavy equipment, skilled experts and carriers to accelerate construction sites and structure logistics in Benin.</span>
+            <span class="fr">Connecter les engins lourds, les experts et les transporteurs pour accélérer le développement au Bénin.</span>
+            <span class="en">Connecting heavy equipment, experts and carriers to accelerate Benin's development.</span>
         </p>
         <div class="hero-stats">
-          <div>
-            <span class="hstat-val"><span class="counter" data-target="6">0</span><span>+</span></span>
-            <span class="hstat-lbl fr">Modules actifs</span>
-            <span class="hstat-lbl en">Active modules</span>
-          </div>
-          <div>
-            <span class="hstat-val"><span class="counter" data-target="7">0</span><span style="color:var(--or)">M</span></span>
-            <span class="hstat-lbl fr">FCFA recherchés</span>
-            <span class="hstat-lbl en">FCFA sought</span>
-          </div>
-          <div>
-            <span class="hstat-val"><span class="counter" data-target="6">0</span><span>+</span></span>
-            <span class="hstat-lbl fr">Sources de revenus</span>
-            <span class="hstat-lbl en">Revenue streams</span>
-          </div>
+          <div><span class="hstat-val"><span class="counter" data-target="6">0</span>+</span><span class="hstat-lbl">Modules</span></div>
+          <div><span class="hstat-val" style="color:var(--or)"><span class="dyn-investment-val">0</span><span class="en">M</span><span class="fr">M</span></span><span class="hstat-lbl">FCFA</span></div>
         </div>
         <div class="btn-row">
-          <a href="#investir" class="btn btn-primary">
-            <i class="fas fa-chart-line"></i>
-            <span class="fr">Dossier investisseur</span>
-            <span class="en">Investor deck</span>
-          </a>
-          <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost">
-            <i class="fas fa-external-link-alt"></i>
-            <span class="fr">Voir l'application</span>
-            <span class="en">See the app</span>
-          </a>
+          <a href="#investir" class="btn btn-primary"><span class="fr">Opportunité</span><span class="en">Opportunity</span></a>
+          <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost">App Live</a>
         </div>
       </div>
-      <div class="hero-visual fade-right">
-        <div class="hero-mockup">
-          <div class="mock-bar">
-            <div class="mock-dot r"></div><div class="mock-dot y"></div><div class="mock-dot g"></div>
-            <div class="mock-url"><i class="fas fa-lock"></i> mobilix.42web.io</div>
-          </div>
-          <div class="mock-body">
-            <div class="mock-hdr">
-              <span class="mock-logo">MOBILIX</span>
-              <div class="mock-pills">
-                <span class="mpill active fr">Engins</span>
-                <span class="mpill active en">Equipment</span>
-                <span class="mpill fr">Experts</span>
-                <span class="mpill en">Experts</span>
-                <span class="mpill">Fret</span>
+      <div class="hero-visual">
+          <div class="hero-mockup">
+              <div class="mock-bar"><div class="mock-dot r"></div><div class="mock-dot y"></div><div class="mock-dot g"></div></div>
+              <div class="mock-body" style="height:250px; display:flex; align-items:center; justify-content:center; background:var(--bk4)">
+                  <div style="text-align:center">
+                      <i class="fas fa-rocket" style="font-size:3rem; color:var(--g); margin-bottom:15px"></i>
+                      <h3 class="fr">MVP Opérationnel</h3>
+                      <h3 class="en">MVP Operational</h3>
+                  </div>
               </div>
-            </div>
-            <div class="mock-search">
-              <i class="fas fa-search"></i>
-              <span class="fr">Rechercher un engin près de vous...</span>
-              <span class="en">Find equipment near you...</span>
-            </div>
-            <div class="mock-cards">
-              <div class="mcard"><div class="mcard-ico">🚛</div><div class="mcard-title fr">Camion Benne</div><div class="mcard-title en">Dump Truck</div><div class="mcard-sub">Cotonou • <span class="fr">Disponible</span><span class="en">Available</span></div><div class="mcard-price fr">Sur demande</div><div class="mcard-price en">On request</div></div>
-              <div class="mcard"><div class="mcard-ico">🏗️</div><div class="mcard-title">Tractopelle</div><div class="mcard-sub">Calavi • <span class="fr">Disponible</span><span class="en">Available</span></div><div class="mcard-price fr">Sur demande</div><div class="mcard-price en">On request</div></div>
-              <div class="mcard"><div class="mcard-ico">👷</div><div class="mcard-title fr">Ingénieur GC</div><div class="mcard-title en">Civil Engineer</div><div class="mcard-sub fr">Expert certifié</div><div class="mcard-sub en">Certified expert</div><div class="mcard-price">CVthèque BTP</div></div>
-              <div class="mcard"><div class="mcard-ico">🚢</div><div class="mcard-title">Fret VIP</div><div class="mcard-sub fr">Port de Cotonou</div><div class="mcard-sub en">Port of Cotonou</div><div class="mcard-price">5 000 FCFA/mois</div></div>
-            </div>
           </div>
-        </div>
-        <div class="hero-float">
-          <div class="fcard"><div class="fcard-ico green"><i class="fas fa-bolt"></i></div><div><strong>MVP <span class="fr">Fonctionnel</span><span class="en">Ready</span></strong><span class="fr">Prêt pour l'onboarding</span><span class="en">Ready for onboarding</span></div></div>
-          <div class="fcard"><div class="fcard-ico orange"><i class="fas fa-map-marker-alt"></i></div><div><strong><span class="fr">Géolocalisation</span><span class="en">Geolocation</span></strong><span class="fr">Engins près de vous</span><span class="en">Equipment near you</span></div></div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROBLÈME -->
-<section class="section" id="probleme" style="background:var(--bk2)">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-exclamation-triangle"></i> <span class="fr">Le problème</span><span class="en">The problem</span></span>
-      <h2><span class="fr">Un secteur fragmenté,<br><span style="color:var(--or)">coûteux et informel</span></span><span class="en">A fragmented sector,<br><span style="color:var(--or)">costly and informal</span></span></h2>
-      <p><span class="fr">Le BTP et la logistique au Bénin fonctionnent encore largement par bouche-à-oreille, provoquant des inefficacités majeures et des pertes évitables.</span><span class="en">Construction and logistics in Benin still rely heavily on word-of-mouth, causing major inefficiencies and avoidable losses.</span></p>
-    </div>
-    <div class="prob-grid stagger">
-      <div class="prob-card fade-up"><div class="prob-ico">⏱️</div><h3><span class="fr">Temps morts coûteux</span><span class="en">Costly downtime</span></h3><p><span class="fr">Les camions restent garés des jours entiers faute de chantiers. Chaque jour d'inactivité est un manque à gagner direct.</span><span class="en">Trucks sit idle for days without work orders. Every day of inactivity is a direct revenue loss.</span></p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">🔗</div><h3><span class="fr">Intermédiaires abusifs</span><span class="en">Abusive middlemen</span></h3><p><span class="fr">2 à 3 démarcheurs prennent chacun une commission, gonflant le prix client tout en réduisant le gain du propriétaire.</span><span class="en">2 to 3 brokers each take a cut, inflating the client price while reducing the owner's earnings.</span></p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">💸</div><h3><span class="fr">Défauts de paiement</span><span class="en">Payment defaults</span></h3><p><span class="fr">"Travaille, je te paye après" — sans mécanisme de sécurisation, les risques de non-paiement sont chroniques.</span><span class="en">"Work now, I'll pay later" — without a security mechanism, payment defaults are chronic.</span></p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">📍</div><h3><span class="fr">Urgences non gérées</span><span class="en">Unmanaged emergencies</span></h3><p><span class="fr">Un camion en panne à Parakou à 7h du matin ? Impossible de trouver un remplaçant disponible à proximité en quelques minutes.</span><span class="en">A broken-down truck in Parakou at 7am? Finding a nearby replacement in minutes is impossible.</span></p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">👷</div><h3><span class="fr">Experts invisibles</span><span class="en">Invisible experts</span></h3><p><span class="fr">Les ingénieurs, topographes et conducteurs qualifiés n'ont aucun espace structuré pour exposer leurs compétences aux entreprises.</span><span class="en">Engineers, surveyors and qualified operators have no structured space to showcase their skills to companies.</span></p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">🚚</div><h3><span class="fr">Retours à vide</span><span class="en">Empty return trips</span></h3><p><span class="fr">Les transporteurs reviennent fréquemment sans fret, perdant carburant et temps sans générer de revenus sur le trajet retour.</span><span class="en">Carriers frequently return empty, wasting fuel and time with no revenue on the return trip.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUTION / MODULES -->
-<section class="section" id="solution">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-lightbulb"></i> <span class="fr">La solution</span><span class="en">The solution</span></span>
-      <h2>Mobilix — <span style="color:var(--g)">6 <span class="fr">modules</span><span class="en">modules</span></span><br><span class="fr">pour un écosystème complet</span><span class="en">for a complete ecosystem</span></h2>
-      <p><span class="fr">Une plateforme unifiée qui centralise tous les services essentiels du BTP et de la logistique au Bénin.</span><span class="en">A unified platform centralising all essential construction and logistics services in Benin.</span></p>
-    </div>
-    <div class="mod-grid stagger">
-      <div class="mod-card fade-up"><div class="mod-num">01</div><div class="mod-icon"><i class="fas fa-truck-monster"></i></div><h3><span class="fr">Catalogue Engins Lourds</span><span class="en">Heavy Equipment Catalogue</span></h3><p><span class="fr">Camions, grues, bulldozers, tractopelles, nacelles, pompes. Vue liste et géolocalisation carte.</span><span class="en">Trucks, cranes, bulldozers, backhoes, lifts, pumps. List view and map geolocation.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">02</div><div class="mod-icon"><i class="fas fa-id-card"></i></div><h3><span class="fr">CVthèque BTP Premium</span><span class="en">Premium Construction CV Library</span></h3><p><span class="fr">Profils qualifiés d'ingénieurs, topographes, conducteurs, soudeurs, mécaniciens. Mise en relation directe.</span><span class="en">Qualified profiles of engineers, surveyors, operators, welders, mechanics. Direct matching.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">03</div><div class="mod-icon"><i class="fas fa-route"></i></div><h3><span class="fr">Retours à Vide</span><span class="en">Empty Return Trips</span></h3><p><span class="fr">Module dédié pour optimiser les trajets retour des transporteurs et réduire les pertes.</span><span class="en">Dedicated module to optimise carriers' return trips and reduce losses.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">04</div><div class="mod-icon"><i class="fas fa-crown"></i></div><h3><span class="fr">Annuaire Fret VIP</span><span class="en">VIP Freight Directory</span></h3><p><span class="fr">Accès premium aux contacts logistiques stratégiques de la zone portuaire et aéroportuaire de Cotonou.</span><span class="en">Premium access to strategic logistics contacts in Cotonou's port and airport area.</span></p><span class="badge badge-or">Premium</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">05</div><div class="mod-icon"><i class="fas fa-store"></i></div><h3><span class="fr">Boutiques Partenaires</span><span class="en">Partner Stores</span></h3><p><span class="fr">Vitrines pour fournisseurs BTP : ciment, outillage, EPI, groupes électrogènes, matériaux.</span><span class="en">Storefronts for construction suppliers: cement, tools, PPE, generators, materials.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">06</div><div class="mod-icon"><i class="fas fa-graduation-cap"></i></div><h3><span class="fr">Observatoire Formations</span><span class="en">Training Observatory</span></h3><p><span class="fr">Meilleures formations BTP, ingénierie, certifications BIM, IA. Visibilité payante pour les écoles.</span><span class="en">Top construction, engineering, BIM and AI certifications. Paid visibility for schools.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
-    </div>
-    <div style="text-align:center;margin-top:48px" class="fade-up">
-      <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i> <span class="fr">Explorer la plateforme</span><span class="en">Explore the platform</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- REVENUS -->
-<section class="section" id="revenus" style="background:var(--bk2)">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-coins"></i> <span class="fr">Modèle économique</span><span class="en">Business model</span></span>
-      <h2><span class="fr">Plusieurs sources de revenus.<br><span style="color:var(--g)">Un seul objectif : la rentabilité.</span></span><span class="en">Multiple revenue streams.<br><span style="color:var(--g)">One goal: profitability.</span></span></h2>
-      <p><span class="fr">Mobilix génère des revenus récurrents à travers six services stratégiques, réduisant les risques tout en maximisant le potentiel de croissance.</span><span class="en">Mobilix generates recurring revenue through six strategic services, reducing risks while maximising growth potential.</span></p>
-    </div>
-    <div class="rev-grid stagger">
-      <div class="rev-card fade-up"><span class="rnum">01</span><div class="rev-icon"><i class="fas fa-truck"></i></div><h3><span class="fr">Abonnements propriétaires</span><span class="en">Owner subscriptions</span></h3><p><span class="fr">Les propriétaires d'engins paient un abonnement annuel pour une visibilité nationale instantanée.</span><span class="en">Equipment owners pay an annual subscription for instant national visibility.</span></p><span class="rev-tag">15K — 50K FCFA/an</span></div>
-      <div class="rev-card fade-up"><span class="rnum">02</span><div class="rev-icon or"><i class="fas fa-user-tie"></i></div><h3><span class="fr">Commission CVthèque BTP</span><span class="en">CV library commission</span></h3><p><span class="fr">Chaque mise en relation professionnelle génère une commission sur la transaction.</span><span class="en">Every professional match generates a commission on the transaction.</span></p><span class="rev-tag or">10% <span class="fr">par transaction</span><span class="en">per transaction</span></span></div>
-      <div class="rev-card fade-up"><span class="rnum">03</span><div class="rev-icon"><i class="fas fa-bullhorn"></i></div><h3><span class="fr">Publicité annonceurs</span><span class="en">Advertiser display</span></h3><p><span class="fr">Bannières premium pour marques de ciment, fournisseurs BTP, banques, assurances, concessionnaires.</span><span class="en">Premium banners for cement brands, construction suppliers, banks, insurers, dealers.</span></p><span class="rev-tag fr">Revenus récurrents</span><span class="rev-tag en">Recurring revenue</span></div>
-      <div class="rev-card fade-up"><span class="rnum">04</span><div class="rev-icon or"><i class="fas fa-newspaper"></i></div><h3><span class="fr">Blog "Entreprise du mois"</span><span class="en">"Company of the month" blog</span></h3><p><span class="fr">Article dédié, visibilité homepage et référencement Google renforcé pour les PME BTP béninoises.</span><span class="en">Dedicated article, homepage visibility and boosted Google ranking for Beninese construction SMEs.</span></p><span class="rev-tag or fr">Sponsoring éditorial</span><span class="rev-tag or en">Editorial sponsorship</span></div>
-      <div class="rev-card fade-up"><span class="rnum">05</span><div class="rev-icon"><i class="fas fa-school"></i></div><h3><span class="fr">Visibilité écoles &amp; formations</span><span class="en">Schools &amp; training visibility</span></h3><p><span class="fr">Les écoles spécialisées BTP, logistique, aéroportuaire paient pour attirer étudiants et recruter des talents.</span><span class="en">Specialised construction, logistics and aviation schools pay to attract students and recruit talent.</span></p><span class="rev-tag fr">Abonnement annuel</span><span class="rev-tag en">Annual subscription</span></div>
-      <div class="rev-card fade-up"><span class="rnum">06</span><div class="rev-icon or"><i class="fas fa-star"></i></div><h3><span class="fr">Annuaire Fret VIP</span><span class="en">VIP Freight Directory</span></h3><p><span class="fr">Accès exclusif aux contacts logistiques stratégiques du port de Cotonou et de la zone aéroportuaire.</span><span class="en">Exclusive access to strategic logistics contacts at Cotonou port and the airport zone.</span></p><span class="rev-tag or">5 000 FCFA/mois</span></div>
-    </div>
-    <!-- CHARTS -->
-    <div class="charts-grid fade-up" style="margin-top:48px">
-      <div class="chart-card">
-        <h3><span class="fr">Répartition des revenus</span><span class="en">Revenue breakdown</span></h3>
-        <div class="csub fr">Projection modèle économique Mobilix</div>
-        <div class="csub en">Mobilix business model projection</div>
-        <div class="chart-legend" id="revLegend"></div>
-        <div style="position:relative;height:260px;margin-top:16px">
-          <canvas id="revenueChart"></canvas>
-        </div>
-      </div>
-      <div class="chart-card">
-        <h3><span class="fr">Projection de croissance</span><span class="en">Growth projection</span></h3>
-        <div class="csub fr">Utilisateurs cumulés — 12 premiers mois</div>
-        <div class="csub en">Cumulative users — first 12 months</div>
-        <div class="chart-legend" id="growthLegend"></div>
-        <div style="position:relative;height:260px;margin-top:16px">
-          <canvas id="growthChart"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- STRATÉGIE DE MARCHÉ V4.1 - DASHBOARD FINANCIER FIABLE -->
+<!-- STRATÉGIE DE MARCHÉ & SIMULATEUR -->
 <section class="section" id="market-intel" style="background:var(--bk3); border-top:1px solid var(--bd)">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-chart-line"></i> <span class="fr">Analyse Stratégique & ROI</span><span class="en">Strategic Analysis & ROI</span></span>
+      <span class="slabel orange"><i class="fas fa-chart-line"></i> <span class="fr">Analyse Stratégique</span><span class="en">Strategic Analysis</span></span>
       <h2><span class="fr">TAM, SAM, SOM & RENTABILITÉ</span><span class="en">TAM, SAM, SOM & PROFITABILITY</span></h2>
-      <p><span class="fr">Simulateur de revenus récurrents et retour sur investissement.</span><span class="en">Recurring revenue and ROI simulator.</span></p>
+      <p><span class="fr">Simulateur de revenus récurrents basé sur 365 jours d'activité.</span><span class="en">Recurring revenue simulator based on 365 days of activity.</span></p>
     </div>
 
     <!-- TRIO TAM SAM SOM -->
-    <div class="why-grid stagger" style="margin-bottom: 50px;">
-      <div class="why-card fade-up">
-        <div class="why-ico">🌍</div>
-        <h4>TAM</h4>
-        <p style="font-size:0.75rem;"><span class="fr">Marché global BTP Bénin : ~200 Mds FCFA/an.</span><span class="en">Total Benin Construction market: ~200B FCFA/year.</span></p>
-      </div>
-      <div class="why-card fade-up" style="border-color:var(--g)">
-        <div class="why-ico">🏙️</div>
-        <h4>SAM</h4>
-        <p style="font-size:0.75rem;"><span class="fr">Marché accessible (Smartphone) dans les 5 pôles urbains.</span><span class="en">Smartphone-accessible market in our 5 urban hubs.</span></p>
-      </div>
-      <div class="why-card fade-up" style="border-color:var(--or)">
-        <div class="why-ico">🎯</div>
-        <h4>SOM</h4>
-        <p style="font-size:0.75rem;"><span class="fr">Cible Mobilix 24 mois : 3 000+ abonnés actifs.</span><span class="en">Mobilix 24-month goal: 3,000+ active subscribers.</span></p>
-      </div>
+    <div class="why-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; margin-bottom:50px">
+      <div class="rev-card fade-up"><h4>TAM</h4><p style="font-size:0.75rem">~200 Mds FCFA/an (Bénin)</p></div>
+      <div class="rev-card fade-up" style="border-color:var(--g)"><h4>SAM</h4><p style="font-size:0.75rem">Digital accessible (5 villes pôles)</p></div>
+      <div class="rev-card fade-up" style="border-color:var(--or)"><h4>SOM</h4><p style="font-size:0.75rem">Objectif 3 000+ abonnés actifs</p></div>
     </div>
 
-    <!-- SIMULATEUR MAÎTRE -->
-    <div class="chart-card fade-up" style="max-width:1000px; margin: 0 auto 30px; background:var(--bk2); border:1px solid var(--bd); padding:40px;">
+    <!-- SIMULATEUR -->
+    <div class="mod-card fade-up" style="margin-bottom:30px; border:1px solid var(--g)">
       <div style="text-align:center; margin-bottom:25px;">
-        <h3 class="fr">Pénétration du Marché (SOM)</h3>
-        <h3 class="en">Market Penetration (SOM)</h3>
-        <p class="fr" style="font-size:0.85rem; color:var(--tx2)">Glissez le curseur pour ajuster le nombre total d'utilisateurs</p>
-        <p class="en" style="font-size:0.85rem; color:var(--tx2)">Slide the cursor to adjust the total number of users</p>
+        <h3 class="fr">Simulateur de Pénétration Marché</h3>
+        <h3 class="en">Market Penetration Simulator</h3>
       </div>
-      
       <input type="range" id="inputUsers" min="0" max="4000" value="1000" style="width:100%; accent-color:var(--g); cursor:pointer">
-      
       <div style="text-align:center; margin-top:20px; display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
-        <div>
-            <span class="hstat-val" style="font-size:1.5rem;" id="countOwners">0</span>
-            <span class="hstat-lbl" style="font-size:0.6rem;"><span class="fr">Abonnés (Owners)</span><span class="en">Subscribers (Owners)</span></span>
-        </div>
-        <div>
-            <span class="hstat-val" style="font-size:1.5rem; color:var(--g)" id="countExperts">0</span>
-            <span class="hstat-lbl" style="font-size:0.6rem;"><span class="fr">Experts BTP</span><span class="en">BTP Experts</span></span>
-        </div>
-        <div>
-            <span class="hstat-val" style="font-size:1.5rem; color:var(--or)" id="countPartners">0</span>
-            <span class="hstat-lbl" style="font-size:0.6rem;"><span class="fr">Partenaires B2B</span><span class="en">B2B Partners</span></span>
-        </div>
+        <div><span class="hstat-val" id="countOwners">0</span><span class="hstat-lbl">Owners</span></div>
+        <div><span class="hstat-val" id="countExperts" style="color:var(--g)">0</span><span class="hstat-lbl">Experts</span></div>
+        <div><span class="hstat-val" id="countPartners" style="color:var(--or)">0</span><span class="hstat-lbl">B2B</span></div>
       </div>
     </div>
 
-    <!-- DASHBOARD DES REVENUS (VENTILÉ) -->
-    <div class="prob-grid stagger" style="margin-bottom:40px;">
-      <div class="rev-card fade-up">
-        <div class="rev-icon"><i class="fas fa-calendar-check"></i></div>
-        <h4><span class="fr">Abonnements</span><span class="en">Subscriptions</span></h4>
-        <div class="hstat-val" style="font-size:1.1rem; color:var(--g);" id="revSubs">0 FCFA</div>
-        <p style="font-size:0.65rem; color:var(--tx2)">~32 000 FCFA / <span class="fr">mois</span><span class="en">month</span></p>
-      </div>
-      <div class="rev-card fade-up">
-        <div class="rev-icon"><i class="fas fa-ad"></i></div>
-        <h4><span class="fr">Publicité/Ads</span><span class="en">Advertising</span></h4>
-        <div class="hstat-val" style="font-size:1.1rem;" id="revAds">0 FCFA</div>
-        <p style="font-size:0.65rem; color:var(--tx2)">Brands & Suppliers</p>
-      </div>
-      <div class="rev-card fade-up">
-        <div class="rev-icon or"><i class="fas fa-pen-nib"></i></div>
-        <h4><span class="fr">Blog Premium</span><span class="en">Premium Blog</span></h4>
-        <div class="hstat-val" style="font-size:1.1rem;" id="revBlog">0 FCFA</div>
-        <p style="font-size:0.65rem; color:var(--tx2)">Sponsoring PME</p>
-      </div>
-      <div class="rev-card fade-up">
-        <div class="rev-icon"><i class="fas fa-university"></i></div>
-        <h4><span class="fr">Écoles BTP</span><span class="en">BTP Schools</span></h4>
-        <div class="hstat-val" style="font-size:1.1rem;" id="revSchools">0 FCFA</div>
-        <p style="font-size:0.65rem; color:var(--tx2)">Recruitment subs</p>
-      </div>
-      <div class="rev-card fade-up">
-        <div class="rev-icon or"><i class="fas fa-star"></i></div>
-        <h4><span class="fr">Fret VIP</span><span class="en">VIP Freight</span></h4>
-        <div class="hstat-val" style="font-size:1.1rem;" id="revVip">0 FCFA</div>
-        <p style="font-size:0.65rem; color:var(--tx2)">Strategic access</p>
-      </div>
-      <div class="rev-card fade-up">
-        <div class="rev-icon"><i class="fas fa-id-card"></i></div>
-        <h4><span class="fr">CVthèque Premium</span><span class="en">Premium CVs</span></h4>
-        <div class="hstat-val" style="font-size:1.1rem; color:var(--g);" id="revCv">0 FCFA</div>
-        <p style="font-size:0.65rem; color:var(--tx2)">Expert Matching</p>
-      </div>
+    <!-- DASHBOARD REVENUS -->
+    <div class="prob-grid" style="margin-bottom:40px">
+      <div class="rev-card fade-up"><div class="rev-icon"><i class="fas fa-sync"></i></div><h4>Abonnements</h4><div class="hstat-val" style="font-size:1.1rem" id="revSubs">0</div></div>
+      <div class="rev-card fade-up"><div class="rev-icon"><i class="fas fa-ad"></i></div><h4>Ads/Pub</h4><div class="hstat-val" style="font-size:1.1rem" id="revAds">0</div></div>
+      <div class="rev-card fade-up"><div class="rev-icon or"><i class="fas fa-pen-nib"></i></div><h4>Blog Premium</h4><div class="hstat-val" style="font-size:1.1rem" id="revBlog">0</div></div>
+      <div class="rev-card fade-up"><div class="rev-icon"><i class="fas fa-university"></i></div><h4>Écoles BTP</h4><div class="hstat-val" style="font-size:1.1rem" id="revSchools">0</div></div>
+      <div class="rev-card fade-up"><div class="rev-icon or"><i class="fas fa-star"></i></div><h4>Fret VIP</h4><div class="hstat-val" style="font-size:1.1rem" id="revVip">0</div></div>
+      <div class="rev-card fade-up"><div class="rev-icon"><i class="fas fa-id-card"></i></div><h4>CVthèque</h4><div class="hstat-val" style="font-size:1.1rem" id="revCv">0</div></div>
     </div>
 
-    <!-- PERFORMANCE FINANCIÈRE RÉCAPITULATIVE -->
-    <div class="budget-total fade-up" style="border:1px solid var(--bd); background:rgba(255,255,255,0.02); display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; text-align:left; padding:30px;">
-      <div>
-        <span class="hstat-lbl"><span class="fr">Chiffre d'Affaires (ARR)</span><span class="en">Annual Revenue (ARR)</span></span>
-        <div id="totalGlobal" style="color:var(--wh); font-size:1.6rem; font-weight:800;">0 FCFA</div>
+    <!-- PERFORMANCE RÉCAP -->
+    <div class="budget-total fade-up" style="border:1px solid var(--bd); display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:20px; text-align:left">
+      <div><span class="hstat-lbl">Chiffre d'Affaires (ARR)</span><div id="totalGlobal" style="color:var(--wh); font-size:1.4rem; font-weight:800;">0</div></div>
+      <div><span class="hstat-lbl" style="color:var(--g)">Bénéfice Net Est.</span><div id="netProfit" style="color:var(--g); font-size:1.4rem; font-weight:800;">0</div></div>
+      <div><span class="hstat-lbl" style="color:var(--or)">ROI %</span><div id="roiPercent" style="color:var(--or); font-size:1.4rem; font-weight:800;">0%</div></div>
+      <div><span class="hstat-lbl">Breakeven</span><div id="breakeven" style="color:var(--wh); font-size:1.2rem;">-</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET DYNAMIQUE -->
+<section class="section" id="budget">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="slabel orange"><i class="fas fa-wallet"></i> <span class="fr">Utilisation des fonds</span><span class="en">Use of funds</span></span>
+      <h2><span class="dyn-investment-val-full">0</span> FCFA — <span class="fr" style="color:var(--g)">Plan de déploiement</span><span class="en" style="color:var(--g)">Deployment plan</span></h2>
+    </div>
+    <div class="fade-up" style="max-width:850px; margin:0 auto">
+      <div style="position:relative; height:300px; margin-bottom:40px">
+        <canvas id="budgetChart"></canvas>
       </div>
-      <div>
-        <span class="hstat-lbl"><span class="fr">Bénéfice Net Estimé</span><span class="en">Estimated Net Profit</span></span>
-        <div id="netProfit" style="color:var(--g); font-size:1.6rem; font-weight:800;">0 FCFA</div>
-      </div>
-      <div>
-        <span class="hstat-lbl"><span class="fr">ROI (Invest. 12M)</span><span class="en">ROI (12M Invest.)</span></span>
-        <div id="roiPercent" style="color:var(--or); font-size:1.6rem; font-weight:800;">0%</div>
-      </div>
-      <div>
-        <span class="hstat-lbl"><span class="fr">Seuil de Rentabilité</span><span class="en">Breakeven Point</span></span>
-        <div id="breakeven" style="color:var(--wh); font-size:1.4rem; font-weight:700;">-</div>
+      <table class="budget-table">
+        <thead><tr><th>Poste / Item</th><th>Impact</th><th>FCFA</th></tr></thead>
+        <tbody id="budgetBody">
+            <!-- Rempli par JS -->
+        </tbody>
+      </table>
+      <div class="budget-total">
+        <span>Total</span>
+        <span id="budgetGrandTotal" style="color:var(--g); font-weight:800; font-size:1.5rem">0 FCFA</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ÉQUIPE -->
+<section class="section" id="equipe" style="background:var(--bk2)">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="slabel"><i class="fas fa-users"></i> L'Équipe</span>
+      <h2>OguTech — Leadership</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <div class="team-avatar">
+            <img src="https://lh3.googleusercontent.com/d/1eJ89yUCN4cg2z6kKbMysfe9t0ULgmXgk" alt="Hilarion DOKOUI" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="initials" style="display:none;">HD</span>
+        </div>
+        <h3>Hilarion S. C. DOKOUI</h3>
+        <div class="team-role">CEO & Founder</div>
+        <p class="fr">Entrepreneur Tech-Savvy. Maîtrise l'architecture produit et l'IA pour transformer l'informel en écosystème digital.</p>
+        <p class="en">Tech-savvy entrepreneur. Masters product architecture and AI to turn informal markets into digital ecosystems.</p>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-avatar">
+            <img src="https://lh3.googleusercontent.com/d/12QkfRrYWfxKKFB1v2fVL8ZugxhWkae69" alt="Ismaël ZOKPADAN" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="initials" style="display:none;">IZ</span>
+        </div>
+        <h3>Frank Ismaël ZOKPADAN</h3>
+        <div class="team-role">COO & Co-founder</div>
+        <p class="fr">Serial entrepreneur BTP. Expert en marchés publics et réalités du terrain logistique au Bénin.</p>
+        <p class="en">Construction serial entrepreneur. Expert in public procurement and logistics field realities in Benin.</p>
+      </div>
+      <div class="team-card fade-up" style="border: 1px dashed var(--g)">
+        <div class="team-avatar"><span class="initials">+</span></div>
+        <h3 class="fr">Recrutement prévu</h3>
+        <h3 class="en">Planned Hire</h3>
+        <div class="team-role fr">La Responsable Commerciale</div>
+        <div class="team-role en">Head of Sales</div>
+        <p class="fr">Elle pilotera le réseau national d'agents via notre portail dédié et garantira notre politique de mixité.</p>
+        <p class="en">She will drive the national agent network via our dedicated portal and ensure our gender-mixity policy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" id="investir">
+    <div class="container">
+        <div class="mod-card fade-up" style="text-align:center; padding:60px; background:linear-gradient(135deg, rgba(0,192,96,0.1), transparent)">
+            <h2><span class="fr">Participer à l'aventure</span><span class="en">Join the venture</span></h2>
+            <p style="margin:20px 0 40px"><span class="fr">Besoin de financement : </span><span class="en">Funding needed: </span> <strong class="dyn-investment-val-full" style="color:var(--g)">0</strong> FCFA</p>
+            <div class="btn-row" style="justify-content:center">
+                <a href="https://wa.me/22901432783" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:hilarion.dokoui@gmail.com" class="btn btn-ghost">Email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">MOBILIX</div>
+                <p>OguTech SARL — Cotonou, Bénin.</p>
+            </div>
+        </div>
+        <div style="margin-top:40px; padding-top:20px; border-top:1px solid var(--bd); font-size:0.8rem">
+            © 2025 Mobilix. Tous droits réservés.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-// --- CONFIGURATION BACK-OFFICE (Modifiez vos chiffres ici) ---
-const CONFIG = {
-    INVESTMENT_TARGET: 12000000,    // Besoin financier (12M FCFA)
-    AVG_SUB_PRICE: 32000,          // Prix moyen abonnement mensuel pondéré
-    FIXED_COSTS_YEAR: 6000000,     // Charges fixes annuelles (Loyer, Salaires, etc.)
-    VAR_COST_PER_USER: 2000,       // Coût variable annuel par utilisateur
-    ADS_PER_USER_YEAR: 6000,       // Revenu pub estimé par utilisateur par an
-    SCHOOL_PRICE: 500000,          // Prix annuel par école
-    BLOG_PRICE: 1200000            // Prix annuel par sponsoring blog (100k/mois)
+// --- CONFIGURATION MAITRE (BACK-OFFICE) ---
+const GLOBAL_CONFIG = {
+    INVESTMENT_TARGET: 12000000, // MODIFIEZ CE CHIFFRE ICI POUR TOUTE LA PAGE
+    AVG_SUB_PRICE: 32000,
+    FIXED_COSTS_YEAR: 6000000,
+    VAR_COST_USER: 2000,
+    BUDGET_RATIOS: [
+        { label: "Acquisition & B2B", pct: 38, fr: "Prospection, stickers, évènements", en: "Canvassing, stickers, events" },
+        { label: "Marketing Digital", pct: 25, fr: "Meta Ads, Video, SEO local", en: "Meta Ads, Video, local SEO" },
+        { label: "Siège & Aménagement", pct: 18, fr: "Loyer, mobilier, bureau physique", en: "Rent, furniture, physical office" },
+        { label: "Infrastructure", pct: 12, fr: "Hébergement, domaine, API", en: "Hosting, domain, API" },
+        { label: "Réserve", pct: 7, fr: "Trésorerie de sécurité", en: "Security cash reserve" }
+    ]
 };
 
+// ── LANGUE
+function setLang(l) {
+  document.body.className = 'lang-' + l;
+  document.getElementById('btnFR').classList.toggle('active', l === 'fr');
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  localStorage.setItem('mobilix_lang', l);
+}
+if(localStorage.getItem('mobilix_lang') === 'en') setLang('en');
+
+// ── MISE À JOUR DYNAMIQUE GLOBALE
+function syncDynamicValues() {
+    const valM = (GLOBAL_CONFIG.INVESTMENT_TARGET / 1000000).toFixed(0);
+    const valFull = GLOBAL_CONFIG.INVESTMENT_TARGET.toLocaleString('fr-FR');
+    
+    document.querySelectorAll('.dyn-investment-val').forEach(el => el.innerText = valM);
+    document.querySelectorAll('.dyn-investment-val-full').forEach(el => el.innerText = valFull);
+}
+
+// ── SIMULATEUR DE MARCHÉ
 function runMarketSim() {
     const input = document.getElementById('inputUsers');
     if(!input) return;
+    const users = parseInt(input.value);
     
-    const totalUsers = parseInt(input.value);
-    
-    // 1. SEGMENTATION
-    const nOwners = Math.floor(totalUsers * 0.60);
-    const nExperts = Math.floor(totalUsers * 0.30);
-    const nPartners = Math.floor(totalUsers / 100);
+    const nOwners = Math.floor(users * 0.60);
+    const nExperts = Math.floor(users * 0.30);
+    const nPartners = Math.floor(users / 100);
 
     document.getElementById('countOwners').innerText = nOwners.toLocaleString();
     document.getElementById('countExperts').innerText = nExperts.toLocaleString();
     document.getElementById('countPartners').innerText = nPartners.toLocaleString();
 
-    // 2. REVENUS INDIVIDUELS
-    const revSubs = nOwners * CONFIG.AVG_SUB_PRICE * 12;
-    const revAds = totalUsers * (CONFIG.ADS_PER_USER_YEAR / 12) * 12;
-    const revBlog = (totalUsers >= 300) ? Math.floor(totalUsers / 300) * CONFIG.BLOG_PRICE : 0;
-    const revSchools = (totalUsers >= 500) ? Math.floor(totalUsers / 500) * CONFIG.SCHOOL_PRICE : 0;
+    const revSubs = nOwners * GLOBAL_CONFIG.AVG_SUB_PRICE * 12;
+    const revAds = users * 500 * 12;
+    const revBlog = (users >= 300) ? Math.floor(users / 300) * 1200000 : 0;
+    const revSchools = (users >= 500) ? Math.floor(users / 500) * 500000 : 0;
     const revVip = (nOwners * 0.10) * 5000 * 12;
     const revCv = nExperts * 5000;
 
-    // 3. AGGREGATION
     const totalARR = revSubs + revAds + revBlog + revSchools + revVip + revCv;
-    const totalOPEX = CONFIG.FIXED_COSTS_YEAR + (totalUsers * CONFIG.VAR_COST_PER_USER);
+    const totalOPEX = GLOBAL_CONFIG.FIXED_COSTS_YEAR + (users * GLOBAL_CONFIG.VAR_COST_USER);
     const profit = Math.max(0, totalARR - totalOPEX);
-    const roi = (totalARR > 0) ? (profit / CONFIG.INVESTMENT_TARGET) * 100 : 0;
-    
-    // Monthly Revenue for Breakeven
-    const monthlyRev = totalARR / 12;
-    const monthsToBE = (monthlyRev > 0) ? Math.ceil(CONFIG.INVESTMENT_TARGET / monthlyRev) : 0;
+    const roi = (profit / GLOBAL_CONFIG.INVESTMENT_TARGET) * 100;
+    const monthsToBE = (totalARR > 0) ? Math.ceil(GLOBAL_CONFIG.INVESTMENT_TARGET / (totalARR / 12)) : 0;
 
-    // 4. MISE À JOUR DOM
     document.getElementById('revSubs').innerText = Math.floor(revSubs).toLocaleString() + " FCFA";
     document.getElementById('revAds').innerText = Math.floor(revAds).toLocaleString() + " FCFA";
     document.getElementById('revBlog').innerText = Math.floor(revBlog).toLocaleString() + " FCFA";
@@ -733,465 +431,71 @@ function runMarketSim() {
     document.getElementById('totalGlobal').innerText = Math.floor(totalARR).toLocaleString() + " FCFA";
     document.getElementById('netProfit').innerText = Math.floor(profit).toLocaleString() + " FCFA";
     document.getElementById('roiPercent').innerText = roi.toFixed(1) + "%";
+    document.getElementById('breakeven').innerText = (users > 50) ? (monthsToBE <= 24 ? monthsToBE + " mois" : "+24 mois") : "-";
+}
+
+// ── BUDGET DYNAMIQUE
+let budgetChart;
+function updateBudgetUI() {
+    const tbody = document.getElementById('budgetBody');
+    tbody.innerHTML = '';
+    const labels = [];
+    const values = [];
+
+    GLOBAL_CONFIG.BUDGET_RATIOS.forEach(item => {
+        const amt = (GLOBAL_CONFIG.INVESTMENT_TARGET * item.pct) / 100;
+        labels.push(item.label);
+        values.push(amt);
+        tbody.innerHTML += `
+            <tr>
+                <td><strong style="color:var(--wh)">${item.label}</strong><div class="bbar-wrap"><div class="bbar" style="width:${item.pct}%"></div></div></td>
+                <td><span class="fr">${item.fr}</span><span class="en">${item.en}</span></td>
+                <td>${Math.floor(amt).toLocaleString()}</td>
+            </tr>
+        `;
+    });
+    document.getElementById('budgetGrandTotal').innerText = GLOBAL_CONFIG.INVESTMENT_TARGET.toLocaleString() + " FCFA";
     
-    let beLabel = "-";
-    if(totalUsers > 50) {
-        beLabel = (monthsToBE <= 24) ? monthsToBE + " mois / months" : "+24 mois";
-    }
-    document.getElementById('breakeven').innerText = beLabel;
+    // Chart update
+    const ctx = document.getElementById('budgetChart');
+    if(budgetChart) budgetChart.destroy();
+    budgetChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{ data: values, backgroundColor: ['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30'], borderRadius: 8 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ y:{ ticks:{callback:v=> (v/1000000)+'M'}, grid:{color:'rgba(255,255,255,0.05)'} } } }
+    });
 }
 
-// Liaison de l'événement et lancement initial
+// ── INIT
+window.addEventListener('DOMContentLoaded', () => {
+    syncDynamicValues();
+    updateBudgetUI();
+    runMarketSim();
+    
+    // Hamburger
+    const ham = document.getElementById('ham');
+    const links = document.getElementById('navLinks');
+    ham.addEventListener('click', () => links.classList.toggle('open'));
+    document.querySelectorAll('#navLinks a').forEach(l => l.addEventListener('click', () => links.classList.remove('open')));
+    
+    // Counter Anim
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if(e.isIntersecting && !e.target.dataset.done) {
+                e.target.dataset.done=1;
+                const t = +e.target.dataset.target;
+                let s=0; const tick=()=>{ s+=t/80; if(s>=t){e.target.innerText=t;return} e.target.innerText=Math.floor(s); requestAnimationFrame(tick)}; tick();
+            }
+        });
+    });
+    document.querySelectorAll('.counter').forEach(el => obs.observe(el));
+});
+
 document.getElementById('inputUsers').addEventListener('input', runMarketSim);
-// On force un premier calcul immédiat
-window.addEventListener('load', runMarketSim);
-runMarketSim();
-</script>
-<!-- MOBILIX PROTECT -->
-<section class="section" id="protect">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-shield-alt"></i> <span class="fr">Infrastructure de confiance</span><span class="en">Trust infrastructure</span></span>
-      <h2>Mobilix Protect</h2>
-      <p><span class="fr">Une couche stratégique de sécurisation pour les opérations BTP et logistiques. Mobilix prévoit un partenariat stratégique avec un acteur majeur de l'assurance.</span><span class="en">A strategic security layer for construction and logistics operations. Mobilix plans a strategic partnership with a major insurance player.</span></p>
-    </div>
-    <div class="protect-grid stagger">
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-shield-alt"></i></div><h3><span class="fr">Assurance simplifiée</span><span class="en">Simplified insurance</span></h3><p><span class="fr">Souscription rapide directement depuis la plateforme, sans paperasse.</span><span class="en">Quick subscription directly from the platform, no paperwork.</span></p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-truck"></i></div><h3><span class="fr">Protection équipements</span><span class="en">Equipment protection</span></h3><p><span class="fr">Couverture adaptée aux réalités des chantiers et du transport au Bénin.</span><span class="en">Coverage tailored to the realities of construction sites and transport in Benin.</span></p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-user-check"></i></div><h3><span class="fr">Validation des partenaires</span><span class="en">Partner validation</span></h3><p><span class="fr">Vérification des profils et renforcement de la confiance entre les acteurs.</span><span class="en">Profile verification and trust-building between all parties.</span></p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit 10% sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns 10% on every contract generated through the platform.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- AVANTAGES CONCURRENTIELS -->
-<section class="section" id="avantages" style="background:var(--bk2)">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-trophy"></i> <span class="fr">Avantages concurrentiels</span><span class="en">Competitive advantages</span></span>
-      <h2><span class="fr">Pourquoi Mobilix fonctionne<br><span style="color:var(--g)">là où le bouche-à-oreille échoue</span></span><span class="en">Why Mobilix succeeds<br><span style="color:var(--g)">where word-of-mouth fails</span></span></h2>
-    </div>
-    <div class="adv-grid stagger">
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-clock"></i></div><div><h4><span class="fr">Transformer les temps morts en revenus</span><span class="en">Turning downtime into revenue</span></h4><p><span class="fr">Le bouche-à-oreille est lent et local. Mobilix offre une visibilité nationale instantanée aux propriétaires d'engins, remplissant leurs journées vides.</span><span class="en">Word-of-mouth is slow and local. Mobilix gives equipment owners instant national visibility, filling their idle days.</span></p></div></div>
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-cut"></i></div><div><h4><span class="fr">Supprimer les intermédiaires inutiles</span><span class="en">Cutting out unnecessary middlemen</span></h4><p><span class="fr">Mobilix connecte directement propriétaires et clients finaux, supprimant les 2–3 démarcheurs qui captaient les marges des deux côtés.</span><span class="en">Mobilix connects owners directly to end clients, eliminating the 2–3 brokers capturing margins on both sides.</span></p></div></div>
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-lock"></i></div><div><h4><span class="fr">Sécuriser les transactions</span><span class="en">Securing transactions</span></h4><p><span class="fr">Validation des profils et sécurisation des paiements pour éliminer le risque de non-paiement chronique dans le secteur.</span><span class="en">Profile validation and payment security to eliminate the sector's chronic payment default risk.</span></p></div></div>
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-map-marker-alt"></i></div><div><h4><span class="fr">La puissance de la géolocalisation</span><span class="en">The power of geolocation</span></h4><p><span class="fr">Un chef de chantier peut géolocaliser instantanément un camion disponible à proximité. Valeur = l'immédiateté.</span><span class="en">A site manager can instantly geolocate a nearby available truck. Value = immediacy.</span></p></div></div>
-    </div>
-    <!-- Citation terrain -->
-    <div class="terrain-section fade-up" style="margin-top:48px">
-      <blockquote>
-        <span class="fr">"Les premiers échanges réalisés avec des propriétaires d'engins à Cotonou révèlent une attente forte pour une solution capable d'apporter des clients sérieux, fiables et rapidement mobilisables. Un propriétaire nous a dit : <strong style="color:var(--g)">'Si ton application m'amène un client sérieux, je signe.'</strong>"</span>
-        <span class="en">"Early conversations with equipment owners in Cotonou reveal strong demand for a solution that brings serious, reliable, quickly reachable clients. One owner told us: <strong style="color:var(--g)">'If your app brings me a serious client, I'll sign.'</strong>"</span>
-      </blockquote>
-      <cite>— <span class="fr">Retour terrain, Port de Cotonou · </span><span class="en">Field feedback, Port of Cotonou · </span><strong>OguTech</strong></cite>
-    </div>
-  </div>
-</section>
-
-<!-- POURQUOI MAINTENANT -->
-<section class="section" id="whynow">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-fire"></i> <span class="fr">Pourquoi maintenant ?</span><span class="en">Why now?</span></span>
-      <h2><span class="fr">Un marché immense<br><span style="color:var(--g)">encore peu structuré numériquement</span></span><span class="en">A massive market<br><span style="color:var(--g)">still barely digitised</span></span></h2>
-    </div>
-    <div class="why-grid stagger">
-      <div class="why-card fade-up"><div class="why-ico">🏗️</div><h4><span class="fr">Explosion du BTP</span><span class="en">Construction boom</span></h4><p><span class="fr">Boom de la construction résidentielle et infrastructurelle au Bénin.</span><span class="en">Residential and infrastructure construction boom in Benin.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">🏙️</div><h4><span class="fr">Urbanisation rapide</span><span class="en">Rapid urbanisation</span></h4><p><span class="fr">Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou en expansion constante.</span><span class="en">Cotonou, Abomey-Calavi, Porto-Novo, Bohicon and Parakou in constant expansion.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">📱</div><h4><span class="fr">Digitalisation</span><span class="en">Digitalisation</span></h4><p><span class="fr">Adoption croissante du mobile money et des services numériques.</span><span class="en">Growing adoption of mobile money and digital services.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">🕳️</div><h4><span class="fr">Marché vierge</span><span class="en">Untapped market</span></h4><p><span class="fr">Aucun acteur digital dominant dans le BTP et la logistique au Bénin.</span><span class="en">No dominant digital player in construction and logistics in Benin.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">🤝</div><h4><span class="fr">Soutien institutionnel</span><span class="en">Institutional support</span></h4><p><span class="fr">Programmes d'incubation (Sèmè City, FAEN) actifs pour les startups digitales.</span><span class="en">Active incubation programmes (Sèmè City, FAEN) for digital startups.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ROADMAP -->
-<section class="section" id="roadmap" style="background:var(--bk2)">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-road"></i> Roadmap</span>
-      <h2><span class="fr">Construire l'infrastructure<br><span style="color:var(--g)">digitale du BTP</span></span><span class="en">Building the<br><span style="color:var(--g)">digital construction infrastructure</span></span></h2>
-    </div>
-    <div style="max-width:700px;margin:0 auto" class="fade-up">
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <span class="tl-year">2026</span>
-          <h3><span class="fr">Lancement &amp; Acquisition</span><span class="en">Launch &amp; Acquisition</span></h3>
-          <p><span class="fr">Déploiement Mobilix au Bénin. Onboarding des premiers engins, entreprises BTP et experts métiers sur Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou.</span><span class="en">Mobilix launch in Benin. Onboarding first equipment, construction companies and trade experts across Cotonou, Abomey-Calavi, Porto-Novo, Bohicon and Parakou.</span></p>
-          <div class="tl-tags"><span class="tl-tag fr">Catalogue engins</span><span class="tl-tag en">Equipment catalogue</span><span class="tl-tag">CVthèque</span><span class="tl-tag">Fret VIP</span><span class="tl-tag fr">Agents terrain</span><span class="tl-tag en">Field agents</span></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <span class="tl-year">2027</span>
-          <h3>Mobilix Protect &amp; <span class="fr">Paiement</span><span class="en">Payment</span></h3>
-          <p><span class="fr">Intégration assurance partenaire, validation des profils, scoring prestataires. Déploiement Mobile Money et paiement sécurisé escrow.</span><span class="en">Partner insurance integration, profile validation, provider scoring. Mobile Money deployment and secure escrow payment.</span></p>
-          <div class="tl-tags"><span class="tl-tag fr">Assurance BTP</span><span class="tl-tag en">Construction insurance</span><span class="tl-tag">Mobile Money</span><span class="tl-tag">Scoring</span><span class="tl-tag fr">Dashboard propriétaires</span><span class="tl-tag en">Owner dashboard</span></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <span class="tl-year">2028</span>
-          <h3><span class="fr">Suivi flotte &amp; données</span><span class="en">Fleet tracking &amp; data</span></h3>
-          <p><span class="fr">Outils analytiques, suivi de flotte en temps réel, API logistique, contrats B2B avec entreprises BTP.</span><span class="en">Analytics tools, real-time fleet tracking, logistics API, B2B contracts with construction firms.</span></p>
-          <div class="tl-tags"><span class="tl-tag">API logistique</span><span class="tl-tag fr">Suivi flotte</span><span class="tl-tag en">Fleet tracking</span><span class="tl-tag">B2B</span></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <span class="tl-year">2029</span>
-          <h3><span class="fr">Expansion régionale</span><span class="en">Regional expansion</span></h3>
-          <p><span class="fr">Déploiement Afrique de l'Ouest — Togo, Côte d'Ivoire, Niger. Marketplace régionale et financement d'équipements.</span><span class="en">West Africa deployment — Togo, Côte d'Ivoire, Niger. Regional marketplace and equipment financing.</span></p>
-          <div class="tl-tags"><span class="tl-tag">Togo</span><span class="tl-tag">Côte d'Ivoire</span><span class="tl-tag fr">Financement équipements</span><span class="tl-tag en">Equipment financing</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BUDGET -->
-<section class="section" id="budget">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-wallet"></i> <span class="fr">Utilisation des fonds</span><span class="en">Use of funds</span></span>
-      <h2>7 000 000 FCFA —<br><span style="color:var(--g)"><span class="fr">chaque franc justifié</span><span class="en">every franc accounted for</span></span></h2>
-      <p><span class="fr">Budget d'amorçage optimisé pour valider le Product-Market Fit sur Cotonou / Abomey-Calavi en 6 mois.</span><span class="en">Seed budget optimised to validate Product-Market Fit in Cotonou / Abomey-Calavi within 6 months.</span></p>
-    </div>
-    <div class="fade-up" style="max-width:760px;margin:0 auto">
-      <div style="position:relative;height:280px;margin-bottom:36px">
-        <canvas id="budgetChart"></canvas>
-      </div>
-      <table class="budget-table">
-        <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
-        <tbody>
-          <tr><td><strong style="color:var(--wh)"><span class="fr">Acquisition terrain &amp; B2B</span><span class="en">Field acquisition &amp; B2B</span></strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="45"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Démarchage port, chantiers, événement de lancement syndicats BTP, flyers &amp; stickers camions</span><span class="en">Port &amp; site canvassing, BTP union launch event, flyers &amp; truck stickers</span></td><td>2 660 000</td></tr>
-          <tr><td><strong style="color:var(--wh)"><span class="fr">Marketing digital</span><span class="en">Digital marketing</span></strong><div class="bbar-wrap"><div class="bbar or" style="width:0" data-w="25"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Meta Ads (Facebook/WhatsApp), vidéo motion design, SEO local Google Maps</span><span class="en">Meta Ads (Facebook/WhatsApp), motion design video, local Google Maps SEO</span></td><td>1 750 000</td></tr>
-          <tr><td><strong style="color:var(--wh)"><span class="fr">Siège social &amp; Aménagement</span><span class="en">Office &amp; fit-out</span></strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="15"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Loyer du bureau physique (caution + avance), mobilier complet et équipement de base.</span><span class="en">Office rent (deposit + advance), full furniture and basic equipment.</span></td><td>1 050 000</td></tr>
-          <tr><td><strong style="color:var(--wh)"><span class="fr">Infrastructure &amp; juridique</span><span class="en">Infrastructure &amp; legal</span></strong><div class="bbar-wrap"><div class="bbar or" style="width:0" data-w="12"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Domaine mobilix.bj, hébergement pro, SMS gateway, CGU &amp; protection données</span><span class="en">mobilix.bj domain, pro hosting, SMS gateway, T&amp;Cs &amp; data protection</span></td><td>840 000</td></tr>
-          <tr><td><strong style="color:var(--wh)"><span class="fr">Réserve opérationnelle</span><span class="en">Operating reserve</span></strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="8"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Trésorerie d'urgence (3 mois), internet &amp; communication</span><span class="en">Emergency cash (3 months), internet &amp; communications</span></td><td>700 000</td></tr>
-        </tbody>
-      </table>
-      <div class="budget-total">
-        <span><span class="fr">Total sollicité</span><span class="en">Total sought</span></span>
-        <span>7 000 000 FCFA</span>
-      </div>
-      <p style="font-size:.82rem;color:var(--tx2);margin-top:16px;text-align:center"><span class="fr">Zéro frais de développement — l'application est <strong style="color:var(--g)">déjà développée et en ligne</strong>. 100% des fonds servent à acquérir les utilisateurs et sécuriser la plateforme.</span><span class="en">Zero development costs — the app is <strong style="color:var(--g)">already built and live</strong>. 100% of funds go toward user acquisition and platform security.</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- VISION LONG TERME -->
-<section class="section" id="vision" style="background:linear-gradient(180deg, var(--bk) 0%, var(--bk2) 100%)">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-eye"></i> <span class="fr">Vision 2030</span><span class="en">Vision 2030</span></span>
-      <h2><span class="fr">Bâtir l'Operating System<br><span style="color:var(--g)">du BTP africain</span></span><span class="en">Building the Operating System<br><span style="color:var(--g)">of African construction</span></span></h2>
-      <p><span class="fr">Mobilix ne s'arrête pas à la mise en relation. Nous préparons les briques technologiques qui transformeront durablement le secteur.</span><span class="en">Mobilix goes beyond matchmaking. We are building the technological bricks that will lastingly transform the sector.</span></p>
-    </div>
-    <div class="mod-grid">
-      <div class="mod-card fade-up">
-        <div class="mod-icon"><i class="fas fa-code"></i></div>
-        <h3><span class="fr">API Logistique</span><span class="en">Logistics API</span></h3>
-        <p><span class="fr">Interconnecter le Port, les cimenteries et les chantiers pour une transparence totale de la supply-chain béninoise.</span><span class="en">Interconnecting the Port, cement plants and construction sites for full transparency across Benin's supply chain.</span></p>
-      </div>
-      <div class="mod-card fade-up">
-        <div class="mod-icon"><i class="fas fa-satellite"></i></div>
-        <h3><span class="fr">Suivi de Flotte IoT</span><span class="en">IoT Fleet Tracking</span></h3>
-        <p><span class="fr">Capteurs intelligents pour réduire le vol de carburant, monitorer la maintenance prédictive et sécuriser les chauffeurs.</span><span class="en">Smart sensors to cut fuel theft, monitor predictive maintenance and keep drivers safe.</span></p>
-      </div>
-      <div class="mod-card fade-up">
-        <div class="mod-icon"><i class="fas fa-hand-holding-usd"></i></div>
-        <h3><span class="fr">Leasing &amp; Financement</span><span class="en">Leasing &amp; Financing</span></h3>
-        <p><span class="fr">Transformer l'historique de revenus Mobilix en garantie bancaire pour aider nos partenaires à acquérir de nouveaux engins.</span><span class="en">Turning Mobilix revenue history into a banking guarantee to help partners acquire new equipment.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ÉQUIPE -->
-<section class="section" id="equipe" style="background:var(--bk2)">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-users"></i> <span class="fr">L'équipe</span><span class="en">The team</span></span>
-      <h2><span class="fr">Derrière Mobilix,<br><span style="color:var(--g)">OguTech SARL</span></span><span class="en">Behind Mobilix,<br><span style="color:var(--g)">OguTech SARL</span></span></h2>
-      <p><span class="fr">La maison-mère technologique qui développe et déploie Mobilix au Bénin.</span><span class="en">The technology parent company that develops and deploys Mobilix in Benin.</span></p>
-    </div>
-    <div class="team-grid stagger">
-      <div class="team-card fade-up">
-        <div class="team-avatar">
-          <img src="https://lh3.googleusercontent.com/d/1eJ89yUCN4cg2z6kKbMysfe9t0ULgmXgk" alt="Hilarion DOKOUI" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-<span class="initials" style="display:none;">HD</span>
-        </div>
-        <h3>Hilarion S. C. DOKOUI</h3>
-        <div class="team-role">CEO, TECH SAVVY &amp; <span class="fr">Fondateur</span><span class="en">Founder</span></div>
-        <p><span class="fr">Entrepreneur visionnaire et expert en solutions digitales. Maîtrise l'architecture de produit et les outils d'IA pour transformer des problématiques complexes (BTP) en solutions technologiques agiles et rentables.</span><span class="en">Visionary entrepreneur and digital solutions expert. Masters product architecture and AI tools to turn complex construction challenges into agile, profitable tech solutions.</span></p>
-      </div>
-      <div class="team-card fade-up">
-        <div class="team-avatar">
-          <img src="https://lh3.googleusercontent.com/d/12QkfRrYWfxKKFB1v2fVL8ZugxhWkae69" alt="Ismaël ZOKPADAN" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-<span class="initials" style="display:none;">IZ</span>
-        </div>
-        <h3>Frank Ismaël ZOKPADAN</h3>
-        <div class="team-role">COO, <span class="fr">CO-FONDATEUR</span><span class="en">CO-FOUNDER</span>, Communication &amp; Branding</div>
-        <p><span class="fr">Serial entrepreneur et dirigeant d'une entreprise de BTP adjudicataire de marchés publics. Expert des réalités du terrain, il pilote l'exécution opérationnelle et le réseau de partenaires stratégiques. Il est responsable de la stratégie de communication, de l'image de marque de Mobilix.</span><span class="en">Serial entrepreneur and CEO of a construction firm that wins public contracts. Expert in field realities, he drives operational execution and the strategic partner network, and owns Mobilix's communication strategy and brand.</span></p>
-      </div>
-      <div class="team-card fade-up" style="border: 1px dashed rgba(0, 192, 96, 0.3);">
-        <div class="team-avatar" style="background: rgba(0, 192, 96, 0.05); border: 1px dashed var(--g); display: flex;">
-          <span class="initials" style="color: var(--g);">+</span>
-        </div>
-        <h3><span class="fr">Recrutement prévu</span><span class="en">Planned hire</span></h3>
-        <div class="team-role"><span class="fr">La Responsable Commerciale</span><span class="en">Head of Sales</span></div>
-        <p><span class="fr">Figure clé de notre politique de mixité, elle coordonnera le réseau national d'agents via notre portail dédié. Pilotage de la prospection terrain et du recrutement de partenaires à Cotonou, Calavi, Porto-Novo, Bohicon et Parakou.</span><span class="en">A key figure in our diversity policy, she will coordinate the national agent network through our dedicated portal. Managing field prospecting and partner recruitment across Cotonou, Calavi, Porto-Novo, Bohicon and Parakou.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA INVESTIR -->
-<section class="section" id="investir">
-  <div class="container">
-    <div class="cta-invest fade-up">
-      <span class="slabel" style="margin-bottom:22px"><i class="fas fa-handshake"></i> <span class="fr">Opportunité d'investissement</span><span class="en">Investment opportunity</span></span>
-      <h2><span class="fr">Mobilix cherche <span class="amt">7 000 000 FCFA</span><br>pour changer le BTP au Bénin.</span><span class="en">Mobilix is raising <span class="amt">7 000 000 FCFA</span><br>to transform construction in Benin.</span></h2>
-      <p><span class="fr">Rejoignez l'aventure en tant qu'investisseur ou partenaire stratégique. Subvention ou participation au capital — discutons ensemble.</span><span class="en">Join the venture as an investor or strategic partner. Grant or equity stake — let's talk.</span></p>
-      <div class="btn-row">
-        <a href="https://wa.me/22901432783?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20Mobilix" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> <span class="fr">Contacter sur WhatsApp</span><span class="en">Contact on WhatsApp</span></a>
-        <a href="mailto:hilarion.dokoui@gmail.com" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span class="fr">Envoyer un email</span><span class="en">Send an email</span></a>
-      </div>
-      <p style="margin-top:28px;font-size:.82rem;color:var(--tx2)">Hilarion DOKOUI · <a href="tel:+22901432783" style="color:var(--g)">+229 01 43 27 83 22</a> · <a href="mailto:hilarion.dokoui@gmail.com" style="color:var(--g)">hilarion.dokoui@gmail.com</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">MOBILIX</div>
-        <p class="tagline fr">Le hub digital du BTP &amp; de la logistique au Bénin.</p>
-        <p class="tagline en">The digital hub for construction &amp; logistics in Benin.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/22901432783" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:hilarion.dokoui@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://mobilix.42web.io" target="_blank" aria-label="App"><i class="fas fa-globe"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4><span class="fr">Plateforme</span><span class="en">Platform</span></h4>
-        <ul>
-          <li><a href="https://mobilix.42web.io" target="_blank"><span class="fr">Application</span><span class="en">App</span></a></li>
-          <li><a href="#solution"><span class="fr">Modules</span><span class="en">Modules</span></a></li>
-          <li><a href="#revenus"><span class="fr">Modèle économique</span><span class="en">Business model</span></a></li>
-          <li><a href="#protect">Mobilix Protect</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4><span class="fr">Investisseurs</span><span class="en">Investors</span></h4>
-        <ul>
-          <li><a href="#budget"><span class="fr">Utilisation des fonds</span><span class="en">Use of funds</span></a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#equipe"><span class="fr">L'équipe</span><span class="en">The team</span></a></li>
-          <li><a href="#investir"><span class="fr">Prendre contact</span><span class="en">Get in touch</span></a></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-contact">
-        <h4>Contact</h4>
-        <p><i class="fas fa-user-tie"></i> <span>Hilarion DOKOUI — CEO</span></p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+22901432783">+229 01 43 27 83 22</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:hilarion.dokoui@gmail.com">hilarion.dokoui@gmail.com</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> <span>Cotonou, Bénin 🇧🇯</span></p>
-        <a href="https://wa.me/22901432783?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20Mobilix" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> <span class="fr">Discuter sur WhatsApp</span><span class="en">Chat on WhatsApp</span></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span><span class="fr">Propulsé par</span><span class="en">Powered by</span> <strong>OguTech SARL</strong> &nbsp;·&nbsp; <a href="mailto:hilarion.dokoui@gmail.com">hilarion.dokoui@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+22901432783">+229 01 43 27 83 22</a></span>
-      <span>&copy; 2025 Mobilix — OguTech. <span class="fr">Tous droits réservés.</span><span class="en">All rights reserved.</span></span>
-    </div>
-  </div>
-</footer>
-
-<!-- CHAT WIDGET -->
-<div id="chatWidget">
-  <div class="chat-bubble" id="chatToggle" style="position:relative">
-    <i class="fas fa-comments"></i>
-    <span class="chat-notif" id="chatNotif">1</span>
-  </div>
-  <div class="chat-win" id="chatWindow">
-    <div class="chat-hdr">
-      <div class="chat-ag"><div class="ag-av">M</div><div><strong><span class="fr">Équipe Mobilix</span><span class="en">Mobilix Team</span></strong><span class="ag-status"><span class="fr">En ligne</span><span class="en">Online</span></span></div></div>
-      <button class="chat-close-btn" id="chatClose"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chat-msgs" id="chatMsgs">
-      <div class="cmsg agent"><div class="cmsg-bub fr">Bonjour 👋 Bienvenue sur le portfolio de <strong>Mobilix</strong>. Je suis disponible pour répondre à vos questions sur le projet ou l'investissement.</div><div class="cmsg-bub en">Hello 👋 Welcome to the <strong>Mobilix</strong> investor portfolio. I'm here to answer any questions about the project or investment.</div></div>
-    </div>
-    <div class="chat-typing" id="chatTyping">
-      <div class="typing-dots"><span></span><span></span><span></span></div>
-    </div>
-    <div class="chat-input-area">
-      <input type="text" id="chatInput" placeholder="Votre message..." autocomplete="off">
-      <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
-    </div>
-    <div class="chat-foot-note"><i class="fab fa-whatsapp" style="color:#25D366"></i> <span class="fr">Ou écrivez sur</span><span class="en">Or write on</span> <a href="https://wa.me/22901432783" target="_blank">WhatsApp</a></div>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script>
-// ── LANGUAGE SWITCHER
-function setLang(lang) {
-  document.body.classList.toggle('lang-en', lang === 'en');
-  document.getElementById('btnFR').classList.toggle('active', lang === 'fr');
-  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
-  document.documentElement.lang = lang;
-  // Placeholder du chat
-  document.getElementById('chatInput').placeholder = lang === 'en' ? 'Your message...' : 'Votre message...';
-  localStorage.setItem('mobilix_lang', lang);
-}
-// Rétablir la langue sauvegardée
-(function(){
-  const saved = localStorage.getItem('mobilix_lang');
-  if (saved === 'en') setLang('en');
-})();
-
-// ── SCROLL ANIMATIONS
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
-},{threshold:.12});
-document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>obs.observe(el));
-
-// ── NAV & HAMBURGER
-const nav = document.getElementById('navbar');
-const ham = document.getElementById('ham');
-const navLinks = document.getElementById('navLinks');
-
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
-ham.addEventListener('click', () => navLinks.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// ── COUNTERS
-const cObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting&&!e.target.dataset.done){
-      e.target.dataset.done=1;
-      const t=+e.target.dataset.target,d=1800;
-      let s=0;const tick=()=>{s+=t/(d/16);if(s>=t){e.target.textContent=t;return}e.target.textContent=Math.floor(s);requestAnimationFrame(tick)};tick()
-    }
-  })
-},{threshold:.5});
-document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
-
-// ── BUDGET BARS
-const bObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('[data-w]').forEach(b=>{
-        setTimeout(()=>b.style.width=b.dataset.w+'%',200)
-      })
-    }
-  })
-},{threshold:.3});
-const bt=document.querySelector('.budget-table');if(bt)bObs.observe(bt);
-
-// ── CHARTS
-const revLabels=['Abonnements','Publicité','CVthèque','Mobilix Protect','Fret VIP','Blog Premium'];
-const revData=[30,20,15,15,10,10];
-const revColors=['#00C060','#FF7A00','#1ee075','#006e35','#ffb347','#2a3a30'];
-
-function buildLegend(id,labels,colors,data){
-  const el=document.getElementById(id);if(!el)return;
-  el.innerHTML=labels.map((l,i)=>`<span class="cl-item"><span class="cl-dot" style="background:${colors[i]}"></span>${l} ${data[i]}%</span>`).join('');
-}
-buildLegend('revLegend',revLabels,revColors,revData);
-
-new Chart(document.getElementById('revenueChart'),{
-  type:'doughnut',
-  data:{labels:revLabels,datasets:[{data:revData,backgroundColor:revColors,borderWidth:0,hoverOffset:8}]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' '+ctx.label+': '+ctx.parsed+'%'}}},cutout:'65%'}
-});
-
-const months=['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
-const gData=[5,15,35,60,90,130,180,230,290,360,430,510];
-const gColors=['#00C060','#FF7A00'];
-buildLegend('growthLegend',['Utilisateurs cumulés','Objectif mensuel'],[gColors[0],gColors[1]],[510,43]);
-
-new Chart(document.getElementById('growthChart'),{
-  type:'line',
-  data:{labels:months,datasets:[
-    {label:'Utilisateurs cumulés',data:gData,borderColor:gColors[0],backgroundColor:'rgba(0,192,96,.08)',fill:true,tension:.4,pointBackgroundColor:gColors[0],pointRadius:4,pointHoverRadius:6,borderWidth:2},
-    {label:'Objectif mensuel',data:[0,10,20,25,30,40,50,50,60,70,70,80],borderColor:gColors[1],backgroundColor:'transparent',borderDash:[5,5],tension:.4,pointRadius:0,borderWidth:1.5}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6A8070',font:{size:11}},border:{color:'transparent'}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6A8070',font:{size:11},callback:v=>v},border:{color:'transparent'}}}}
-});
-
-new Chart(document.getElementById('budgetChart'),{
-  type:'bar',
-  data:{
-    labels:['Acquisition terrain','Marketing digital','Siège social','Infrastructure','Réserve'],
-    datasets:[{data:[2660000,1750000,1050000,840000,700000],backgroundColor:['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30'],borderRadius:8,borderWidth:0}]
-  },
-  options:{
-    responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' '+ctx.parsed.y.toLocaleString('fr-FR')+' FCFA'}}},
-    scales:{x:{grid:{display:false},ticks:{color:'#6A8070',font:{size:10}},border:{color:'transparent'}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6A8070',font:{size:10},callback:v=>(v/1000000).toFixed(1)+'M'},border:{color:'transparent'}}}
-  }
-});
-
-// ── CHAT WIDGET
-const toggle=document.getElementById('chatToggle');
-const win=document.getElementById('chatWindow');
-const closeBtn=document.getElementById('chatClose');
-const notif=document.getElementById('chatNotif');
-const msgs=document.getElementById('chatMsgs');
-const input=document.getElementById('chatInput');
-const sendBtn=document.getElementById('chatSend');
-const typing=document.getElementById('chatTyping');
-
-const AUTO_REPLIES_FR=[
-  "Merci pour votre message ! Hilarion reviendra vers vous très rapidement. 📱",
-  "Pour toute question urgente, écrivez directement sur WhatsApp : +229 01 43 27 83 22",
-  "Mobilix est un projet de OguTech SARL, porté par Hilarion DOKOUI. Nous serions ravis de vous présenter le dossier complet !",
-  "Le projet est déjà opérationnel sur mobilix.42web.io — vous pouvez explorer la plateforme en direct.",
-];
-const AUTO_REPLIES_EN=[
-  "Thank you for your message! Hilarion will get back to you very shortly. 📱",
-  "For urgent questions, write directly on WhatsApp: +229 01 43 27 83 22",
-  "Mobilix is an OguTech SARL project, led by Hilarion DOKOUI. We'd love to walk you through the full investor deck!",
-  "The platform is already live at mobilix.42web.io — feel free to explore it directly.",
-];
-let replyIdx=0;
-
-function addMsg(text,type){
-  const d=document.createElement('div');
-  d.className='cmsg '+type;
-  d.innerHTML='<div class="cmsg-bub">'+text+'</div>';
-  msgs.appendChild(d);
-  msgs.scrollTop=msgs.scrollHeight;
-}
-
-function sendMessage(){
-  const txt=input.value.trim();
-  if(!txt)return;
-  addMsg(txt,'user');
-  input.value='';
-  notif.style.display='none';
-  typing.classList.add('show');
-  const isEN = document.body.classList.contains('lang-en');
-  const replies = isEN ? AUTO_REPLIES_EN : AUTO_REPLIES_FR;
-  setTimeout(()=>{
-    typing.classList.remove('show');
-    addMsg(replies[replyIdx%replies.length],'agent');
-    replyIdx++;
-  },1400);
-}
-
-toggle.addEventListener('click',()=>{
-  win.classList.toggle('open');
-  if(win.classList.contains('open'))notif.style.display='none';
-});
-closeBtn.addEventListener('click',()=>win.classList.remove('open'));
-sendBtn.addEventListener('click',sendMessage);
-input.addEventListener('keydown',e=>{if(e.key==='Enter')sendMessage()});
+window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
 </script>
 </body>
 </html>
