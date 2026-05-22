@@ -57,6 +57,16 @@ nav.scrolled{background:rgba(8,12,10,.92);backdrop-filter:blur(20px);border-bott
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index: 1001;}
 .ham span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:.3s}
 
+/* ── LANG SWITCHER ── */
+.lang-switcher{display:flex;align-items:center;gap:4px;margin-left:12px;background:rgba(255,255,255,.05);border:1px solid var(--bd);border-radius:100px;padding:3px}
+.lang-btn{font-family:var(--font-h);font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--tx2);background:transparent;border:none;cursor:pointer;padding:5px 12px;border-radius:100px;transition:.2s}
+.lang-btn.active{background:var(--g);color:var(--bk)}
+.lang-btn:hover:not(.active){color:var(--wh)}
+/* Visibilité bilingue */
+.en{display:none}
+body.lang-en .fr{display:none}
+body.lang-en .en{display:revert}
+
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 0 60px}
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -196,7 +206,7 @@ nav.scrolled{background:rgba(8,12,10,.92);backdrop-filter:blur(20px);border-bott
 .team-card:hover{border-color:rgba(0,192,96,.3);transform:translateY(-6px)}
 .team-avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,rgba(0,192,96,.3),rgba(0,192,96,.1));border:2px solid rgba(0,192,96,.3);display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 auto 22px}
 .team-avatar img{width:100%;height:100%;object-fit:cover}
-.team-avatar .initials {font-family:var(--font-h);font-weight:800;font-size:1.6rem;color:var(--g);}
+.team-avatar .initials{font-family:var(--font-h);font-weight:800;font-size:1.6rem;color:var(--g);}
 .team-card h3{color:var(--wh);font-size:1.2rem;margin-bottom:6px}
 .team-role{font-size:.82rem;color:var(--g);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
 .team-card p{font-size:.87rem;color:var(--tx)}
@@ -343,6 +353,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   .cta-invest{padding:50px 28px}
   .footer-grid{grid-template-columns:1fr}
   .chat-win{width:calc(100vw - 32px)}
+  .lang-switcher{margin-left:0}
 }
 </style>
 </head>
@@ -353,15 +364,21 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   <div class="nav-inner">
     <a href="#" class="nav-logo"><span class="dot"></span>MOBILIX</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#solution">Solution</a></li>
-      <li><a href="#revenus">Modèle</a></li>
+      <li><a href="#solution"><span class="fr">Solution</span><span class="en">Solution</span></a></li>
+      <li><a href="#revenus"><span class="fr">Modèle</span><span class="en">Model</span></a></li>
       <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#equipe">Équipe</a></li>
-      <li><a href="#investir" class="nav-cta">Investir →</a></li>
+      <li><a href="#equipe"><span class="fr">Équipe</span><span class="en">Team</span></a></li>
+      <li><a href="#investir" class="nav-cta"><span class="fr">Investir →</span><span class="en">Invest →</span></a></li>
     </ul>
-    <button class="ham" id="ham" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="ham" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -375,33 +392,53 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   <div class="container">
     <div class="hero-inner">
       <div class="hero-text fade-left">
-        <div class="hero-badge">Startup BTP &amp; Logistique — Bénin 🇧🇯</div>
+        <div class="hero-badge">
+          <span class="fr">Startup BTP &amp; Logistique — Bénin 🇧🇯</span>
+          <span class="en">Construction &amp; Logistics Startup — Benin 🇧🇯</span>
+        </div>
         <h1 class="hero-title">
           MOBILIX<br>
-          <span class="accent">Hub Digital</span><br>
-          <span class="accent2">BTP &amp; Logistique</span>
+          <span class="accent">
+            <span class="fr">Hub Digital</span>
+            <span class="en">Digital Hub</span>
+          </span><br>
+          <span class="accent2">
+            <span class="fr">BTP &amp; Logistique</span>
+            <span class="en">Construction &amp; Logistics</span>
+          </span>
         </h1>
         <p class="hero-sub">
-          Connecter les engins lourds, les experts qualifiés et les transporteurs pour accélérer les chantiers et structurer la logistique au Bénin.<br>
-          <em>Connecting construction equipment, skilled experts and carriers to build Benin faster.</em>
+          <span class="fr">Connecter les engins lourds, les experts qualifiés et les transporteurs pour accélérer les chantiers et structurer la logistique au Bénin.</span>
+          <span class="en">Connecting heavy equipment, skilled experts and carriers to accelerate construction sites and structure logistics in Benin.</span>
         </p>
         <div class="hero-stats">
           <div>
             <span class="hstat-val"><span class="counter" data-target="6">0</span><span>+</span></span>
-            <span class="hstat-lbl">Modules actifs</span>
+            <span class="hstat-lbl fr">Modules actifs</span>
+            <span class="hstat-lbl en">Active modules</span>
           </div>
           <div>
             <span class="hstat-val"><span class="counter" data-target="7">0</span><span style="color:var(--or)">M</span></span>
-            <span class="hstat-lbl">FCFA recherchés</span>
+            <span class="hstat-lbl fr">FCFA recherchés</span>
+            <span class="hstat-lbl en">FCFA sought</span>
           </div>
           <div>
             <span class="hstat-val"><span class="counter" data-target="6">0</span><span>+</span></span>
-            <span class="hstat-lbl">Sources de revenus</span>
+            <span class="hstat-lbl fr">Sources de revenus</span>
+            <span class="hstat-lbl en">Revenue streams</span>
           </div>
         </div>
         <div class="btn-row">
-          <a href="#investir" class="btn btn-primary"><i class="fas fa-chart-line"></i> Dossier investisseur</a>
-          <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i> Voir l'application</a>
+          <a href="#investir" class="btn btn-primary">
+            <i class="fas fa-chart-line"></i>
+            <span class="fr">Dossier investisseur</span>
+            <span class="en">Investor deck</span>
+          </a>
+          <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost">
+            <i class="fas fa-external-link-alt"></i>
+            <span class="fr">Voir l'application</span>
+            <span class="en">See the app</span>
+          </a>
         </div>
       </div>
       <div class="hero-visual fade-right">
@@ -414,23 +451,29 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
             <div class="mock-hdr">
               <span class="mock-logo">MOBILIX</span>
               <div class="mock-pills">
-                <span class="mpill active">Engins</span>
-                <span class="mpill">Experts</span>
+                <span class="mpill active fr">Engins</span>
+                <span class="mpill active en">Equipment</span>
+                <span class="mpill fr">Experts</span>
+                <span class="mpill en">Experts</span>
                 <span class="mpill">Fret</span>
               </div>
             </div>
-            <div class="mock-search"><i class="fas fa-search"></i> Rechercher un engin près de vous...</div>
+            <div class="mock-search">
+              <i class="fas fa-search"></i>
+              <span class="fr">Rechercher un engin près de vous...</span>
+              <span class="en">Find equipment near you...</span>
+            </div>
             <div class="mock-cards">
-              <div class="mcard"><div class="mcard-ico">🚛</div><div class="mcard-title">Camion Benne</div><div class="mcard-sub">Cotonou • Disponible</div><div class="mcard-price">Sur demande</div></div>
-              <div class="mcard"><div class="mcard-ico">🏗️</div><div class="mcard-title">Tractopelle</div><div class="mcard-sub">Calavi • Disponible</div><div class="mcard-price">Sur demande</div></div>
-              <div class="mcard"><div class="mcard-ico">👷</div><div class="mcard-title">Ingénieur GC</div><div class="mcard-sub">Expert certifié</div><div class="mcard-price">CVthèque BTP</div></div>
-              <div class="mcard"><div class="mcard-ico">🚢</div><div class="mcard-title">Fret VIP</div><div class="mcard-sub">Port de Cotonou</div><div class="mcard-price">5 000 FCFA/mois</div></div>
+              <div class="mcard"><div class="mcard-ico">🚛</div><div class="mcard-title fr">Camion Benne</div><div class="mcard-title en">Dump Truck</div><div class="mcard-sub">Cotonou • <span class="fr">Disponible</span><span class="en">Available</span></div><div class="mcard-price fr">Sur demande</div><div class="mcard-price en">On request</div></div>
+              <div class="mcard"><div class="mcard-ico">🏗️</div><div class="mcard-title">Tractopelle</div><div class="mcard-sub">Calavi • <span class="fr">Disponible</span><span class="en">Available</span></div><div class="mcard-price fr">Sur demande</div><div class="mcard-price en">On request</div></div>
+              <div class="mcard"><div class="mcard-ico">👷</div><div class="mcard-title fr">Ingénieur GC</div><div class="mcard-title en">Civil Engineer</div><div class="mcard-sub fr">Expert certifié</div><div class="mcard-sub en">Certified expert</div><div class="mcard-price">CVthèque BTP</div></div>
+              <div class="mcard"><div class="mcard-ico">🚢</div><div class="mcard-title">Fret VIP</div><div class="mcard-sub fr">Port de Cotonou</div><div class="mcard-sub en">Port of Cotonou</div><div class="mcard-price">5 000 FCFA/mois</div></div>
             </div>
           </div>
         </div>
         <div class="hero-float">
-          <div class="fcard"><div class="fcard-ico green"><i class="fas fa-bolt"></i></div><div><strong>MVP Fonctionnel</strong><span>Prêt pour l'onboarding</span></div></div>
-          <div class="fcard"><div class="fcard-ico orange"><i class="fas fa-map-marker-alt"></i></div><div><strong>Géolocalisation</strong><span>Engins près de vous</span></div></div>
+          <div class="fcard"><div class="fcard-ico green"><i class="fas fa-bolt"></i></div><div><strong>MVP <span class="fr">Fonctionnel</span><span class="en">Ready</span></strong><span class="fr">Prêt pour l'onboarding</span><span class="en">Ready for onboarding</span></div></div>
+          <div class="fcard"><div class="fcard-ico orange"><i class="fas fa-map-marker-alt"></i></div><div><strong><span class="fr">Géolocalisation</span><span class="en">Geolocation</span></strong><span class="fr">Engins près de vous</span><span class="en">Equipment near you</span></div></div>
         </div>
       </div>
     </div>
@@ -441,17 +484,17 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="probleme" style="background:var(--bk2)">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-exclamation-triangle"></i> Le problème</span>
-      <h2>Un secteur fragmenté,<br><span style="color:var(--or)">coûteux et informel</span></h2>
-      <p>Le BTP et la logistique au Bénin fonctionnent encore largement par bouche-à-oreille, provoquant des inefficacités majeures et des pertes évitables.</p>
+      <span class="slabel orange"><i class="fas fa-exclamation-triangle"></i> <span class="fr">Le problème</span><span class="en">The problem</span></span>
+      <h2><span class="fr">Un secteur fragmenté,<br><span style="color:var(--or)">coûteux et informel</span></span><span class="en">A fragmented sector,<br><span style="color:var(--or)">costly and informal</span></span></h2>
+      <p><span class="fr">Le BTP et la logistique au Bénin fonctionnent encore largement par bouche-à-oreille, provoquant des inefficacités majeures et des pertes évitables.</span><span class="en">Construction and logistics in Benin still rely heavily on word-of-mouth, causing major inefficiencies and avoidable losses.</span></p>
     </div>
     <div class="prob-grid stagger">
-      <div class="prob-card fade-up"><div class="prob-ico">⏱️</div><h3>Temps morts coûteux</h3><p>Les camions restent garés des jours entiers faute de chantiers. Chaque jour d'inactivité est un manque à gagner direct.</p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">🔗</div><h3>Intermédiaires abusifs</h3><p>2 à 3 démarcheurs prennent chacun une commission, gonflant le prix client tout en réduisant le gain du propriétaire.</p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">💸</div><h3>Défauts de paiement</h3><p>"Travaille, je te paye après" — sans mécanisme de sécurisation, les risques de non-paiement sont chroniques.</p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">📍</div><h3>Urgences non gérées</h3><p>Un camion en panne à Parakou à 7h du matin ? Impossible de trouver un remplaçant disponible à proximité en quelques minutes.</p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">👷</div><h3>Experts invisibles</h3><p>Les ingénieurs, topographes et conducteurs qualifiés n'ont aucun espace structuré pour exposer leurs compétences aux entreprises.</p></div>
-      <div class="prob-card fade-up"><div class="prob-ico">🚚</div><h3>Retours à vide</h3><p>Les transporteurs reviennent fréquemment sans fret, perdant carburant et temps sans générer de revenus sur le trajet retour.</p></div>
+      <div class="prob-card fade-up"><div class="prob-ico">⏱️</div><h3><span class="fr">Temps morts coûteux</span><span class="en">Costly downtime</span></h3><p><span class="fr">Les camions restent garés des jours entiers faute de chantiers. Chaque jour d'inactivité est un manque à gagner direct.</span><span class="en">Trucks sit idle for days without work orders. Every day of inactivity is a direct revenue loss.</span></p></div>
+      <div class="prob-card fade-up"><div class="prob-ico">🔗</div><h3><span class="fr">Intermédiaires abusifs</span><span class="en">Abusive middlemen</span></h3><p><span class="fr">2 à 3 démarcheurs prennent chacun une commission, gonflant le prix client tout en réduisant le gain du propriétaire.</span><span class="en">2 to 3 brokers each take a cut, inflating the client price while reducing the owner's earnings.</span></p></div>
+      <div class="prob-card fade-up"><div class="prob-ico">💸</div><h3><span class="fr">Défauts de paiement</span><span class="en">Payment defaults</span></h3><p><span class="fr">"Travaille, je te paye après" — sans mécanisme de sécurisation, les risques de non-paiement sont chroniques.</span><span class="en">"Work now, I'll pay later" — without a security mechanism, payment defaults are chronic.</span></p></div>
+      <div class="prob-card fade-up"><div class="prob-ico">📍</div><h3><span class="fr">Urgences non gérées</span><span class="en">Unmanaged emergencies</span></h3><p><span class="fr">Un camion en panne à Parakou à 7h du matin ? Impossible de trouver un remplaçant disponible à proximité en quelques minutes.</span><span class="en">A broken-down truck in Parakou at 7am? Finding a nearby replacement in minutes is impossible.</span></p></div>
+      <div class="prob-card fade-up"><div class="prob-ico">👷</div><h3><span class="fr">Experts invisibles</span><span class="en">Invisible experts</span></h3><p><span class="fr">Les ingénieurs, topographes et conducteurs qualifiés n'ont aucun espace structuré pour exposer leurs compétences aux entreprises.</span><span class="en">Engineers, surveyors and qualified operators have no structured space to showcase their skills to companies.</span></p></div>
+      <div class="prob-card fade-up"><div class="prob-ico">🚚</div><h3><span class="fr">Retours à vide</span><span class="en">Empty return trips</span></h3><p><span class="fr">Les transporteurs reviennent fréquemment sans fret, perdant carburant et temps sans générer de revenus sur le trajet retour.</span><span class="en">Carriers frequently return empty, wasting fuel and time with no revenue on the return trip.</span></p></div>
     </div>
   </div>
 </section>
@@ -460,20 +503,20 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="solution">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-lightbulb"></i> La solution</span>
-      <h2>Mobilix — <span style="color:var(--g)">6 modules</span><br>pour un écosystème complet</h2>
-      <p>Une plateforme unifiée qui centralise tous les services essentiels du BTP et de la logistique au Bénin.</p>
+      <span class="slabel"><i class="fas fa-lightbulb"></i> <span class="fr">La solution</span><span class="en">The solution</span></span>
+      <h2>Mobilix — <span style="color:var(--g)">6 <span class="fr">modules</span><span class="en">modules</span></span><br><span class="fr">pour un écosystème complet</span><span class="en">for a complete ecosystem</span></h2>
+      <p><span class="fr">Une plateforme unifiée qui centralise tous les services essentiels du BTP et de la logistique au Bénin.</span><span class="en">A unified platform centralising all essential construction and logistics services in Benin.</span></p>
     </div>
     <div class="mod-grid stagger">
-      <div class="mod-card fade-up"><div class="mod-num">01</div><div class="mod-icon"><i class="fas fa-truck-monster"></i></div><h3>Catalogue Engins Lourds</h3><p>Camions, grues, bulldozers, tractopelles, nacelles, pompes. Vue liste et géolocalisation carte.</p><span class="badge badge-g">Actif</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">02</div><div class="mod-icon"><i class="fas fa-id-card"></i></div><h3>CVthèque BTP Premium</h3><p>Profils qualifiés d'ingénieurs, topographes, conducteurs, soudeurs, mécaniciens. Mise en relation directe.</p><span class="badge badge-g">Actif</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">03</div><div class="mod-icon"><i class="fas fa-route"></i></div><h3>Retours à Vide</h3><p>Module dédié pour optimiser les trajets retour des transporteurs et réduire les pertes.</p><span class="badge badge-g">Actif</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">04</div><div class="mod-icon"><i class="fas fa-crown"></i></div><h3>Annuaire Fret VIP</h3><p>Accès premium aux contacts logistiques stratégiques de la zone portuaire et aéroportuaire de Cotonou.</p><span class="badge badge-or">Premium</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">05</div><div class="mod-icon"><i class="fas fa-store"></i></div><h3>Boutiques Partenaires</h3><p>Vitrines pour fournisseurs BTP : ciment, outillage, EPI, groupes électrogènes, matériaux.</p><span class="badge badge-g">Actif</span></div>
-      <div class="mod-card fade-up"><div class="mod-num">06</div><div class="mod-icon"><i class="fas fa-graduation-cap"></i></div><h3>Observatoire Formations</h3><p>Meilleures formations BTP, ingénierie, certifications BIM, IA. Visibilité payante pour les écoles.</p><span class="badge badge-g">Actif</span></div>
+      <div class="mod-card fade-up"><div class="mod-num">01</div><div class="mod-icon"><i class="fas fa-truck-monster"></i></div><h3><span class="fr">Catalogue Engins Lourds</span><span class="en">Heavy Equipment Catalogue</span></h3><p><span class="fr">Camions, grues, bulldozers, tractopelles, nacelles, pompes. Vue liste et géolocalisation carte.</span><span class="en">Trucks, cranes, bulldozers, backhoes, lifts, pumps. List view and map geolocation.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
+      <div class="mod-card fade-up"><div class="mod-num">02</div><div class="mod-icon"><i class="fas fa-id-card"></i></div><h3><span class="fr">CVthèque BTP Premium</span><span class="en">Premium Construction CV Library</span></h3><p><span class="fr">Profils qualifiés d'ingénieurs, topographes, conducteurs, soudeurs, mécaniciens. Mise en relation directe.</span><span class="en">Qualified profiles of engineers, surveyors, operators, welders, mechanics. Direct matching.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
+      <div class="mod-card fade-up"><div class="mod-num">03</div><div class="mod-icon"><i class="fas fa-route"></i></div><h3><span class="fr">Retours à Vide</span><span class="en">Empty Return Trips</span></h3><p><span class="fr">Module dédié pour optimiser les trajets retour des transporteurs et réduire les pertes.</span><span class="en">Dedicated module to optimise carriers' return trips and reduce losses.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
+      <div class="mod-card fade-up"><div class="mod-num">04</div><div class="mod-icon"><i class="fas fa-crown"></i></div><h3><span class="fr">Annuaire Fret VIP</span><span class="en">VIP Freight Directory</span></h3><p><span class="fr">Accès premium aux contacts logistiques stratégiques de la zone portuaire et aéroportuaire de Cotonou.</span><span class="en">Premium access to strategic logistics contacts in Cotonou's port and airport area.</span></p><span class="badge badge-or">Premium</span></div>
+      <div class="mod-card fade-up"><div class="mod-num">05</div><div class="mod-icon"><i class="fas fa-store"></i></div><h3><span class="fr">Boutiques Partenaires</span><span class="en">Partner Stores</span></h3><p><span class="fr">Vitrines pour fournisseurs BTP : ciment, outillage, EPI, groupes électrogènes, matériaux.</span><span class="en">Storefronts for construction suppliers: cement, tools, PPE, generators, materials.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
+      <div class="mod-card fade-up"><div class="mod-num">06</div><div class="mod-icon"><i class="fas fa-graduation-cap"></i></div><h3><span class="fr">Observatoire Formations</span><span class="en">Training Observatory</span></h3><p><span class="fr">Meilleures formations BTP, ingénierie, certifications BIM, IA. Visibilité payante pour les écoles.</span><span class="en">Top construction, engineering, BIM and AI certifications. Paid visibility for schools.</span></p><span class="badge badge-g fr">Actif</span><span class="badge badge-g en">Live</span></div>
     </div>
     <div style="text-align:center;margin-top:48px" class="fade-up">
-      <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i> Explorer la plateforme</a>
+      <a href="https://mobilix.42web.io" target="_blank" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i> <span class="fr">Explorer la plateforme</span><span class="en">Explore the platform</span></a>
     </div>
   </div>
 </section>
@@ -482,35 +525,36 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="revenus" style="background:var(--bk2)">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-coins"></i> Modèle économique</span>
-      <h2>Plusieurs sources de revenus.<br><span style="color:var(--g)">Un seul objectif : la rentabilité.</span></h2>
-      <p>Mobilix génère des revenus récurrents à travers six services stratégiques, réduisant les risques tout en maximisant le potentiel de croissance.</p>
+      <span class="slabel orange"><i class="fas fa-coins"></i> <span class="fr">Modèle économique</span><span class="en">Business model</span></span>
+      <h2><span class="fr">Plusieurs sources de revenus.<br><span style="color:var(--g)">Un seul objectif : la rentabilité.</span></span><span class="en">Multiple revenue streams.<br><span style="color:var(--g)">One goal: profitability.</span></span></h2>
+      <p><span class="fr">Mobilix génère des revenus récurrents à travers six services stratégiques, réduisant les risques tout en maximisant le potentiel de croissance.</span><span class="en">Mobilix generates recurring revenue through six strategic services, reducing risks while maximising growth potential.</span></p>
     </div>
     <div class="rev-grid stagger">
-      <div class="rev-card fade-up"><span class="rnum">01</span><div class="rev-icon"><i class="fas fa-truck"></i></div><h3>Abonnements propriétaires</h3><p>Les propriétaires d'engins paient un abonnement annuel pour une visibilité nationale instantanée.</p><span class="rev-tag">15K — 50K FCFA/an</span></div>
-      <div class="rev-card fade-up"><span class="rnum">02</span><div class="rev-icon or"><i class="fas fa-user-tie"></i></div><h3>Commission CVthèque BTP</h3><p>Chaque mise en relation professionnelle génère une commission sur la transaction.</p><span class="rev-tag or">10% par transaction</span></div>
-      <div class="rev-card fade-up"><span class="rnum">03</span><div class="rev-icon"><i class="fas fa-bullhorn"></i></div><h3>Publicité annonceurs</h3><p>Bannières premium pour marques de ciment, fournisseurs BTP, banques, assurances, concessionnaires.</p><span class="rev-tag">Revenus récurrents</span></div>
-      <div class="rev-card fade-up"><span class="rnum">04</span><div class="rev-icon or"><i class="fas fa-newspaper"></i></div><h3>Blog "Entreprise du mois"</h3><p>Article dédié, visibilité homepage et référencement Google renforcé pour les PME BTP béninoises.</p><span class="rev-tag or">Sponsoring éditorial</span></div>
-      <div class="rev-card fade-up"><span class="rnum">05</span><div class="rev-icon"><i class="fas fa-school"></i></div><h3>Visibilité écoles &amp; formations</h3><p>Les écoles spécialisées BTP, logistique, aéroportuaire paient pour attirer étudiants et recruter des talents.</p><span class="rev-tag">Abonnement annuel</span></div>
-      <div class="rev-card fade-up"><span class="rnum">06</span><div class="rev-icon or"><i class="fas fa-star"></i></div><h3>Annuaire Fret VIP</h3><p>Accès exclusif aux contacts logistiques stratégiques du port de Cotonou et de la zone aéroportuaire.</p><span class="rev-tag or">5 000 FCFA/mois</span></div>
+      <div class="rev-card fade-up"><span class="rnum">01</span><div class="rev-icon"><i class="fas fa-truck"></i></div><h3><span class="fr">Abonnements propriétaires</span><span class="en">Owner subscriptions</span></h3><p><span class="fr">Les propriétaires d'engins paient un abonnement annuel pour une visibilité nationale instantanée.</span><span class="en">Equipment owners pay an annual subscription for instant national visibility.</span></p><span class="rev-tag">15K — 50K FCFA/an</span></div>
+      <div class="rev-card fade-up"><span class="rnum">02</span><div class="rev-icon or"><i class="fas fa-user-tie"></i></div><h3><span class="fr">Commission CVthèque BTP</span><span class="en">CV library commission</span></h3><p><span class="fr">Chaque mise en relation professionnelle génère une commission sur la transaction.</span><span class="en">Every professional match generates a commission on the transaction.</span></p><span class="rev-tag or">10% <span class="fr">par transaction</span><span class="en">per transaction</span></span></div>
+      <div class="rev-card fade-up"><span class="rnum">03</span><div class="rev-icon"><i class="fas fa-bullhorn"></i></div><h3><span class="fr">Publicité annonceurs</span><span class="en">Advertiser display</span></h3><p><span class="fr">Bannières premium pour marques de ciment, fournisseurs BTP, banques, assurances, concessionnaires.</span><span class="en">Premium banners for cement brands, construction suppliers, banks, insurers, dealers.</span></p><span class="rev-tag fr">Revenus récurrents</span><span class="rev-tag en">Recurring revenue</span></div>
+      <div class="rev-card fade-up"><span class="rnum">04</span><div class="rev-icon or"><i class="fas fa-newspaper"></i></div><h3><span class="fr">Blog "Entreprise du mois"</span><span class="en">"Company of the month" blog</span></h3><p><span class="fr">Article dédié, visibilité homepage et référencement Google renforcé pour les PME BTP béninoises.</span><span class="en">Dedicated article, homepage visibility and boosted Google ranking for Beninese construction SMEs.</span></p><span class="rev-tag or fr">Sponsoring éditorial</span><span class="rev-tag or en">Editorial sponsorship</span></div>
+      <div class="rev-card fade-up"><span class="rnum">05</span><div class="rev-icon"><i class="fas fa-school"></i></div><h3><span class="fr">Visibilité écoles &amp; formations</span><span class="en">Schools &amp; training visibility</span></h3><p><span class="fr">Les écoles spécialisées BTP, logistique, aéroportuaire paient pour attirer étudiants et recruter des talents.</span><span class="en">Specialised construction, logistics and aviation schools pay to attract students and recruit talent.</span></p><span class="rev-tag fr">Abonnement annuel</span><span class="rev-tag en">Annual subscription</span></div>
+      <div class="rev-card fade-up"><span class="rnum">06</span><div class="rev-icon or"><i class="fas fa-star"></i></div><h3><span class="fr">Annuaire Fret VIP</span><span class="en">VIP Freight Directory</span></h3><p><span class="fr">Accès exclusif aux contacts logistiques stratégiques du port de Cotonou et de la zone aéroportuaire.</span><span class="en">Exclusive access to strategic logistics contacts at Cotonou port and the airport zone.</span></p><span class="rev-tag or">5 000 FCFA/mois</span></div>
     </div>
-
     <!-- CHARTS -->
     <div class="charts-grid fade-up" style="margin-top:48px">
       <div class="chart-card">
-        <h3>Répartition des revenus</h3>
-        <div class="csub">Projection modèle économique Mobilix</div>
+        <h3><span class="fr">Répartition des revenus</span><span class="en">Revenue breakdown</span></h3>
+        <div class="csub fr">Projection modèle économique Mobilix</div>
+        <div class="csub en">Mobilix business model projection</div>
         <div class="chart-legend" id="revLegend"></div>
         <div style="position:relative;height:260px;margin-top:16px">
-          <canvas id="revenueChart" role="img" aria-label="Camembert répartition des 6 sources de revenus Mobilix">Abonnements 30%, Publicité 20%, CVthèque 15%, Protect 15%, Fret VIP 10%, Blog 10%</canvas>
+          <canvas id="revenueChart"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <h3>Projection de croissance</h3>
-        <div class="csub">Utilisateurs cumulés — 12 premiers mois</div>
+        <h3><span class="fr">Projection de croissance</span><span class="en">Growth projection</span></h3>
+        <div class="csub fr">Utilisateurs cumulés — 12 premiers mois</div>
+        <div class="csub en">Cumulative users — first 12 months</div>
         <div class="chart-legend" id="growthLegend"></div>
         <div style="position:relative;height:260px;margin-top:16px">
-          <canvas id="growthChart" role="img" aria-label="Courbe de croissance des utilisateurs sur 12 mois">Croissance progressive de 0 à 500 utilisateurs sur 12 mois</canvas>
+          <canvas id="growthChart"></canvas>
         </div>
       </div>
     </div>
@@ -521,15 +565,15 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="protect">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-shield-alt"></i> Infrastructure de confiance</span>
+      <span class="slabel"><i class="fas fa-shield-alt"></i> <span class="fr">Infrastructure de confiance</span><span class="en">Trust infrastructure</span></span>
       <h2>Mobilix Protect</h2>
-      <p>Une couche stratégique de sécurisation pour les opérations BTP et logistiques. Mobilix prévoit un partenariat stratégique avec un acteur majeur de l'assurance.</p>
+      <p><span class="fr">Une couche stratégique de sécurisation pour les opérations BTP et logistiques. Mobilix prévoit un partenariat stratégique avec un acteur majeur de l'assurance.</span><span class="en">A strategic security layer for construction and logistics operations. Mobilix plans a strategic partnership with a major insurance player.</span></p>
     </div>
     <div class="protect-grid stagger">
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-shield-alt"></i></div><h3>Assurance simplifiée</h3><p>Souscription rapide directement depuis la plateforme, sans paperasse.</p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-truck"></i></div><h3>Protection équipements</h3><p>Couverture adaptée aux réalités des chantiers et du transport au Bénin.</p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-user-check"></i></div><h3>Validation des partenaires</h3><p>Vérification des profils et renforcement de la confiance entre les acteurs.</p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3>Commission stratégique</h3><p>Mobilix perçoit 10% sur chaque contrat généré via la plateforme.</p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-shield-alt"></i></div><h3><span class="fr">Assurance simplifiée</span><span class="en">Simplified insurance</span></h3><p><span class="fr">Souscription rapide directement depuis la plateforme, sans paperasse.</span><span class="en">Quick subscription directly from the platform, no paperwork.</span></p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-truck"></i></div><h3><span class="fr">Protection équipements</span><span class="en">Equipment protection</span></h3><p><span class="fr">Couverture adaptée aux réalités des chantiers et du transport au Bénin.</span><span class="en">Coverage tailored to the realities of construction sites and transport in Benin.</span></p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-user-check"></i></div><h3><span class="fr">Validation des partenaires</span><span class="en">Partner validation</span></h3><p><span class="fr">Vérification des profils et renforcement de la confiance entre les acteurs.</span><span class="en">Profile verification and trust-building between all parties.</span></p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit 10% sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns 10% on every contract generated through the platform.</span></p></div>
     </div>
   </div>
 </section>
@@ -538,22 +582,22 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="avantages" style="background:var(--bk2)">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-trophy"></i> Avantages concurrentiels</span>
-      <h2>Pourquoi Mobilix fonctionne<br><span style="color:var(--g)">là où le bouche-à-oreille échoue</span></h2>
+      <span class="slabel"><i class="fas fa-trophy"></i> <span class="fr">Avantages concurrentiels</span><span class="en">Competitive advantages</span></span>
+      <h2><span class="fr">Pourquoi Mobilix fonctionne<br><span style="color:var(--g)">là où le bouche-à-oreille échoue</span></span><span class="en">Why Mobilix succeeds<br><span style="color:var(--g)">where word-of-mouth fails</span></span></h2>
     </div>
     <div class="adv-grid stagger">
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-clock"></i></div><div><h4>Transformer les temps morts en revenus</h4><p>Le bouche-à-oreille est lent et local. Mobilix offre une visibilité nationale instantanée aux propriétaires d'engins, remplissant leurs journées vides.</p></div></div>
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-cut"></i></div><div><h4>Supprimer les intermédiaires inutiles</h4><p>Mobilix connecte directement propriétaires et clients finaux, supprimant les 2–3 démarcheurs qui captaient les marges des deux côtés.</p></div></div>
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-lock"></i></div><div><h4>Sécuriser les transactions</h4><p>Validation des profils et sécurisation des paiements pour éliminer le risque de non-paiement chronique dans le secteur.</p></div></div>
-      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-map-marker-alt"></i></div><div><h4>La puissance de la géolocalisation</h4><p>Un chef de chantier peut géolocaliser instantanément un camion disponible à proximité. Valeur = l'immédiateté.</p></div></div>
+      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-clock"></i></div><div><h4><span class="fr">Transformer les temps morts en revenus</span><span class="en">Turning downtime into revenue</span></h4><p><span class="fr">Le bouche-à-oreille est lent et local. Mobilix offre une visibilité nationale instantanée aux propriétaires d'engins, remplissant leurs journées vides.</span><span class="en">Word-of-mouth is slow and local. Mobilix gives equipment owners instant national visibility, filling their idle days.</span></p></div></div>
+      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-cut"></i></div><div><h4><span class="fr">Supprimer les intermédiaires inutiles</span><span class="en">Cutting out unnecessary middlemen</span></h4><p><span class="fr">Mobilix connecte directement propriétaires et clients finaux, supprimant les 2–3 démarcheurs qui captaient les marges des deux côtés.</span><span class="en">Mobilix connects owners directly to end clients, eliminating the 2–3 brokers capturing margins on both sides.</span></p></div></div>
+      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-lock"></i></div><div><h4><span class="fr">Sécuriser les transactions</span><span class="en">Securing transactions</span></h4><p><span class="fr">Validation des profils et sécurisation des paiements pour éliminer le risque de non-paiement chronique dans le secteur.</span><span class="en">Profile validation and payment security to eliminate the sector's chronic payment default risk.</span></p></div></div>
+      <div class="adv-card fade-up"><div class="adv-ico"><i class="fas fa-map-marker-alt"></i></div><div><h4><span class="fr">La puissance de la géolocalisation</span><span class="en">The power of geolocation</span></h4><p><span class="fr">Un chef de chantier peut géolocaliser instantanément un camion disponible à proximité. Valeur = l'immédiateté.</span><span class="en">A site manager can instantly geolocate a nearby available truck. Value = immediacy.</span></p></div></div>
     </div>
-
     <!-- Citation terrain -->
     <div class="terrain-section fade-up" style="margin-top:48px">
       <blockquote>
-        "Les premiers échanges réalisés avec des propriétaires d'engins à Cotonou révèlent une attente forte pour une solution capable d'apporter des clients sérieux, fiables et rapidement mobilisables. Un propriétaire nous a dit : <strong style="color:var(--g)">'Si ton application m'amène un client sérieux, je signe.'</strong>"
+        <span class="fr">"Les premiers échanges réalisés avec des propriétaires d'engins à Cotonou révèlent une attente forte pour une solution capable d'apporter des clients sérieux, fiables et rapidement mobilisables. Un propriétaire nous a dit : <strong style="color:var(--g)">'Si ton application m'amène un client sérieux, je signe.'</strong>"</span>
+        <span class="en">"Early conversations with equipment owners in Cotonou reveal strong demand for a solution that brings serious, reliable, quickly reachable clients. One owner told us: <strong style="color:var(--g)">'If your app brings me a serious client, I'll sign.'</strong>"</span>
       </blockquote>
-      <cite>— Retour terrain, Port de Cotonou · <strong>Équipe OguTech</strong></cite>
+      <cite>— <span class="fr">Retour terrain, Port de Cotonou · </span><span class="en">Field feedback, Port of Cotonou · </span><strong>OguTech</strong></cite>
     </div>
   </div>
 </section>
@@ -562,15 +606,15 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="whynow">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-fire"></i> Pourquoi maintenant ?</span>
-      <h2>Un marché immense<br><span style="color:var(--g)">encore peu structuré numériquement</span></h2>
+      <span class="slabel orange"><i class="fas fa-fire"></i> <span class="fr">Pourquoi maintenant ?</span><span class="en">Why now?</span></span>
+      <h2><span class="fr">Un marché immense<br><span style="color:var(--g)">encore peu structuré numériquement</span></span><span class="en">A massive market<br><span style="color:var(--g)">still barely digitised</span></span></h2>
     </div>
     <div class="why-grid stagger">
-      <div class="why-card fade-up"><div class="why-ico">🏗️</div><h4>Explosion du BTP</h4><p>Boom de la construction résidentielle et infrastructurelle au Bénin.</p></div>
-      <div class="why-card fade-up"><div class="why-ico">🏙️</div><h4>Urbanisation rapide</h4><p>Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou en expansion constante.</p></div>
-      <div class="why-card fade-up"><div class="why-ico">📱</div><h4>Digitalisation</h4><p>Adoption croissante du mobile money et des services numériques.</p></div>
-      <div class="why-card fade-up"><div class="why-ico">🕳️</div><h4>Marché vierge</h4><p>Aucun acteur digital dominant dans le BTP et la logistique au Bénin.</p></div>
-      <div class="why-card fade-up"><div class="why-ico">🤝</div><h4>Soutien institutionnel</h4><p>Programmes d'incubation (Sèmè City, FAEN) actifs pour les startups digitales.</p></div>
+      <div class="why-card fade-up"><div class="why-ico">🏗️</div><h4><span class="fr">Explosion du BTP</span><span class="en">Construction boom</span></h4><p><span class="fr">Boom de la construction résidentielle et infrastructurelle au Bénin.</span><span class="en">Residential and infrastructure construction boom in Benin.</span></p></div>
+      <div class="why-card fade-up"><div class="why-ico">🏙️</div><h4><span class="fr">Urbanisation rapide</span><span class="en">Rapid urbanisation</span></h4><p><span class="fr">Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou en expansion constante.</span><span class="en">Cotonou, Abomey-Calavi, Porto-Novo, Bohicon and Parakou in constant expansion.</span></p></div>
+      <div class="why-card fade-up"><div class="why-ico">📱</div><h4><span class="fr">Digitalisation</span><span class="en">Digitalisation</span></h4><p><span class="fr">Adoption croissante du mobile money et des services numériques.</span><span class="en">Growing adoption of mobile money and digital services.</span></p></div>
+      <div class="why-card fade-up"><div class="why-ico">🕳️</div><h4><span class="fr">Marché vierge</span><span class="en">Untapped market</span></h4><p><span class="fr">Aucun acteur digital dominant dans le BTP et la logistique au Bénin.</span><span class="en">No dominant digital player in construction and logistics in Benin.</span></p></div>
+      <div class="why-card fade-up"><div class="why-ico">🤝</div><h4><span class="fr">Soutien institutionnel</span><span class="en">Institutional support</span></h4><p><span class="fr">Programmes d'incubation (Sèmè City, FAEN) actifs pour les startups digitales.</span><span class="en">Active incubation programmes (Sèmè City, FAEN) for digital startups.</span></p></div>
     </div>
   </div>
 </section>
@@ -580,37 +624,37 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   <div class="container">
     <div class="section-head fade-up">
       <span class="slabel"><i class="fas fa-road"></i> Roadmap</span>
-      <h2>Construire l'infrastructure<br><span style="color:var(--g)">digitale du BTP</span></h2>
+      <h2><span class="fr">Construire l'infrastructure<br><span style="color:var(--g)">digitale du BTP</span></span><span class="en">Building the<br><span style="color:var(--g)">digital construction infrastructure</span></span></h2>
     </div>
     <div style="max-width:700px;margin:0 auto" class="fade-up">
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-dot"></div>
           <span class="tl-year">2026</span>
-          <h3>Lancement &amp; Acquisition</h3>
-          <p>Déploiement Mobilix au Bénin. Onboarding des premiers engins, entreprises BTP et experts métiers sur Cotonou, Abomey-Calavi.Porto-Novo, Bohicon et Parakou</p>
-          <div class="tl-tags"><span class="tl-tag">Catalogue engins</span><span class="tl-tag">CVthèque</span><span class="tl-tag">Fret VIP</span><span class="tl-tag">Agents terrain</span></div>
+          <h3><span class="fr">Lancement &amp; Acquisition</span><span class="en">Launch &amp; Acquisition</span></h3>
+          <p><span class="fr">Déploiement Mobilix au Bénin. Onboarding des premiers engins, entreprises BTP et experts métiers sur Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou.</span><span class="en">Mobilix launch in Benin. Onboarding first equipment, construction companies and trade experts across Cotonou, Abomey-Calavi, Porto-Novo, Bohicon and Parakou.</span></p>
+          <div class="tl-tags"><span class="tl-tag fr">Catalogue engins</span><span class="tl-tag en">Equipment catalogue</span><span class="tl-tag">CVthèque</span><span class="tl-tag">Fret VIP</span><span class="tl-tag fr">Agents terrain</span><span class="tl-tag en">Field agents</span></div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
           <span class="tl-year">2027</span>
-          <h3>Mobilix Protect &amp; Paiement</h3>
-          <p>Intégration assurance partenaire, validation des profils, scoring prestataires. Déploiement Mobile Money et paiement sécurisé escrow.</p>
-          <div class="tl-tags"><span class="tl-tag">Assurance BTP</span><span class="tl-tag">Mobile Money</span><span class="tl-tag">Scoring</span><span class="tl-tag">Dashboard propriétaires</span></div>
+          <h3>Mobilix Protect &amp; <span class="fr">Paiement</span><span class="en">Payment</span></h3>
+          <p><span class="fr">Intégration assurance partenaire, validation des profils, scoring prestataires. Déploiement Mobile Money et paiement sécurisé escrow.</span><span class="en">Partner insurance integration, profile validation, provider scoring. Mobile Money deployment and secure escrow payment.</span></p>
+          <div class="tl-tags"><span class="tl-tag fr">Assurance BTP</span><span class="tl-tag en">Construction insurance</span><span class="tl-tag">Mobile Money</span><span class="tl-tag">Scoring</span><span class="tl-tag fr">Dashboard propriétaires</span><span class="tl-tag en">Owner dashboard</span></div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
           <span class="tl-year">2028</span>
-          <h3>Suivi flotte &amp; données</h3>
-          <p>Outils analytiques, suivi de flotte en temps réel, API logistique, contrats B2B avec entreprises BTP.</p>
-          <div class="tl-tags"><span class="tl-tag">API logistique</span><span class="tl-tag">Suivi flotte</span><span class="tl-tag">B2B</span></div>
+          <h3><span class="fr">Suivi flotte &amp; données</span><span class="en">Fleet tracking &amp; data</span></h3>
+          <p><span class="fr">Outils analytiques, suivi de flotte en temps réel, API logistique, contrats B2B avec entreprises BTP.</span><span class="en">Analytics tools, real-time fleet tracking, logistics API, B2B contracts with construction firms.</span></p>
+          <div class="tl-tags"><span class="tl-tag">API logistique</span><span class="tl-tag fr">Suivi flotte</span><span class="tl-tag en">Fleet tracking</span><span class="tl-tag">B2B</span></div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
           <span class="tl-year">2029</span>
-          <h3>Expansion régionale</h3>
-          <p>Déploiement Afrique de l'Ouest — Togo, Côte d'Ivoire, Niger. Marketplace régionale et financement d'équipements.</p>
-          <div class="tl-tags"><span class="tl-tag">Togo</span><span class="tl-tag">Côte d'Ivoire</span><span class="tl-tag">Financement équipements</span></div>
+          <h3><span class="fr">Expansion régionale</span><span class="en">Regional expansion</span></h3>
+          <p><span class="fr">Déploiement Afrique de l'Ouest — Togo, Côte d'Ivoire, Niger. Marketplace régionale et financement d'équipements.</span><span class="en">West Africa deployment — Togo, Côte d'Ivoire, Niger. Regional marketplace and equipment financing.</span></p>
+          <div class="tl-tags"><span class="tl-tag">Togo</span><span class="tl-tag">Côte d'Ivoire</span><span class="tl-tag fr">Financement équipements</span><span class="tl-tag en">Equipment financing</span></div>
         </div>
       </div>
     </div>
@@ -621,58 +665,56 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="budget">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-wallet"></i> Utilisation des fonds</span>
-      <h2>7 000 000 FCFA —<br><span style="color:var(--g)">chaque franc justifié</span></h2>
-      <p>Budget d'amorçage optimisé pour valider le Product-Market Fit sur Cotonou / Abomey-Calavi en 6 mois.</p>
+      <span class="slabel orange"><i class="fas fa-wallet"></i> <span class="fr">Utilisation des fonds</span><span class="en">Use of funds</span></span>
+      <h2>7 000 000 FCFA —<br><span style="color:var(--g)"><span class="fr">chaque franc justifié</span><span class="en">every franc accounted for</span></span></h2>
+      <p><span class="fr">Budget d'amorçage optimisé pour valider le Product-Market Fit sur Cotonou / Abomey-Calavi en 6 mois.</span><span class="en">Seed budget optimised to validate Product-Market Fit in Cotonou / Abomey-Calavi within 6 months.</span></p>
     </div>
     <div class="fade-up" style="max-width:760px;margin:0 auto">
       <div style="position:relative;height:280px;margin-bottom:36px">
-        <canvas id="budgetChart" role="img" aria-label="Budget répartition des 7 millions FCFA par poste">Infrastructure 12%, Acquisition terrain 38%, Marketing digital 25%, Espace travail 18%, Réserve 7%</canvas>
+        <canvas id="budgetChart"></canvas>
       </div>
       <table class="budget-table">
-        <thead><tr><th>Poste</th><th>Description</th><th>Montant</th></tr></thead>
+        <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
         <tbody>
-          <tr><td><strong style="color:var(--wh)">Acquisition terrain &amp; B2B</strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="45"></div></div></td><td style="font-size:.83rem;color:var(--tx)">Démarchage port, chantiers, événement de lancement syndicats BTP, flyers &amp; stickers camions</td><td>2 660 000</td></tr>
-          <tr><td><strong style="color:var(--wh)">Marketing digital</strong><div class="bbar-wrap"><div class="bbar or" style="width:0" data-w="25"></div></div></td><td style="font-size:.83rem;color:var(--tx)">Meta Ads (Facebook/WhatsApp), vidéo motion design, SEO local Google Maps</td><td>1 750 000</td></tr>
-          <tr><td><strong style="color:var(--wh)">Siège social &amp; Aménagement</strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="15"></div></div></td>
-  <td style="font-size:.83rem;color:var(--tx)">Loyer du bureau physique (caution + avance), mobilier complet (bureaux, armoire, chaises) et équipement de base.</td>
-  <td>1 050 000</td></tr>
-          <tr><td><strong style="color:var(--wh)">Infrastructure &amp; juridique</strong><div class="bbar-wrap"><div class="bbar or" style="width:0" data-w="12"></div></div></td><td style="font-size:.83rem;color:var(--tx)">Domaine mobilix.bj, hébergement pro, SMS gateway, CGU &amp; protection données</td><td>840 000</td></tr>
-          <tr><td><strong style="color:var(--wh)">Réserve opérationnelle</strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="8"></div></div></td><td style="font-size:.83rem;color:var(--tx)">Trésorerie d'urgence (3 mois), internet &amp; communication</td><td>700 000</td></tr>
+          <tr><td><strong style="color:var(--wh)"><span class="fr">Acquisition terrain &amp; B2B</span><span class="en">Field acquisition &amp; B2B</span></strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="45"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Démarchage port, chantiers, événement de lancement syndicats BTP, flyers &amp; stickers camions</span><span class="en">Port &amp; site canvassing, BTP union launch event, flyers &amp; truck stickers</span></td><td>2 660 000</td></tr>
+          <tr><td><strong style="color:var(--wh)"><span class="fr">Marketing digital</span><span class="en">Digital marketing</span></strong><div class="bbar-wrap"><div class="bbar or" style="width:0" data-w="25"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Meta Ads (Facebook/WhatsApp), vidéo motion design, SEO local Google Maps</span><span class="en">Meta Ads (Facebook/WhatsApp), motion design video, local Google Maps SEO</span></td><td>1 750 000</td></tr>
+          <tr><td><strong style="color:var(--wh)"><span class="fr">Siège social &amp; Aménagement</span><span class="en">Office &amp; fit-out</span></strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="15"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Loyer du bureau physique (caution + avance), mobilier complet et équipement de base.</span><span class="en">Office rent (deposit + advance), full furniture and basic equipment.</span></td><td>1 050 000</td></tr>
+          <tr><td><strong style="color:var(--wh)"><span class="fr">Infrastructure &amp; juridique</span><span class="en">Infrastructure &amp; legal</span></strong><div class="bbar-wrap"><div class="bbar or" style="width:0" data-w="12"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Domaine mobilix.bj, hébergement pro, SMS gateway, CGU &amp; protection données</span><span class="en">mobilix.bj domain, pro hosting, SMS gateway, T&amp;Cs &amp; data protection</span></td><td>840 000</td></tr>
+          <tr><td><strong style="color:var(--wh)"><span class="fr">Réserve opérationnelle</span><span class="en">Operating reserve</span></strong><div class="bbar-wrap"><div class="bbar" style="width:0" data-w="8"></div></div></td><td style="font-size:.83rem;color:var(--tx)"><span class="fr">Trésorerie d'urgence (3 mois), internet &amp; communication</span><span class="en">Emergency cash (3 months), internet &amp; communications</span></td><td>700 000</td></tr>
         </tbody>
       </table>
       <div class="budget-total">
-        <span>Total sollicité</span>
+        <span><span class="fr">Total sollicité</span><span class="en">Total sought</span></span>
         <span>7 000 000 FCFA</span>
       </div>
-      <p style="font-size:.82rem;color:var(--tx2);margin-top:16px;text-align:center">Zéro frais de développement — l'application est <strong style="color:var(--g)">déjà développée et en ligne</strong>. 100% des fonds servent à acquérir les utilisateurs et sécuriser la plateforme.</p>
+      <p style="font-size:.82rem;color:var(--tx2);margin-top:16px;text-align:center"><span class="fr">Zéro frais de développement — l'application est <strong style="color:var(--g)">déjà développée et en ligne</strong>. 100% des fonds servent à acquérir les utilisateurs et sécuriser la plateforme.</span><span class="en">Zero development costs — the app is <strong style="color:var(--g)">already built and live</strong>. 100% of funds go toward user acquisition and platform security.</span></p>
     </div>
   </div>
 </section>
-  
+
 <!-- VISION LONG TERME -->
 <section class="section" id="vision" style="background:linear-gradient(180deg, var(--bk) 0%, var(--bk2) 100%)">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-eye"></i> Vision 2030</span>
-      <h2>Bâtir l'Operating System<br><span style="color:var(--g)">du BTP africain</span></h2>
-      <p>Mobilix ne s'arrête pas à la mise en relation. Nous préparons les briques technologiques qui transformeront durablement le secteur.</p>
+      <span class="slabel"><i class="fas fa-eye"></i> <span class="fr">Vision 2030</span><span class="en">Vision 2030</span></span>
+      <h2><span class="fr">Bâtir l'Operating System<br><span style="color:var(--g)">du BTP africain</span></span><span class="en">Building the Operating System<br><span style="color:var(--g)">of African construction</span></span></h2>
+      <p><span class="fr">Mobilix ne s'arrête pas à la mise en relation. Nous préparons les briques technologiques qui transformeront durablement le secteur.</span><span class="en">Mobilix goes beyond matchmaking. We are building the technological bricks that will lastingly transform the sector.</span></p>
     </div>
     <div class="mod-grid">
       <div class="mod-card fade-up">
         <div class="mod-icon"><i class="fas fa-code"></i></div>
-        <h3>API Logistique</h3>
-        <p>Interconnecter le Port, les cimenteries et les chantiers pour une transparence totale de la supply-chain béninoise.</p>
+        <h3><span class="fr">API Logistique</span><span class="en">Logistics API</span></h3>
+        <p><span class="fr">Interconnecter le Port, les cimenteries et les chantiers pour une transparence totale de la supply-chain béninoise.</span><span class="en">Interconnecting the Port, cement plants and construction sites for full transparency across Benin's supply chain.</span></p>
       </div>
       <div class="mod-card fade-up">
         <div class="mod-icon"><i class="fas fa-satellite"></i></div>
-        <h3>Suivi de Flotte IoT</h3>
-        <p>Capteurs intelligents pour réduire le vol de carburant, monitorer la maintenance prédictive et sécuriser les chauffeurs.</p>
+        <h3><span class="fr">Suivi de Flotte IoT</span><span class="en">IoT Fleet Tracking</span></h3>
+        <p><span class="fr">Capteurs intelligents pour réduire le vol de carburant, monitorer la maintenance prédictive et sécuriser les chauffeurs.</span><span class="en">Smart sensors to cut fuel theft, monitor predictive maintenance and keep drivers safe.</span></p>
       </div>
       <div class="mod-card fade-up">
         <div class="mod-icon"><i class="fas fa-hand-holding-usd"></i></div>
-        <h3>Leasing & Financement</h3>
-        <p>Transformer l'historique de revenus Mobilix en garantie bancaire pour aider nos partenaires à acquérir de nouveaux engins.</p>
+        <h3><span class="fr">Leasing &amp; Financement</span><span class="en">Leasing &amp; Financing</span></h3>
+        <p><span class="fr">Transformer l'historique de revenus Mobilix en garantie bancaire pour aider nos partenaires à acquérir de nouveaux engins.</span><span class="en">Turning Mobilix revenue history into a banking guarantee to help partners acquire new equipment.</span></p>
       </div>
     </div>
   </div>
@@ -682,39 +724,37 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="equipe" style="background:var(--bk2)">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="slabel"><i class="fas fa-users"></i> L'équipe</span>
-      <h2>Derrière Mobilix,<br><span style="color:var(--g)">OguTech SARL</span></h2>
-      <p>La maison-mère technologique qui développe et déploie Mobilix au Bénin.</p>
+      <span class="slabel"><i class="fas fa-users"></i> <span class="fr">L'équipe</span><span class="en">The team</span></span>
+      <h2><span class="fr">Derrière Mobilix,<br><span style="color:var(--g)">OguTech SARL</span></span><span class="en">Behind Mobilix,<br><span style="color:var(--g)">OguTech SARL</span></span></h2>
+      <p><span class="fr">La maison-mère technologique qui développe et déploie Mobilix au Bénin.</span><span class="en">The technology parent company that develops and deploys Mobilix in Benin.</span></p>
     </div>
     <div class="team-grid stagger">
       <div class="team-card fade-up">
         <div class="team-avatar">
-            <!-- Remplacez ID_PHOTO_HILARION par l'ID de votre fichier Drive -->
-            <img src="https://lh3.googleusercontent.com/d/1eJ89yUCN4cg2z6kKbMysfe9t0ULgmXgk" alt="Hilarion DOKOUI" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <img src="https://lh3.googleusercontent.com/d/1eJ89yUCN4cg2z6kKbMysfe9t0ULgmXgk" alt="Hilarion DOKOUI" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
 <span class="initials" style="display:none;">HD</span>
         </div>
         <h3>Hilarion S. C. DOKOUI</h3>
-        <div class="team-role">CEO, TECH SAVVY &amp; Fondateur</div>
-        <p>Entrepreneur visionnaire et expert en solutions digitales. Maîtrise l'architecture de produit et les outils d'IA pour transformer des problématiques complexes (BTP) en solutions technologiques agiles et rentables.</p>
+        <div class="team-role">CEO, TECH SAVVY &amp; <span class="fr">Fondateur</span><span class="en">Founder</span></div>
+        <p><span class="fr">Entrepreneur visionnaire et expert en solutions digitales. Maîtrise l'architecture de produit et les outils d'IA pour transformer des problématiques complexes (BTP) en solutions technologiques agiles et rentables.</span><span class="en">Visionary entrepreneur and digital solutions expert. Masters product architecture and AI tools to turn complex construction challenges into agile, profitable tech solutions.</span></p>
       </div>
       <div class="team-card fade-up">
         <div class="team-avatar">
-            <!-- Remplacez ID_PHOTO_ISMAEL par l'ID de votre fichier Drive -->
-            <img src="https://lh3.googleusercontent.com/d/12QkfRrYWfxKKFB1v2fVL8ZugxhWkae69" alt="Ismaël ZOKPADAN" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <img src="https://lh3.googleusercontent.com/d/12QkfRrYWfxKKFB1v2fVL8ZugxhWkae69" alt="Ismaël ZOKPADAN" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
 <span class="initials" style="display:none;">IZ</span>
         </div>
         <h3>Frank Ismaël ZOKPADAN</h3>
-        <div class="team-role">COO, CO-FONDATEUR, Communication &amp; Branding</div>
-        <p>Serial entrepreneur et dirigeant d'une entreprise de BTP adjudicataire de marchés publics. Expert des réalités du terrain, il pilote l'exécution opérationnelle et le réseau de partenaires stratégiques. Il est responsable de la stratégie de communication, de l'image de marque de Mobilix.</p>
+        <div class="team-role">COO, <span class="fr">CO-FONDATEUR</span><span class="en">CO-FOUNDER</span>, Communication &amp; Branding</div>
+        <p><span class="fr">Serial entrepreneur et dirigeant d'une entreprise de BTP adjudicataire de marchés publics. Expert des réalités du terrain, il pilote l'exécution opérationnelle et le réseau de partenaires stratégiques. Il est responsable de la stratégie de communication, de l'image de marque de Mobilix.</span><span class="en">Serial entrepreneur and CEO of a construction firm that wins public contracts. Expert in field realities, he drives operational execution and the strategic partner network, and owns Mobilix's communication strategy and brand.</span></p>
       </div>
-     <div class="team-card fade-up" style="border: 1px dashed rgba(0, 192, 96, 0.3);">
-  <div class="team-avatar" style="background: rgba(0, 192, 96, 0.05); border: 1px dashed var(--g); display: flex;">
-    <span class="initials" style="color: var(--g);">+</span>
-  </div>
-  <h3>Recrutement prévu</h3>
-  <div class="team-role">La Responsable Commerciale</div>
-  <p>Figure clé de notre politique de mixité, elle coordonnera le réseau national d'agents via notre portail dédié. Pilotage de la prospection terrain et du recrutement de partenaires à Cotonou, Calavi, Porto-Novo, Bohicon et Parakou.</p>
-</div>
+      <div class="team-card fade-up" style="border: 1px dashed rgba(0, 192, 96, 0.3);">
+        <div class="team-avatar" style="background: rgba(0, 192, 96, 0.05); border: 1px dashed var(--g); display: flex;">
+          <span class="initials" style="color: var(--g);">+</span>
+        </div>
+        <h3><span class="fr">Recrutement prévu</span><span class="en">Planned hire</span></h3>
+        <div class="team-role"><span class="fr">La Responsable Commerciale</span><span class="en">Head of Sales</span></div>
+        <p><span class="fr">Figure clé de notre politique de mixité, elle coordonnera le réseau national d'agents via notre portail dédié. Pilotage de la prospection terrain et du recrutement de partenaires à Cotonou, Calavi, Porto-Novo, Bohicon et Parakou.</span><span class="en">A key figure in our diversity policy, she will coordinate the national agent network through our dedicated portal. Managing field prospecting and partner recruitment across Cotonou, Calavi, Porto-Novo, Bohicon and Parakou.</span></p>
+      </div>
     </div>
   </div>
 </section>
@@ -723,12 +763,12 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <section class="section" id="investir">
   <div class="container">
     <div class="cta-invest fade-up">
-      <span class="slabel" style="margin-bottom:22px"><i class="fas fa-handshake"></i> Opportunité d'investissement</span>
-      <h2>Mobilix cherche <span class="amt">7 000 000 FCFA</span><br>pour changer le BTP au Bénin.</h2>
-      <p>Rejoignez l'aventure en tant qu'investisseur ou partenaire stratégique. Subvention ou participation au capital — discutons ensemble.</p>
+      <span class="slabel" style="margin-bottom:22px"><i class="fas fa-handshake"></i> <span class="fr">Opportunité d'investissement</span><span class="en">Investment opportunity</span></span>
+      <h2><span class="fr">Mobilix cherche <span class="amt">7 000 000 FCFA</span><br>pour changer le BTP au Bénin.</span><span class="en">Mobilix is raising <span class="amt">7 000 000 FCFA</span><br>to transform construction in Benin.</span></h2>
+      <p><span class="fr">Rejoignez l'aventure en tant qu'investisseur ou partenaire stratégique. Subvention ou participation au capital — discutons ensemble.</span><span class="en">Join the venture as an investor or strategic partner. Grant or equity stake — let's talk.</span></p>
       <div class="btn-row">
-        <a href="https://wa.me/22901432783?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20Mobilix" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Contacter sur WhatsApp</a>
-        <a href="mailto:hilarion.dokoui@gmail.com" class="btn btn-ghost"><i class="fas fa-envelope"></i> Envoyer un email</a>
+        <a href="https://wa.me/22901432783?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20Mobilix" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> <span class="fr">Contacter sur WhatsApp</span><span class="en">Contact on WhatsApp</span></a>
+        <a href="mailto:hilarion.dokoui@gmail.com" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span class="fr">Envoyer un email</span><span class="en">Send an email</span></a>
       </div>
       <p style="margin-top:28px;font-size:.82rem;color:var(--tx2)">Hilarion DOKOUI · <a href="tel:+22901432783" style="color:var(--g)">+229 01 43 27 83 22</a> · <a href="mailto:hilarion.dokoui@gmail.com" style="color:var(--g)">hilarion.dokoui@gmail.com</a></p>
     </div>
@@ -741,8 +781,8 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     <div class="footer-grid">
       <div>
         <div class="footer-logo">MOBILIX</div>
-        <p class="tagline">Le hub digital du BTP &amp; de la logistique au Bénin.</p>
-        <p class="tagline" style="font-style:italic;color:var(--tx2)">The digital hub for construction &amp; logistics in Benin.</p>
+        <p class="tagline fr">Le hub digital du BTP &amp; de la logistique au Bénin.</p>
+        <p class="tagline en">The digital hub for construction &amp; logistics in Benin.</p>
         <div class="footer-social">
           <a href="https://wa.me/22901432783" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="mailto:hilarion.dokoui@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -750,21 +790,21 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
         </div>
       </div>
       <div class="footer-col">
-        <h4>Plateforme</h4>
+        <h4><span class="fr">Plateforme</span><span class="en">Platform</span></h4>
         <ul>
-          <li><a href="https://mobilix.42web.io" target="_blank">Application</a></li>
-          <li><a href="#solution">Modules</a></li>
-          <li><a href="#revenus">Modèle économique</a></li>
+          <li><a href="https://mobilix.42web.io" target="_blank"><span class="fr">Application</span><span class="en">App</span></a></li>
+          <li><a href="#solution"><span class="fr">Modules</span><span class="en">Modules</span></a></li>
+          <li><a href="#revenus"><span class="fr">Modèle économique</span><span class="en">Business model</span></a></li>
           <li><a href="#protect">Mobilix Protect</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Investisseurs</h4>
+        <h4><span class="fr">Investisseurs</span><span class="en">Investors</span></h4>
         <ul>
-          <li><a href="#budget">Utilisation des fonds</a></li>
+          <li><a href="#budget"><span class="fr">Utilisation des fonds</span><span class="en">Use of funds</span></a></li>
           <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#equipe">L'équipe</a></li>
-          <li><a href="#investir">Prendre contact</a></li>
+          <li><a href="#equipe"><span class="fr">L'équipe</span><span class="en">The team</span></a></li>
+          <li><a href="#investir"><span class="fr">Prendre contact</span><span class="en">Get in touch</span></a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">
@@ -773,12 +813,12 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
         <p><i class="fas fa-phone"></i> <a href="tel:+22901432783">+229 01 43 27 83 22</a></p>
         <p><i class="fas fa-envelope"></i> <a href="mailto:hilarion.dokoui@gmail.com">hilarion.dokoui@gmail.com</a></p>
         <p><i class="fas fa-map-marker-alt"></i> <span>Cotonou, Bénin 🇧🇯</span></p>
-        <a href="https://wa.me/22901432783?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20Mobilix" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> Discuter sur WhatsApp</a>
+        <a href="https://wa.me/22901432783?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20Mobilix" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> <span class="fr">Discuter sur WhatsApp</span><span class="en">Chat on WhatsApp</span></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Propulsé par <strong>OguTech SARL</strong> &nbsp;·&nbsp; <a href="mailto:hilarion.dokoui@gmail.com">hilarion.dokoui@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+22901432783">+229 01 43 27 83 22</a></span>
-      <span>&copy; 2025 Mobilix — OguTech. Tous droits réservés.</span>
+      <span><span class="fr">Propulsé par</span><span class="en">Powered by</span> <strong>OguTech SARL</strong> &nbsp;·&nbsp; <a href="mailto:hilarion.dokoui@gmail.com">hilarion.dokoui@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+22901432783">+229 01 43 27 83 22</a></span>
+      <span>&copy; 2025 Mobilix — OguTech. <span class="fr">Tous droits réservés.</span><span class="en">All rights reserved.</span></span>
     </div>
   </div>
 </footer>
@@ -791,11 +831,11 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   </div>
   <div class="chat-win" id="chatWindow">
     <div class="chat-hdr">
-      <div class="chat-ag"><div class="ag-av">M</div><div><strong>Équipe Mobilix</strong><span class="ag-status">En ligne</span></div></div>
+      <div class="chat-ag"><div class="ag-av">M</div><div><strong><span class="fr">Équipe Mobilix</span><span class="en">Mobilix Team</span></strong><span class="ag-status"><span class="fr">En ligne</span><span class="en">Online</span></span></div></div>
       <button class="chat-close-btn" id="chatClose"><i class="fas fa-times"></i></button>
     </div>
     <div class="chat-msgs" id="chatMsgs">
-      <div class="cmsg agent"><div class="cmsg-bub">Bonjour 👋 Bienvenue sur le portfolio de <strong>Mobilix</strong>. Je suis disponible pour répondre à vos questions sur le projet ou l'investissement.</div></div>
+      <div class="cmsg agent"><div class="cmsg-bub fr">Bonjour 👋 Bienvenue sur le portfolio de <strong>Mobilix</strong>. Je suis disponible pour répondre à vos questions sur le projet ou l'investissement.</div><div class="cmsg-bub en">Hello 👋 Welcome to the <strong>Mobilix</strong> investor portfolio. I'm here to answer any questions about the project or investment.</div></div>
     </div>
     <div class="chat-typing" id="chatTyping">
       <div class="typing-dots"><span></span><span></span><span></span></div>
@@ -804,29 +844,41 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <input type="text" id="chatInput" placeholder="Votre message..." autocomplete="off">
       <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
     </div>
-    <div class="chat-foot-note"><i class="fab fa-whatsapp" style="color:#25D366"></i> Ou écrivez sur <a href="https://wa.me/22901432783" target="_blank">WhatsApp</a></div>
+    <div class="chat-foot-note"><i class="fab fa-whatsapp" style="color:#25D366"></i> <span class="fr">Ou écrivez sur</span><span class="en">Or write on</span> <a href="https://wa.me/22901432783" target="_blank">WhatsApp</a></div>
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
+// ── LANGUAGE SWITCHER
+function setLang(lang) {
+  document.body.classList.toggle('lang-en', lang === 'en');
+  document.getElementById('btnFR').classList.toggle('active', lang === 'fr');
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+  // Placeholder du chat
+  document.getElementById('chatInput').placeholder = lang === 'en' ? 'Your message...' : 'Votre message...';
+  localStorage.setItem('mobilix_lang', lang);
+}
+// Rétablir la langue sauvegardée
+(function(){
+  const saved = localStorage.getItem('mobilix_lang');
+  if (saved === 'en') setLang('en');
+})();
+
 // ── SCROLL ANIMATIONS
 const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
 },{threshold:.12});
 document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>obs.observe(el));
 
-// ── NAV & HAMBURGER (FIXED)
+// ── NAV & HAMBURGER
 const nav = document.getElementById('navbar');
 const ham = document.getElementById('ham');
 const navLinks = document.getElementById('navLinks');
 
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
-
-// Ouvre/Ferme le menu
 ham.addEventListener('click', () => navLinks.classList.toggle('open'));
-
-// Ferme le menu quand on clique sur un lien
 document.querySelectorAll('#navLinks a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
@@ -856,7 +908,6 @@ const bObs=new IntersectionObserver(entries=>{
 const bt=document.querySelector('.budget-table');if(bt)bObs.observe(bt);
 
 // ── CHARTS
-const isDark=true;
 const revLabels=['Abonnements','Publicité','CVthèque','Mobilix Protect','Fret VIP','Blog Premium'];
 const revData=[30,20,15,15,10,10];
 const revColors=['#00C060','#FF7A00','#1ee075','#006e35','#ffb347','#2a3a30'];
@@ -890,7 +941,7 @@ new Chart(document.getElementById('growthChart'),{
 new Chart(document.getElementById('budgetChart'),{
   type:'bar',
   data:{
-    labels:['Acquisition terrain','Marketing digital','Espace de travail','Infrastructure & juridique','Réserve'],
+    labels:['Acquisition terrain','Marketing digital','Siège social','Infrastructure','Réserve'],
     datasets:[{data:[2660000,1750000,1050000,840000,700000],backgroundColor:['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30'],borderRadius:8,borderWidth:0}]
   },
   options:{
@@ -910,11 +961,17 @@ const input=document.getElementById('chatInput');
 const sendBtn=document.getElementById('chatSend');
 const typing=document.getElementById('chatTyping');
 
-const AUTO_REPLIES=[
+const AUTO_REPLIES_FR=[
   "Merci pour votre message ! Hilarion reviendra vers vous très rapidement. 📱",
   "Pour toute question urgente, écrivez directement sur WhatsApp : +229 01 43 27 83 22",
   "Mobilix est un projet de OguTech SARL, porté par Hilarion DOKOUI. Nous serions ravis de vous présenter le dossier complet !",
   "Le projet est déjà opérationnel sur mobilix.42web.io — vous pouvez explorer la plateforme en direct.",
+];
+const AUTO_REPLIES_EN=[
+  "Thank you for your message! Hilarion will get back to you very shortly. 📱",
+  "For urgent questions, write directly on WhatsApp: +229 01 43 27 83 22",
+  "Mobilix is an OguTech SARL project, led by Hilarion DOKOUI. We'd love to walk you through the full investor deck!",
+  "The platform is already live at mobilix.42web.io — feel free to explore it directly.",
 ];
 let replyIdx=0;
 
@@ -933,9 +990,11 @@ function sendMessage(){
   input.value='';
   notif.style.display='none';
   typing.classList.add('show');
+  const isEN = document.body.classList.contains('lang-en');
+  const replies = isEN ? AUTO_REPLIES_EN : AUTO_REPLIES_FR;
   setTimeout(()=>{
     typing.classList.remove('show');
-    addMsg(AUTO_REPLIES[replyIdx%AUTO_REPLIES.length],'agent');
+    addMsg(replies[replyIdx%replies.length],'agent');
     replyIdx++;
   },1400);
 }
