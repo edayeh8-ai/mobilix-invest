@@ -560,111 +560,143 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     </div>
   </div>
 </section>
-<!-- STRATÉGIE DE MARCHÉ & ALGORITHME FINANCIER -->
+<!-- STRATÉGIE DE MARCHÉ & DASHBOARD FINANCIER -->
 <section class="section" id="market-intel" style="background:var(--bk3); border-top:1px solid var(--bd)">
   <div class="container">
     <div class="section-head fade-up">
       <span class="slabel orange"><i class="fas fa-brain"></i> <span class="fr">Intelligence de Marché</span><span class="en">Market Intelligence</span></span>
       <h2><span class="fr">TAM, SAM, SOM & RENTABILITÉ</span><span class="en">TAM, SAM, SOM & PROFITABILITY</span></h2>
-      <p><span class="fr">Analyse dynamique de la portée du projet et simulateur de revenus en temps réel.</span><span class="en">Dynamic analysis of project scope and real-time revenue simulator.</span></p>
+      <p><span class="fr">Analyse dynamique basée sur des données réalistes du marché béninois.</span><span class="en">Dynamic analysis based on realistic Beninese market data.</span></p>
     </div>
 
-    <!-- IDENTIFICATION & ANALYSE -->
-    <div class="adv-grid stagger" style="margin-bottom: 60px;">
-      <div class="adv-card fade-up">
-        <div class="adv-ico"><i class="fas fa-bullseye"></i></div>
-        <div>
-          <h4><span class="fr">1. Identification & Clients</span><span class="en">1. Identification & Clients</span></h4>
-          <p><span class="fr">Cible : 15 000+ propriétaires d'engins et 5 000+ experts BTP au Bénin. Profils : PME structurées et propriétaires individuels informels.</span><span class="en">Target: 15,000+ equipment owners and 5,000+ construction experts in Benin. Profiles: SMEs and informal individual owners.</span></p>
-        </div>
+    <!-- TRIO TAM SAM SOM -->
+    <div class="why-grid stagger" style="margin-bottom: 50px;">
+      <div class="why-card fade-up">
+        <div class="why-ico">🌍</div>
+        <h4>TAM (Total)</h4>
+        <p style="font-size:0.8rem;"><span class="fr">Marché global BTP/Logistique au Bénin. Environ 200 Mds FCFA/an.</span><span class="en">Total Benin Construction/Logistics market. ~200B FCFA/year.</span></p>
       </div>
-      <div class="adv-card fade-up">
-        <div class="adv-ico"><i class="fas fa-balance-scale"></i></div>
-        <div>
-          <h4><span class="fr">2. VS Concurrence (Pain Points)</span><span class="en">2. VS Competition (Pain Points)</span></h4>
-          <p><span class="fr">Concurrence (Informel) : Manque de traçabilité, prix volatils, pas d'assurance. Mobilix résout cela par le scoring et le paiement sécurisé.</span><span class="en">Competition (Informal): No traceability, volatile pricing, no insurance. Mobilix solves this via scoring and secure payments.</span></p>
-        </div>
+      <div class="why-card fade-up" style="border-color:var(--g)">
+        <div class="why-ico">🏙️</div>
+        <h4>SAM (Serviceable)</h4>
+        <p style="font-size:0.8rem;"><span class="fr">Part accessible via le digital dans les 5 villes pôles (Cotonou, Calavi, Porto-Novo, Bohicon, Parakou).</span><span class="en">Digitally accessible part in the 5 main cities (Cotonou, Calavi, Porto-Novo, Bohicon, Parakou).</span></p>
       </div>
-    </div>
-
-    <!-- ALGORITHME INTELLIGENT DE RENTABILITÉ -->
-    <div class="chart-card fade-up" style="max-width:900px; margin: 0 auto;">
-      <h3 style="text-align:center; margin-bottom:30px;">
-        <span class="fr"><i class="fas fa-calculator"></i> Simulateur de Revenus (365 jours)</span>
-        <span class="en"><i class="fas fa-calculator"></i> Revenue Simulator (365 days)</span>
-      </h3>
-      
-      <div class="adv-grid" style="grid-template-columns: 1fr 1fr; gap:30px;">
-        <!-- Inputs -->
-        <div style="display:flex; flex-direction:column; gap:20px;">
-          <div>
-            <label class="hstat-lbl"><span class="fr">Utilisateurs actifs</span><span class="en">Active Users</span> (SOM)</label>
-            <input type="range" id="inputUsers" min="100" max="10000" value="1000" style="width:100%; accent-color:var(--g);">
-            <div style="display:flex; justify-content:space-between; font-size:0.8rem;"><span id="valUsers">1000</span></div>
-          </div>
-          <div>
-            <label class="hstat-lbl"><span class="fr">Panier moyen (FCFA)</span><span class="en">Avg Transaction (FCFA)</span></label>
-            <input type="range" id="inputTicket" min="15000" max="500000" step="5000" value="50000" style="width:100%; accent-color:var(--or);">
-            <div style="display:flex; justify-content:space-between; font-size:0.8rem;"><span id="valTicket">50 000</span></div>
-          </div>
-        </div>
-
-        <!-- Outputs Algorithmiques -->
-        <div style="background:var(--bk4); padding:20px; border-radius:var(--r); border:1px solid var(--bd);">
-          <div style="margin-bottom:15px;">
-            <span class="hstat-lbl"><span class="fr">Volume d'affaires annuel (TAM capturé)</span><span class="en">Annual Business Volume</span></span>
-            <div class="hstat-val" style="font-size:1.4rem;" id="totalVolume">0 FCFA</div>
-          </div>
-          <div style="margin-bottom:15px;">
-            <span class="hstat-lbl"><span class="fr">Revenus Mobilix (Commission 10%)</span><span class="en">Mobilix Revenue (10% Comm)</span></span>
-            <div class="hstat-val" style="font-size:1.4rem; color:var(--g);" id="totalRev">0 FCFA</div>
-          </div>
-          <div>
-            <span class="hstat-lbl"><span class="fr">Rentabilité estimée</span><span class="en">Estimated Profitability</span></span>
-            <div class="hstat-val" style="font-size:1.4rem; color:var(--or);" id="totalROI">10%</div>
-          </div>
-        </div>
+      <div class="why-card fade-up" style="border-color:var(--or)">
+        <div class="why-ico">🎯</div>
+        <h4>SOM (Obtainable)</h4>
+        <p style="font-size:0.8rem;"><span class="fr">Cible Mobilix à 24 mois : 3 000+ propriétaires d'engins et 1 000+ experts BTP.</span><span class="en">Mobilix 24-month target: 3,000+ equipment owners and 1,000+ BTP experts.</span></p>
       </div>
     </div>
 
-    <!-- MARKETING & CAPACITÉ -->
-    <div class="rev-grid stagger" style="margin-top:50px;">
+    <!-- SIMULATEUR MAÎTRE -->
+    <div class="chart-card fade-up" style="max-width:1000px; margin: 0 auto 30px; background:var(--bk2);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <h3 class="fr">Simulateur de croissance SOM</h3>
+        <h3 class="en">SOM Growth Simulator</h3>
+        <p class="fr" style="font-size:0.85rem; color:var(--tx2)">Ajustez le nombre d'utilisateurs actifs pour voir l'impact sur l'écosystème.</p>
+        <p class="en" style="font-size:0.85rem; color:var(--tx2)">Adjust active users to see the impact on the ecosystem.</p>
+      </div>
+      <input type="range" id="inputUsers" min="1" max="4000" value="500" style="width:100%; accent-color:var(--g); height:10px; border-radius:5px;">
+      <div style="text-align:center; margin-top:15px;">
+        <span class="hstat-val" style="color:var(--g); font-size:2.5rem;"><span id="valUsers">500</span> <small style="font-size:1rem; color:var(--tx)">Users</small></span>
+      </div>
+    </div>
+
+    <!-- DASHBOARD DES REVENUS DYNAMIQUE -->
+    <div class="prob-grid stagger">
+      <!-- 1. Abonnements -->
       <div class="rev-card fade-up">
-        <div class="rev-icon"><i class="fas fa-megaphone"></i></div>
-        <h4><span class="fr">Stratégie Marketing</span><span class="en">Marketing Strategy</span></h4>
-        <p><span class="fr">Etude clientèle basée sur la visibilité premium (Ad-Sales) et publicité ciblée sur les chantiers (Stickers QR Code).</span><span class="en">Customer study based on premium visibility (Ad-Sales) and targeted site advertising (QR Code Stickers).</span></p>
+        <div class="rev-icon"><i class="fas fa-id-badge"></i></div>
+        <h4><span class="fr">Abonnements</span><span class="en">Subscriptions</span></h4>
+        <div class="hstat-val" style="font-size:1.2rem;" id="revSubs">0</div>
+        <p style="font-size:0.7rem; color:var(--tx2)">Est. 25 000 FCFA / an / owner</p>
       </div>
+      <!-- 2. Commissions -->
       <div class="rev-card fade-up">
-        <div class="rev-icon or"><i class="fas fa-vault"></i></div>
-        <h4><span class="fr">Capacité Financière</span><span class="en">Financial Capacity</span></h4>
-        <p><span class="fr">7M FCFA injectés pour couvrir 12 mois d'acquisition. Point d'équilibre (Breakeven) prévu à M9.</span><span class="en">7M FCFA injected to cover 12 months of acquisition. Breakeven expected at M9.</span></p>
+        <div class="rev-icon"><i class="fas fa-percentage"></i></div>
+        <h4><span class="fr">Commissions (10%)</span><span class="en">Commissions (10%)</span></h4>
+        <div class="hstat-val" style="font-size:1.2rem; color:var(--g);" id="revComm">0</div>
+        <p style="font-size:0.7rem; color:var(--tx2)">Sur volume d'affaires généré</p>
       </div>
+      <!-- 3. Publicité -->
+      <div class="rev-card fade-up">
+        <div class="rev-icon"><i class="fas fa-ad"></i></div>
+        <h4><span class="fr">Publicité/Ads</span><span class="en">Advertising</span></h4>
+        <div class="hstat-val" style="font-size:1.2rem;" id="revAds">0</div>
+        <p style="font-size:0.7rem; color:var(--tx2)">Bannières & mise en avant</p>
+      </div>
+      <!-- 4. Blog Sponsoring -->
+      <div class="rev-card fade-up">
+        <div class="rev-icon or"><i class="fas fa-pen-nib"></i></div>
+        <h4><span class="fr">Blog Premium</span><span class="en">Premium Blog</span></h4>
+        <div class="hstat-val" style="font-size:1.2rem;" id="revBlog">0</div>
+        <p style="font-size:0.7rem; color:var(--tx2)">Entreprise du mois</p>
+      </div>
+      <!-- 5. Ecoles -->
+      <div class="rev-card fade-up">
+        <div class="rev-icon"><i class="fas fa-university"></i></div>
+        <h4><span class="fr">Ecoles BTP</span><span class="en">Schools</span></h4>
+        <div class="hstat-val" style="font-size:1.2rem;" id="revSchools">0</div>
+        <p style="font-size:0.7rem; color:var(--tx2)">Recrutement de talents</p>
+      </div>
+      <!-- 6. Fret VIP -->
+      <div class="rev-card fade-up">
+        <div class="rev-icon or"><i class="fas fa-star"></i></div>
+        <h4><span class="fr">Annuaire VIP</span><span class="en">VIP Directory</span></h4>
+        <div class="hstat-val" style="font-size:1.2rem;" id="revVip">0</div>
+        <p style="font-size:0.7rem; color:var(--tx2)">Accès zones stratégiques</p>
+      </div>
+    </div>
+
+    <!-- TOTAL ANNUEL -->
+    <div class="budget-total fade-up" style="margin-top:40px; border:2px solid var(--g);">
+      <span class="fr">Estimation CA Annuel Mobilix</span>
+      <span class="en">Estimated Mobilix Annual Revenue</span>
+      <span id="totalGlobal" style="color:var(--g)">0 FCFA</span>
     </div>
   </div>
 </section>
 
 <script>
-// ALGORITHME DE CALCUL EN TEMPS RÉEL
-function updateFinance() {
-    const users = document.getElementById('inputUsers').value;
-    const ticket = document.getElementById('inputTicket').value;
-    
-    // Affichage des labels
-    document.getElementById('valUsers').innerText = parseInt(users).toLocaleString() + " utilisateurs";
-    document.getElementById('valTicket').innerText = parseInt(ticket).toLocaleString() + " FCFA";
+function updateMarketDashboard() {
+    const users = parseInt(document.getElementById('inputUsers').value);
+    document.getElementById('valUsers').innerText = users.toLocaleString();
 
-    // Calculs (Hypothèse : 2 transactions par mois par utilisateur actif)
-    const volume = users * ticket * 24; 
-    const revenue = volume * 0.10; // Commission Mobilix
+    // --- FORMULES LOGIQUES (MODIFIABLES) ---
     
-    // Mise à jour de l'interface
-    document.getElementById('totalVolume').innerText = volume.toLocaleString() + " FCFA";
-    document.getElementById('totalRev').innerText = revenue.toLocaleString() + " FCFA";
+    // 1. Abonnements (on considère que 60% des utilisateurs sont des propriétaires payants)
+    const revSubs = Math.floor((users * 0.6) * 25000);
+    
+    // 2. Commissions (Hypothèse: panier moyen 100k, 1 transaction/mois par user, 10% com)
+    const revComm = Math.floor(users * 100000 * 12 * 0.10);
+    
+    // 3. Publicité (Fixe + petit variable par utilisateur)
+    const revAds = 500000 + (users * 500);
+    
+    // 4. Blog (Forfait mensuel entreprises sponsorisées)
+    const revBlog = 200000 * 12;
+    
+    // 5. Ecoles (Abonnement fixe de 5 grandes écoles)
+    const revSchools = 150000 * 5 * 12;
+    
+    // 6. Fret VIP (On considère que 10% des utilisateurs paient l'accès VIP à 5000/mois)
+    const revVip = Math.floor((users * 0.1) * 5000 * 12);
+
+    // --- MISE À JOUR DE L'INTERFACE ---
+    document.getElementById('revSubs').innerText = revSubs.toLocaleString() + " FCFA";
+    document.getElementById('revComm').innerText = revComm.toLocaleString() + " FCFA";
+    document.getElementById('revAds').innerText = revAds.toLocaleString() + " FCFA";
+    document.getElementById('revBlog').innerText = revBlog.toLocaleString() + " FCFA";
+    document.getElementById('revSchools').innerText = revSchools.toLocaleString() + " FCFA";
+    document.getElementById('revVip').innerText = revVip.toLocaleString() + " FCFA";
+
+    const total = revSubs + revComm + revAds + revBlog + revSchools + revVip;
+    document.getElementById('totalGlobal').innerText = total.toLocaleString() + " FCFA";
 }
 
-document.getElementById('inputUsers').addEventListener('input', updateFinance);
-document.getElementById('inputTicket').addEventListener('input', updateFinance);
-updateFinance(); // Initialisation
+document.getElementById('inputUsers').addEventListener('input', updateMarketDashboard);
+// Initialisation
+updateMarketDashboard();
 </script>
 
 <!-- MOBILIX PROTECT -->
