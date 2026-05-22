@@ -560,6 +560,112 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     </div>
   </div>
 </section>
+<!-- STRATÉGIE DE MARCHÉ & ALGORITHME FINANCIER -->
+<section class="section" id="market-intel" style="background:var(--bk3); border-top:1px solid var(--bd)">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="slabel orange"><i class="fas fa-brain"></i> <span class="fr">Intelligence de Marché</span><span class="en">Market Intelligence</span></span>
+      <h2><span class="fr">TAM, SAM, SOM & RENTABILITÉ</span><span class="en">TAM, SAM, SOM & PROFITABILITY</span></h2>
+      <p><span class="fr">Analyse dynamique de la portée du projet et simulateur de revenus en temps réel.</span><span class="en">Dynamic analysis of project scope and real-time revenue simulator.</span></p>
+    </div>
+
+    <!-- IDENTIFICATION & ANALYSE -->
+    <div class="adv-grid stagger" style="margin-bottom: 60px;">
+      <div class="adv-card fade-up">
+        <div class="adv-ico"><i class="fas fa-bullseye"></i></div>
+        <div>
+          <h4><span class="fr">1. Identification & Clients</span><span class="en">1. Identification & Clients</span></h4>
+          <p><span class="fr">Cible : 15 000+ propriétaires d'engins et 5 000+ experts BTP au Bénin. Profils : PME structurées et propriétaires individuels informels.</span><span class="en">Target: 15,000+ equipment owners and 5,000+ construction experts in Benin. Profiles: SMEs and informal individual owners.</span></p>
+        </div>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-ico"><i class="fas fa-balance-scale"></i></div>
+        <div>
+          <h4><span class="fr">2. VS Concurrence (Pain Points)</span><span class="en">2. VS Competition (Pain Points)</span></h4>
+          <p><span class="fr">Concurrence (Informel) : Manque de traçabilité, prix volatils, pas d'assurance. Mobilix résout cela par le scoring et le paiement sécurisé.</span><span class="en">Competition (Informal): No traceability, volatile pricing, no insurance. Mobilix solves this via scoring and secure payments.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALGORITHME INTELLIGENT DE RENTABILITÉ -->
+    <div class="chart-card fade-up" style="max-width:900px; margin: 0 auto;">
+      <h3 style="text-align:center; margin-bottom:30px;">
+        <span class="fr"><i class="fas fa-calculator"></i> Simulateur de Revenus (365 jours)</span>
+        <span class="en"><i class="fas fa-calculator"></i> Revenue Simulator (365 days)</span>
+      </h3>
+      
+      <div class="adv-grid" style="grid-template-columns: 1fr 1fr; gap:30px;">
+        <!-- Inputs -->
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div>
+            <label class="hstat-lbl"><span class="fr">Utilisateurs actifs</span><span class="en">Active Users</span> (SOM)</label>
+            <input type="range" id="inputUsers" min="100" max="10000" value="1000" style="width:100%; accent-color:var(--g);">
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem;"><span id="valUsers">1000</span></div>
+          </div>
+          <div>
+            <label class="hstat-lbl"><span class="fr">Panier moyen (FCFA)</span><span class="en">Avg Transaction (FCFA)</span></label>
+            <input type="range" id="inputTicket" min="15000" max="500000" step="5000" value="50000" style="width:100%; accent-color:var(--or);">
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem;"><span id="valTicket">50 000</span></div>
+          </div>
+        </div>
+
+        <!-- Outputs Algorithmiques -->
+        <div style="background:var(--bk4); padding:20px; border-radius:var(--r); border:1px solid var(--bd);">
+          <div style="margin-bottom:15px;">
+            <span class="hstat-lbl"><span class="fr">Volume d'affaires annuel (TAM capturé)</span><span class="en">Annual Business Volume</span></span>
+            <div class="hstat-val" style="font-size:1.4rem;" id="totalVolume">0 FCFA</div>
+          </div>
+          <div style="margin-bottom:15px;">
+            <span class="hstat-lbl"><span class="fr">Revenus Mobilix (Commission 10%)</span><span class="en">Mobilix Revenue (10% Comm)</span></span>
+            <div class="hstat-val" style="font-size:1.4rem; color:var(--g);" id="totalRev">0 FCFA</div>
+          </div>
+          <div>
+            <span class="hstat-lbl"><span class="fr">Rentabilité estimée</span><span class="en">Estimated Profitability</span></span>
+            <div class="hstat-val" style="font-size:1.4rem; color:var(--or);" id="totalROI">10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING & CAPACITÉ -->
+    <div class="rev-grid stagger" style="margin-top:50px;">
+      <div class="rev-card fade-up">
+        <div class="rev-icon"><i class="fas fa-megaphone"></i></div>
+        <h4><span class="fr">Stratégie Marketing</span><span class="en">Marketing Strategy</span></h4>
+        <p><span class="fr">Etude clientèle basée sur la visibilité premium (Ad-Sales) et publicité ciblée sur les chantiers (Stickers QR Code).</span><span class="en">Customer study based on premium visibility (Ad-Sales) and targeted site advertising (QR Code Stickers).</span></p>
+      </div>
+      <div class="rev-card fade-up">
+        <div class="rev-icon or"><i class="fas fa-vault"></i></div>
+        <h4><span class="fr">Capacité Financière</span><span class="en">Financial Capacity</span></h4>
+        <p><span class="fr">7M FCFA injectés pour couvrir 12 mois d'acquisition. Point d'équilibre (Breakeven) prévu à M9.</span><span class="en">7M FCFA injected to cover 12 months of acquisition. Breakeven expected at M9.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ALGORITHME DE CALCUL EN TEMPS RÉEL
+function updateFinance() {
+    const users = document.getElementById('inputUsers').value;
+    const ticket = document.getElementById('inputTicket').value;
+    
+    // Affichage des labels
+    document.getElementById('valUsers').innerText = parseInt(users).toLocaleString() + " utilisateurs";
+    document.getElementById('valTicket').innerText = parseInt(ticket).toLocaleString() + " FCFA";
+
+    // Calculs (Hypothèse : 2 transactions par mois par utilisateur actif)
+    const volume = users * ticket * 24; 
+    const revenue = volume * 0.10; // Commission Mobilix
+    
+    // Mise à jour de l'interface
+    document.getElementById('totalVolume').innerText = volume.toLocaleString() + " FCFA";
+    document.getElementById('totalRev').innerText = revenue.toLocaleString() + " FCFA";
+}
+
+document.getElementById('inputUsers').addEventListener('input', updateFinance);
+document.getElementById('inputTicket').addEventListener('input', updateFinance);
+updateFinance(); // Initialisation
+</script>
 
 <!-- MOBILIX PROTECT -->
 <section class="section" id="protect">
