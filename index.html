@@ -560,13 +560,13 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     </div>
   </div>
 </section>
-<!-- STRATÉGIE DE MARCHÉ V4.0 - DASHBOARD FINANCIER COMPLET -->
+<!-- STRATÉGIE DE MARCHÉ V4.1 - DASHBOARD FINANCIER FIABLE -->
 <section class="section" id="market-intel" style="background:var(--bk3); border-top:1px solid var(--bd)">
   <div class="container">
     <div class="section-head fade-up">
       <span class="slabel orange"><i class="fas fa-chart-line"></i> <span class="fr">Analyse Stratégique & ROI</span><span class="en">Strategic Analysis & ROI</span></span>
       <h2><span class="fr">TAM, SAM, SOM & RENTABILITÉ</span><span class="en">TAM, SAM, SOM & PROFITABILITY</span></h2>
-      <p><span class="fr">Modélisation de la croissance et retour sur investissement en temps réel.</span><span class="en">Growth modeling and real-time return on investment.</span></p>
+      <p><span class="fr">Simulateur de revenus récurrents et retour sur investissement.</span><span class="en">Recurring revenue and ROI simulator.</span></p>
     </div>
 
     <!-- TRIO TAM SAM SOM -->
@@ -589,14 +589,16 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     </div>
 
     <!-- SIMULATEUR MAÎTRE -->
-    <div class="chart-card fade-up" style="max-width:1000px; margin: 0 auto 30px; background:var(--bk2); border:1px solid var(--g)">
+    <div class="chart-card fade-up" style="max-width:1000px; margin: 0 auto 30px; background:var(--bk2); border:1px solid var(--bd); padding:40px;">
       <div style="text-align:center; margin-bottom:25px;">
-        <h3 class="fr">Simulateur de Pénétration (SOM)</h3>
-        <h3 class="en">Market Penetration Simulator (SOM)</h3>
-        <p class="fr" style="font-size:0.85rem; color:var(--tx2)">Glissez pour simuler le nombre total d'abonnés sur la plateforme</p>
-        <p class="en" style="font-size:0.85rem; color:var(--tx2)">Slide to simulate total subscribers on the platform</p>
+        <h3 class="fr">Pénétration du Marché (SOM)</h3>
+        <h3 class="en">Market Penetration (SOM)</h3>
+        <p class="fr" style="font-size:0.85rem; color:var(--tx2)">Glissez le curseur pour ajuster le nombre total d'utilisateurs</p>
+        <p class="en" style="font-size:0.85rem; color:var(--tx2)">Slide the cursor to adjust the total number of users</p>
       </div>
+      
       <input type="range" id="inputUsers" min="0" max="4000" value="1000" style="width:100%; accent-color:var(--g); cursor:pointer">
+      
       <div style="text-align:center; margin-top:20px; display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
         <div>
             <span class="hstat-val" style="font-size:1.5rem;" id="countOwners">0</span>
@@ -629,7 +631,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       </div>
       <div class="rev-card fade-up">
         <div class="rev-icon or"><i class="fas fa-pen-nib"></i></div>
-        <h4><span class="fr">Blog "Société"</span><span class="en">Company Blog</span></h4>
+        <h4><span class="fr">Blog Premium</span><span class="en">Premium Blog</span></h4>
         <div class="hstat-val" style="font-size:1.1rem;" id="revBlog">0 FCFA</div>
         <p style="font-size:0.65rem; color:var(--tx2)">Sponsoring PME</p>
       </div>
@@ -668,7 +670,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
         <div id="roiPercent" style="color:var(--or); font-size:1.6rem; font-weight:800;">0%</div>
       </div>
       <div>
-        <span class="hstat-lbl"><span class="fr">Rentabilité (Breakeven)</span><span class="en">Breakeven Point</span></span>
+        <span class="hstat-lbl"><span class="fr">Seuil de Rentabilité</span><span class="en">Breakeven Point</span></span>
         <div id="breakeven" style="color:var(--wh); font-size:1.4rem; font-weight:700;">-</div>
       </div>
     </div>
@@ -678,19 +680,22 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <script>
 // --- CONFIGURATION BACK-OFFICE (Modifiez vos chiffres ici) ---
 const CONFIG = {
-    INVESTMENT_TARGET: 12000000,    // Besoin financier (ex: 12M FCFA)
-    AVG_SUB_PRICE: 32000,          // Prix moyen abonnement mensuel
-    COMMISSION_RATE: 0.10,         // Taux de commission (si applicable)
+    INVESTMENT_TARGET: 12000000,    // Besoin financier (12M FCFA)
+    AVG_SUB_PRICE: 32000,          // Prix moyen abonnement mensuel pondéré
     FIXED_COSTS_YEAR: 6000000,     // Charges fixes annuelles (Loyer, Salaires, etc.)
-    VAR_COST_PER_USER: 2000,       // Coût variable annuel par utilisateur (Serveur, Support)
+    VAR_COST_PER_USER: 2000,       // Coût variable annuel par utilisateur
     ADS_PER_USER_YEAR: 6000,       // Revenu pub estimé par utilisateur par an
-    SCHOOL_SUB_PRICE: 500000       // Prix abonnement annuel pour une école
+    SCHOOL_PRICE: 500000,          // Prix annuel par école
+    BLOG_PRICE: 1200000            // Prix annuel par sponsoring blog (100k/mois)
 };
 
-function updateMarketAlgorithm() {
-    const totalUsers = parseInt(document.getElementById('inputUsers').value);
+function runMarketSim() {
+    const input = document.getElementById('inputUsers');
+    if(!input) return;
     
-    // Segmentation
+    const totalUsers = parseInt(input.value);
+    
+    // 1. SEGMENTATION
     const nOwners = Math.floor(totalUsers * 0.60);
     const nExperts = Math.floor(totalUsers * 0.30);
     const nPartners = Math.floor(totalUsers / 100);
@@ -699,41 +704,48 @@ function updateMarketAlgorithm() {
     document.getElementById('countExperts').innerText = nExperts.toLocaleString();
     document.getElementById('countPartners').innerText = nPartners.toLocaleString();
 
-    // CALCUL DES REVENUS
+    // 2. REVENUS INDIVIDUELS
     const revSubs = nOwners * CONFIG.AVG_SUB_PRICE * 12;
     const revAds = totalUsers * (CONFIG.ADS_PER_USER_YEAR / 12) * 12;
-    const revBlog = (totalUsers > 300) ? 150000 * 12 : 0;
-    const revSchools = Math.floor(totalUsers / 500) * CONFIG.SCHOOL_SUB_PRICE;
-    const revVip = Math.floor((nOwners * 0.10) * 5000 * 12);
+    const revBlog = (totalUsers >= 300) ? Math.floor(totalUsers / 300) * CONFIG.BLOG_PRICE : 0;
+    const revSchools = (totalUsers >= 500) ? Math.floor(totalUsers / 500) * CONFIG.SCHOOL_PRICE : 0;
+    const revVip = (nOwners * 0.10) * 5000 * 12;
     const revCv = nExperts * 5000;
 
+    // 3. AGGREGATION
     const totalARR = revSubs + revAds + revBlog + revSchools + revVip + revCv;
-
-    // CALCUL DES CHARGES & PROFITS
     const totalOPEX = CONFIG.FIXED_COSTS_YEAR + (totalUsers * CONFIG.VAR_COST_PER_USER);
-    const netProfit = Math.max(0, totalARR - totalOPEX);
-    const roi = (totalARR > 0) ? (netProfit / CONFIG.INVESTMENT_TARGET) * 100 : 0;
-    const monthsToBreakeven = (totalARR > 0) ? Math.ceil((CONFIG.INVESTMENT_TARGET / (totalARR / 12))) : 0;
+    const profit = Math.max(0, totalARR - totalOPEX);
+    const roi = (totalARR > 0) ? (profit / CONFIG.INVESTMENT_TARGET) * 100 : 0;
+    
+    // Monthly Revenue for Breakeven
+    const monthlyRev = totalARR / 12;
+    const monthsToBE = (monthlyRev > 0) ? Math.ceil(CONFIG.INVESTMENT_TARGET / monthlyRev) : 0;
 
-    // MISE À JOUR UI
-    document.getElementById('valUsers').innerText = totalUsers.toLocaleString();
-    document.getElementById('revSubs').innerText = revSubs.toLocaleString() + " FCFA";
-    document.getElementById('revAds').innerText = revAds.toLocaleString() + " FCFA";
-    document.getElementById('revBlog').innerText = revBlog.toLocaleString() + " FCFA";
-    document.getElementById('revSchools').innerText = revSchools.toLocaleString() + " FCFA";
-    document.getElementById('revVip').innerText = revVip.toLocaleString() + " FCFA";
-    document.getElementById('revCv').innerText = revCv.toLocaleString() + " FCFA";
+    // 4. MISE À JOUR DOM
+    document.getElementById('revSubs').innerText = Math.floor(revSubs).toLocaleString() + " FCFA";
+    document.getElementById('revAds').innerText = Math.floor(revAds).toLocaleString() + " FCFA";
+    document.getElementById('revBlog').innerText = Math.floor(revBlog).toLocaleString() + " FCFA";
+    document.getElementById('revSchools').innerText = Math.floor(revSchools).toLocaleString() + " FCFA";
+    document.getElementById('revVip').innerText = Math.floor(revVip).toLocaleString() + " FCFA";
+    document.getElementById('revCv').innerText = Math.floor(revCv).toLocaleString() + " FCFA";
 
-    document.getElementById('totalGlobal').innerText = totalARR.toLocaleString() + " FCFA";
-    document.getElementById('netProfit').innerText = netProfit.toLocaleString() + " FCFA";
+    document.getElementById('totalGlobal').innerText = Math.floor(totalARR).toLocaleString() + " FCFA";
+    document.getElementById('netProfit').innerText = Math.floor(profit).toLocaleString() + " FCFA";
     document.getElementById('roiPercent').innerText = roi.toFixed(1) + "%";
     
-    const beText = (monthsToBreakeven > 0 && monthsToBreakeven <= 24) ? monthsToBreakeven + " mois / months" : "+24 mois";
-    document.getElementById('breakeven').innerText = (totalUsers > 100) ? beText : "-";
+    let beLabel = "-";
+    if(totalUsers > 50) {
+        beLabel = (monthsToBE <= 24) ? monthsToBE + " mois / months" : "+24 mois";
+    }
+    document.getElementById('breakeven').innerText = beLabel;
 }
 
-document.getElementById('inputUsers').addEventListener('input', updateMarketAlgorithm);
-updateMarketAlgorithm();
+// Liaison de l'événement et lancement initial
+document.getElementById('inputUsers').addEventListener('input', runMarketSim);
+// On force un premier calcul immédiat
+window.addEventListener('load', runMarketSim);
+runMarketSim();
 </script>
 <!-- MOBILIX PROTECT -->
 <section class="section" id="protect">
