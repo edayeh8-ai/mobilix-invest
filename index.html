@@ -9,6 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
+/* --- PROTECTION ANTI-SÉLECTION --- */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 :root {
   --g: #00C060;
   --g2: #00E070;
@@ -62,7 +70,6 @@ nav.scrolled{background:rgba(8,12,10,.92);backdrop-filter:blur(20px);border-bott
 .lang-btn{font-family:var(--font-h);font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--tx2);background:transparent;border:none;cursor:pointer;padding:5px 12px;border-radius:100px;transition:.2s}
 .lang-btn.active{background:var(--g);color:var(--bk)}
 .lang-btn:hover:not(.active){color:var(--wh)}
-/* Visibilité bilingue */
 .en{display:none}
 body.lang-en .fr{display:none}
 body.lang-en .en{display:revert}
@@ -320,6 +327,14 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 .stagger .fade-up:nth-child(5){transition-delay:.45s}
 .stagger .fade-up:nth-child(6){transition-delay:.55s}
 
+/* ── ANTI-COPIE ── */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   .hero-inner{grid-template-columns:1fr}
@@ -357,7 +372,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 }
 </style>
 </head>
-<body class="lang-fr">
+<body class="lang-fr" oncontextmenu="return false;">
 
 <!-- NAV -->
 <nav id="navbar">
@@ -690,7 +705,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-shield-alt"></i></div><h3><span class="fr">Assurance simplifiée</span><span class="en">Simplified insurance</span></h3><p><span class="fr">Souscription rapide directement depuis la plateforme, sans paperasse.</span><span class="en">Quick subscription directly from the platform, no paperwork.</span></p></div>
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-truck"></i></div><h3><span class="fr">Protection équipements</span><span class="en">Equipment protection</span></h3><p><span class="fr">Couverture adaptée aux réalités des chantiers et du transport au Bénin.</span><span class="en">Coverage tailored to the realities of construction sites and transport in Benin.</span></p></div>
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-user-check"></i></div><h3><span class="fr">Validation des partenaires</span><span class="en">Partner validation</span></h3><p><span class="fr">Vérification des profils et renforcement de la confiance entre les acteurs.</span><span class="en">Profile verification and trust-building between all parties.</span></p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit 10% sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns 10% on every contract generated through the platform.</span></p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit une commission sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns a commission on every contract generated through the platform.</span></p></div>
     </div>
   </div>
 </section>
@@ -1023,16 +1038,30 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('countExperts').innerText = nExperts.toLocaleString();
         document.getElementById('countPartners').innerText = nBanks.toLocaleString();
 
-        // --- CALCUL DES 9 REVENUS ---
+        // --- CALCUL DES 9 REVENUS AVEC SEUILS DÉCLENCHEURS ---
+        
+        // Les abonnements et CVthèque démarrent dès le 1er utilisateur
         const rSubs = nOwners * GLOBAL_CONFIG.AVG_SUB_PRICE * 12;
-        const rIot = Math.floor(nTrucks * 0.20) * GLOBAL_CONFIG.IOT_PRICE * 12; // 20% adoptent IoT
-        const rData = Math.floor(nTrucks * 0.20) * GLOBAL_CONFIG.M2M_DATA_MARGIN * 12; // Marge sur la data
-        const rApi = nBanks * GLOBAL_CONFIG.API_PRICE * 12;
-        const rAdsPure = users * 500 * 12; // 500 FCFA/mois pub par user
-        const rBlog = (users >= 300) ? Math.floor(users / 300) * GLOBAL_CONFIG.BLOG_PRICE * 12 : 0;
-        const rSchools = (users >= 500) ? Math.floor(users / 500) * GLOBAL_CONFIG.SCHOOL_PRICE : 0;
-        const rVip = Math.floor(nOwners * 0.10) * GLOBAL_CONFIG.VIP_PRICE * 12;
         const rCv = nExperts * GLOBAL_CONFIG.CV_PRICE;
+        
+        // L'IoT (Sentinel + Data M2M) démarre si on a au moins des propriétaires
+        const rIot = Math.floor(nTrucks * 0.20) * GLOBAL_CONFIG.IOT_PRICE * 12; 
+        const rData = Math.floor(nTrucks * 0.20) * GLOBAL_CONFIG.M2M_DATA_MARGIN * 12; 
+        
+        // L'API Banques démarre si on a la masse critique pour attirer une banque (200 users)
+        const rApi = nBanks * GLOBAL_CONFIG.API_PRICE * 12;
+        
+        // La Publicité démarre APRES 500 utilisateurs (masse critique B2B)
+        const rAdsPure = (users >= 500) ? users * 500 * 12 : 0; 
+        
+        // Le Blog démarre APRES 1000 utilisateurs (1 sponsor pour 1000 users)
+        const rBlog = (users >= 1000) ? Math.floor(users / 1000) * GLOBAL_CONFIG.BLOG_PRICE * 12 : 0;
+        
+        // Les Écoles démarrent APRES 800 utilisateurs
+        const rSchools = (users >= 800) ? Math.floor(users / 800) * GLOBAL_CONFIG.SCHOOL_PRICE : 0;
+        
+        // Le Fret VIP démarre si on a des propriétaires
+        const rVip = Math.floor(nOwners * 0.10) * GLOBAL_CONFIG.VIP_PRICE * 12;
 
         // --- AGGREGATION & ROI ---
         const totalARR = rSubs + rIot + rData + rApi + rAdsPure + rBlog + rSchools + rVip + rCv;
@@ -1157,3 +1186,5 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+```"
+}
