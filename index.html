@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Mobilix — Dossier Investisseur | OguTech</title>
 <meta name="description" content="Mobilix connecte les propriétaires d'engins lourds, experts BTP et transporteurs pour accélérer les chantiers au Bénin. Startup digitale OguTech.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +35,17 @@ body {
   --r2: 24px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* VERROUILLAGE DU DÉBORDEMENT MOBILE (Vide à droite) */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-b);background:var(--bk);color:var(--tx);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-b);background:var(--bk);color:var(--tx);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--g);text-decoration:none;transition:.25s}
 a:hover{color:var(--g2)}
 img{max-width:100%;display:block}
@@ -48,7 +57,7 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--wh);line-height:1.1}
 h1{font-size:clamp(2.6rem,5.5vw,4.8rem);font-weight:800;letter-spacing:-0.03em}
 h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;letter-spacing:-0.02em}
 h3{font-size:1.25rem;font-weight:600}
-p{font-size:1.02rem;color:var(--tx);line-height:1.8}
+p{font-size:1.02rem;color:var(--tx);line-height:1.8; word-wrap: break-word;}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0;transition:.4s}
@@ -75,7 +84,7 @@ body.lang-en .fr{display:none}
 body.lang-en .en{display:revert}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 0 60px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:100px 0 60px}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,192,96,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,192,96,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
 .hero-glow{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(0,192,96,.18) 0%,transparent 70%)}
@@ -168,19 +177,22 @@ body.lang-en .en{display:revert}
 .seg-val  { font-family:var(--font-h); font-size:1.8rem; font-weight:800; color:var(--wh); }
 .seg-lbl  { font-size:.75rem; color:var(--tx2); text-transform:uppercase; letter-spacing:.05em; margin-top:4px; }
 
-.rev-pro-table { width:100%; border-collapse:collapse; margin-bottom:28px; }
+/* TABLE RESPONSIVE WRAPPER */
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom:28px; }
+
+.rev-pro-table { width:100%; border-collapse:collapse; min-width: 600px; }
 .rev-pro-table th { font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--tx2); text-align:left; padding:0 0 14px; border-bottom:1px solid var(--bd); }
 .rev-pro-table th:last-child { text-align:right; }
 .rev-pro-table td { padding:16px 0; border-bottom:1px solid rgba(255,255,255,.04); vertical-align:middle; }
 .rev-pro-table td:last-child { text-align:right; font-family:var(--font-h); font-weight:700; font-size:1rem; color:var(--wh); white-space:nowrap; }
 .rev-pro-table tfoot td { padding-top:20px; border-top:1px solid rgba(0,192,96,.3); border-bottom:none; }
 .rev-pro-table tfoot td:last-child { color:var(--g); font-size:1.4rem; }
-.rev-num   { font-size:.75rem; color:var(--tx2); min-width:30px; }
+.rev-num   { font-size:.75rem; color:var(--tx2); min-width:30px; padding-right:10px; }
 .rev-name  { font-family:var(--font-h); font-size:.95rem; font-weight:600; color:var(--wh); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .rev-logic { font-size:.8rem; color:var(--tx2); margin-top:4px; }
 .rev-bar-wrap { height:4px; background:var(--bk4); border-radius:2px; margin-top:8px; width:100%; }
 .rev-bar     { height:4px; border-radius:2px; transition:width .5s ease; }
-.rev-share   { font-size:.8rem; color:var(--tx2); text-align:right; vertical-align:top; padding-top:18px; white-space:nowrap; }
+.rev-share   { font-size:.8rem; color:var(--tx2); text-align:right; vertical-align:top; padding-top:18px; white-space:nowrap; padding-right:15px; }
 
 .badge-active { display:inline-block; font-size:.65rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:4px 10px; border-radius:100px; background:rgba(0,192,96,.12); color:var(--g); border:1px solid rgba(0,192,96,.2); }
 .badge-locked { display:inline-block; font-size:.65rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:4px 10px; border-radius:100px; background:var(--bk4); color:var(--tx2); border:1px solid var(--bd); }
@@ -222,14 +234,14 @@ body.lang-en .en{display:revert}
 .tl-tag{font-size:.68rem;color:var(--tx2);background:var(--bk4);border:1px solid var(--bd);padding:3px 10px;border-radius:100px}
 
 /* ── BUDGET TABLE STANDARD ── */
-.budget-table{width:100%;border-collapse:collapse}
+.budget-table{width:100%;border-collapse:collapse; min-width: 500px;}
 .budget-table th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);text-align:left;padding:0 0 16px;border-bottom:1px solid var(--bd)}
 .budget-table td{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;vertical-align:middle}
 .budget-table td:last-child{text-align:right;font-family:var(--font-h);font-weight:700;color:var(--wh);white-space:nowrap}
 .bbar-wrap{height:4px;background:var(--bk4);border-radius:2px;width:120px;margin:4px 0}
 .bbar{height:4px;border-radius:2px;background:var(--g);transition:width 1s ease}
 .bbar.or{background:var(--or)}
-.budget-total{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding:20px 28px;background:rgba(0,192,96,.07);border:1px solid rgba(0,192,96,.15);border-radius:14px}
+.budget-total{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding:20px 28px;background:rgba(0,192,96,.07);border:1px solid rgba(0,192,96,.15);border-radius:14px; flex-wrap: wrap; gap: 10px;}
 .budget-total span:first-child{font-family:var(--font-h);font-weight:700;color:var(--wh);font-size:1rem}
 .budget-total span:last-child{font-family:var(--font-h);font-weight:800;color:var(--g);font-size:1.4rem}
 
@@ -385,12 +397,15 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   .terrain-section{padding:36px 28px}
   .cta-invest{padding:50px 28px}
   .footer-grid{grid-template-columns:1fr}
-  .chat-win{width:calc(100vw - 32px)}
+  .chat-win{width:calc(100vw - 40px); right:20px; bottom:80px;}
   .lang-switcher{margin-left:0}
   
   .sim-slider-row { flex-wrap:wrap; }
   .sim-slider-row label { min-width:100%; }
   .seg-grid { grid-template-columns:1fr; }
+  .budget-total { flex-direction: column; text-align: center; gap: 10px; }
+  .sim-block { padding: 24px 16px; }
+  .rev-pro-table td:last-child { font-size: .85rem; }
 }
 </style>
 </head>
@@ -608,63 +623,6 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         SIMULATEUR FINANCIER PRO V6
-    ═══════════════════════════════════════════ -->
-    <style>
-      /* — Curseurs — */
-      .sim-block { background:var(--bk3); border:1px solid var(--bd); border-radius:var(--r2); padding:36px 32px; margin-bottom:28px; }
-      .sim-block h3 { font-size:1rem; color:var(--wh); margin-bottom:6px; }
-      .sim-block .csub { font-size:.8rem; color:var(--tx2); margin-bottom:24px; }
-      .sim-slider-row { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
-      .sim-slider-row label { font-size:.83rem; color:var(--tx); min-width:220px; }
-      .sim-slider-row input[type=range] { flex:1; accent-color:var(--g); cursor:pointer; }
-      .sim-slider-val { font-family:var(--font-h); font-weight:700; font-size:.9rem; color:var(--wh); min-width:80px; text-align:right; }
-
-      /* — Segmentation — */
-      .seg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px; }
-      .seg-card { background:var(--bk4); border:1px solid var(--bd); border-radius:var(--r); padding:16px 14px; text-align:center; }
-      .seg-val  { font-family:var(--font-h); font-size:1.6rem; font-weight:800; color:var(--wh); }
-      .seg-lbl  { font-size:.7rem; color:var(--tx2); text-transform:uppercase; letter-spacing:.05em; margin-top:4px; }
-
-      /* — Tableau des revenus — */
-      .rev-pro-table { width:100%; border-collapse:collapse; margin-bottom:28px; }
-      .rev-pro-table th { font-size:.7rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--tx2); text-align:left; padding:0 0 14px; border-bottom:1px solid var(--bd); }
-      .rev-pro-table th:last-child { text-align:right; }
-      .rev-pro-table td { padding:12px 0; border-bottom:1px solid rgba(255,255,255,.04); vertical-align:middle; }
-      .rev-pro-table td:last-child { text-align:right; font-family:var(--font-h); font-weight:700; font-size:.9rem; color:var(--wh); white-space:nowrap; }
-      .rev-pro-table tfoot td { padding-top:16px; border-top:1px solid rgba(0,192,96,.25); border-bottom:none; }
-      .rev-pro-table tfoot td:last-child { color:var(--g); font-size:1.1rem; }
-      .rev-num   { font-size:.7rem; color:var(--tx2); min-width:28px; }
-      .rev-name  { font-family:var(--font-h); font-size:.88rem; font-weight:600; color:var(--wh); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-      .rev-logic { font-size:.75rem; color:var(--tx2); margin-top:3px; }
-      .rev-bar-wrap { height:3px; background:var(--bk4); border-radius:2px; margin-top:6px; width:100%; }
-      .rev-bar     { height:3px; border-radius:2px; transition:width .5s ease; }
-      .rev-share   { font-size:.72rem; color:var(--tx2); text-align:right; vertical-align:top; padding-top:14px; white-space:nowrap; }
-
-      .badge-active { display:inline-block; font-size:.62rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:3px 9px; border-radius:100px; background:rgba(0,192,96,.12); color:var(--g); border:1px solid rgba(0,192,96,.2); }
-      .badge-locked { display:inline-block; font-size:.62rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:3px 9px; border-radius:100px; background:var(--bk4); color:var(--tx2); border:1px solid var(--bd); }
-
-      /* — ROI Box — */
-      .roi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:28px; }
-      .roi-card  { background:var(--bk4); border:1px solid var(--bd); border-radius:var(--r); padding:20px 18px; }
-      .roi-lbl   { font-size:.7rem; color:var(--tx2); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
-      .roi-val   { font-family:var(--font-h); font-size:1.35rem; font-weight:800; color:var(--wh); }
-      .roi-val.g { color:var(--g); }
-      .roi-val.o { color:var(--or); }
-
-      /* — Légende graphique — */
-      .rev-legend { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px; }
-      .rev-leg-item { display:flex; align-items:center; gap:6px; font-size:.72rem; color:var(--tx); }
-      .rev-leg-dot  { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
-
-      @media(max-width:640px){
-        .sim-slider-row { flex-wrap:wrap; }
-        .sim-slider-row label { min-width:100%; }
-        .seg-grid { grid-template-columns:1fr; }
-      }
-    </style>
-
     <!-- BLOC CURSEURS -->
     <div class="sim-block fade-up">
       <h3 class="fr">Hypothèses de simulation</h3>
@@ -712,7 +670,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     </div>
 
     <!-- TABLEAU DES 9 REVENUS -->
-    <div class="sim-block fade-up" style="padding:32px">
+    <div class="sim-block fade-up" style="padding:32px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <h3 class="fr">Détail des 9 sources de revenus — ARR annuel</h3>
       <h3 class="en">9 revenue streams breakdown — Annual ARR</h3>
       <div class="csub fr">Prix moyen CVthèque : 6 500 FCFA (70% × 5 000 standard + 30% × 10 000 premium). Publicité : 25 000 FCFA/mois/annonceur.</div>
@@ -802,7 +760,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-shield-alt"></i></div><h3><span class="fr">Assurance simplifiée</span><span class="en">Simplified insurance</span></h3><p><span class="fr">Souscription rapide directement depuis la plateforme, sans paperasse.</span><span class="en">Quick subscription directly from the platform, no paperwork.</span></p></div>
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-truck"></i></div><h3><span class="fr">Protection équipements</span><span class="en">Equipment protection</span></h3><p><span class="fr">Couverture adaptée aux réalités des chantiers et du transport au Bénin.</span><span class="en">Coverage tailored to the realities of construction sites and transport in Benin.</span></p></div>
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-user-check"></i></div><h3><span class="fr">Validation des partenaires</span><span class="en">Partner validation</span></h3><p><span class="fr">Vérification des profils et renforcement de la confiance entre les acteurs.</span><span class="en">Profile verification and trust-building between all parties.</span></p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit une commission sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns a commission on every contract generated through the platform.</span></p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit 10% sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns 10% on every contract generated through the platform.</span></p></div>
     </div>
   </div>
 </section>
@@ -886,12 +844,14 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <div style="position:relative;height:280px;margin-bottom:36px">
         <canvas id="budgetChart"></canvas>
       </div>
-      <table class="budget-table">
-        <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
-        <tbody id="budgetBody">
-          <!-- Rempli par le JS de manière dynamique -->
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="budget-table">
+          <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
+          <tbody id="budgetBody">
+            <!-- Rempli par le JS de manière dynamique -->
+          </tbody>
+        </table>
+      </div>
       <div class="budget-total">
         <span><span class="fr">Total sollicité</span><span class="en">Total sought</span></span>
         <span class="dyn-investment-val-full" style="color:var(--g)">0 FCFA</span>
@@ -1039,26 +999,27 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 
   /* ── 1. CONFIG FINANCIÈRE MOBILIX V6 (VARIABLE MAÎTRESSE) ── */
   const CFG = {
-    INVESTMENT : 30000000,   // <-- MONTANT À CHANGER ICI (30 millions pour Baobab)
-    FIXED_Y    : 12000000,   // Frais fixes annuels
-    VAR_U      : 1500,       // Coût variable par utilisateur
+    INVESTMENT : 30000000,   // <-- MONTANT À CHANGER ICI (ex: 30 millions pour Baobab)
+    FIXED_Y    : 12000000,   // Frais fixes annuels (salaires base, loyer)
+    VAR_U      : 1500,       // Coût variable par utilisateur (serveur, SMS)
     SUB_PRICE  : 32000,      // Abonnement SaaS propriétaire / mois
     IOT_PRICE  : 4500,       // Sentinel IoT / mois (GPS + data inclus)
     M2M_MARGIN : 1000,       // Marge nette SIM M2M / device / mois
-    CV_AVG     : 6500,       // Prix moyen pondéré CVthèque
+    CV_AVG     : 6500,       // Prix moyen pondéré CVthèque (70%×5k + 30%×10k)
     AD_PRICE   : 25000,      // Publicité par annonceur / mois
     API_PRICE  : 50000,      // MobiScore API par banque / mois
     VIP_PRICE  : 5000,       // Fret VIP / propriétaire actif / mois
     BLOG_PRICE : 150000,     // Sponsor blog PME / mois
     SCHOOL_Y   : 500000,     // Abonnement école BTP / an
     
-    // Répartition du Budget
+    // Répartition du Budget d'Investissement (doit faire 100%)
     BUDGET_SPLIT: [
-        { label: "Talents & Op.", pct: 35, fr: "Salaires 18 mois, Ventes", en: "18mo Salaries, Sales" },
-        { label: "Acquisition", pct: 25, fr: "Ads, Évènements, Stickers", en: "Ads, Events, Truck Stickers" },
-        { label: "Hardware IoT", pct: 15, fr: "Stock initial boîtiers & SIMs", en: "Initial stock GPS boxes & SIMs" },
-        { label: "Siège & Tech", pct: 15, fr: "Bureau, Matériel, Serveurs", en: "Office, Hardware, Servers" },
-        { label: "Réserve", pct: 10, fr: "Imprévus opérationnels", en: "Operational contingency" }
+        { label: "Talents & Opérations", pct: 35, fr: "Salaires 18 mois, Force de vente", en: "18mo Salaries, Sales force" },
+        { label: "Acquisition B2B", pct: 25, fr: "Ads, Évènements syndicats, Stickers", en: "Ads, Events, Truck Stickers" },
+        { label: "Hardware IoT", pct: 15, fr: "Stock initial boîtiers & SIMs M2M", en: "Initial stock GPS boxes & M2M SIMs" },
+        { label: "Siège & Serveurs", pct: 12, fr: "Bureau Cotonou, Matériel, Cloud", en: "Office, Hardware, Cloud Servers" },
+        { label: "Frais Juridiques & API", pct: 6, fr: "Assurances, Licences, Data Privacy", en: "Insurance, Licenses, Data Privacy" },
+        { label: "Réserve Sécurité", pct: 7, fr: "Imprévus opérationnels", en: "Operational contingency" }
     ]
   };
 
@@ -1103,7 +1064,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       subs    : nSubs  * CFG.SUB_PRICE * 12,
       iot     : nIot   * CFG.IOT_PRICE * 12,
       cv      : cvSales* CFG.CV_AVG    * 12,
-      ads     : users >= 300  ? Math.floor(users/120) * CFG.AD_PRICE * 12 : 0, // <-- 1 pour 120
+      ads     : users >= 300  ? Math.floor(users/120) * CFG.AD_PRICE * 12 : 0, 
       api     : nBanks * CFG.API_PRICE * 12,
       vip     : Math.floor(nOwners * 0.15) * CFG.VIP_PRICE * 12,
       blog    : users >= 1000 ? Math.floor(users/1000) * CFG.BLOG_PRICE * 12 : 0,
@@ -1141,7 +1102,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     return n.toLocaleString('fr-FR') + ' FCFA';
   }
 
-  /* ── 5. INITIALISATION DES GRAPHIQUES ── */
+  /* ── 5. INITIALISATION DES GRAPHIQUES ET DU SITE ── */
   let donutChart = null;
   let budgetChart = null;
 
@@ -1163,8 +1124,8 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
         data:{
           labels: months,
           datasets:[
-            { label:'Utilisateurs', data:[5,15,35,60,90,130,180,230,290,360,430,510], borderColor:'#00C060', backgroundColor:'rgba(0,192,96,.07)', fill:true, tension:.4, pointBackgroundColor:'#00C060', pointRadius:4, borderWidth:2 },
-            { label:'Objectif', data:[0,10,20,25,30,40,50,50,60,70,70,80], borderColor:'#FF7A00', backgroundColor:'transparent', borderDash:[5,5], tension:.4, pointRadius:0, borderWidth:1.5 }
+            { label:'Utilisateurs cumulés', data:[5,15,35,60,90,130,180,230,290,360,430,510], borderColor:'#00C060', backgroundColor:'rgba(0,192,96,.07)', fill:true, tension:.4, pointBackgroundColor:'#00C060', pointRadius:4, borderWidth:2 },
+            { label:'Objectif mensuel', data:[0,10,20,25,30,40,50,50,60,70,70,80], borderColor:'#FF7A00', backgroundColor:'transparent', borderDash:[5,5], tension:.4, pointRadius:0, borderWidth:1.5 }
           ]
         },
         options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'rgba(255,255,255,.04)' }, ticks:{ color:'#6A8070' } }, y:{ grid:{ color:'rgba(255,255,255,.04)' }, ticks:{ color:'#6A8070' } } } }
@@ -1173,7 +1134,6 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       // Budget Graphique & Table
       const bBody = document.getElementById('budgetBody');
       const bLabels = [], bDatas = [];
-      const isEn = document.body.classList.contains('lang-en');
 
       CFG.BUDGET_SPLIT.forEach(r => {
           const amt = (CFG.INVESTMENT * r.pct) / 100;
@@ -1188,11 +1148,11 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 
       budgetChart = new Chart(document.getElementById('budgetChart'), {
           type: 'bar',
-          data: { labels: bLabels, datasets: [{ data: bDatas, backgroundColor: ['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30'], borderRadius: 8 }] },
-          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#6A8070' } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6A8070', callback: v => (v / 1000000).toFixed(1) + 'M' } } } }
+          data: { labels: bLabels, datasets: [{ data: bDatas, backgroundColor: ['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30','#00C060'], borderRadius: 8 }] },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#6A8070', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6A8070', font: { size: 10 }, callback: v => (v / 1000000).toFixed(1) + 'M' } } } }
       });
 
-      // Bind events and start
+      // Bind events and start simulation
       ['simUsers','simConv','simCv'].forEach(id => document.getElementById(id).addEventListener('input', update));
       update();
 
@@ -1220,7 +1180,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       }, {threshold:.5});
       document.querySelectorAll('.counter').forEach(el => obsCount.observe(el));
       
-      // Chat
+      // Chat Widget
       const win = document.getElementById('chatWindow');
       document.getElementById('chatToggle').onclick = () => { win.classList.toggle('open'); document.getElementById('chatNotif').style.display = 'none'; };
       document.getElementById('chatClose').onclick = () => win.classList.remove('open');
