@@ -417,7 +417,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
             <span class="hstat-lbl en">Active modules</span>
           </div>
           <div>
-            <span class="hstat-val"><span class="counter dyn-investment-counter" data-target="7">0</span><span style="color:var(--or)">M</span></span>
+            <span class="hstat-val"><span class="counter dyn-investment-counter" data-target="12">0</span><span style="color:var(--or)">M</span></span>
             <span class="hstat-lbl fr">FCFA recherchés</span>
             <span class="hstat-lbl en">FCFA sought</span>
           </div>
@@ -526,35 +526,16 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     <div class="section-head fade-up">
       <span class="slabel orange"><i class="fas fa-coins"></i> <span class="fr">Modèle économique & ROI</span><span class="en">Business model & ROI</span></span>
       <h2><span class="fr">TAM, SAM, SOM & RENTABILITÉ</span><span class="en">TAM, SAM, SOM & PROFITABILITY</span></h2>
-      <p><span class="fr">Simulateur dynamique basé sur vos tarifs d'abonnement et commissions récurrentes.</span><span class="en">Dynamic simulator based on your recurring subscription and commission rates.</span></p>
-    </div>
-
-    <!-- TRIO TAM SAM SOM -->
-    <div class="why-grid stagger" style="margin-bottom: 50px;">
-      <div class="why-card fade-up">
-        <div class="why-ico">🌍</div>
-        <h4>TAM</h4>
-        <p style="font-size:0.75rem;"><span class="fr">Marché global BTP Bénin : ~200 Mds FCFA/an.</span><span class="en">Total Benin Construction market: ~200B FCFA/year.</span></p>
-      </div>
-      <div class="why-card fade-up" style="border-color:var(--g)">
-        <div class="why-ico">🏙️</div>
-        <h4>SAM</h4>
-        <p style="font-size:0.75rem;"><span class="fr">Marché digital dans les 5 pôles urbains.</span><span class="en">Digital market in the 5 urban hubs.</span></p>
-      </div>
-      <div class="why-card fade-up" style="border-color:var(--or)">
-        <div class="why-ico">🎯</div>
-        <h4>SOM</h4>
-        <p style="font-size:0.75rem;"><span class="fr">Cible Mobilix (24 mois) : 3 000+ utilisateurs.</span><span class="en">Mobilix target (24mo): 3,000+ users.</span></p>
-      </div>
+      <p><span class="fr">Simulateur dynamique interactif : explorez nos 6 sources de revenus en temps réel.</span><span class="en">Interactive dynamic simulator: explore our 6 revenue streams in real time.</span></p>
     </div>
 
     <!-- SIMULATEUR MAÎTRE -->
-    <div class="chart-card fade-up" style="max-width:1000px; margin: 0 auto 40px; background:var(--bk3); border:1px solid var(--g)">
+    <div class="chart-card fade-up" style="max-width:1000px; margin: 0 auto 50px; background:var(--bk3); border:1px solid var(--g)">
       <div style="text-align:center; margin-bottom:25px;">
         <h3 class="fr">Simulateur de Pénétration (SOM)</h3>
         <h3 class="en">Market Penetration Simulator (SOM)</h3>
-        <p class="fr" style="font-size:0.85rem; color:var(--tx2)">Ajustez le nombre total d'utilisateurs actifs sur la plateforme</p>
-        <p class="en" style="font-size:0.85rem; color:var(--tx2)">Adjust the total number of active users on the platform</p>
+        <p class="fr" style="font-size:0.85rem; color:var(--tx2)">Ajustez le curseur du nombre total d'utilisateurs actifs pour actualiser les données ci-dessous.</p>
+        <p class="en" style="font-size:0.85rem; color:var(--tx2)">Adjust the total active users slider to update the data below.</p>
       </div>
       <input type="range" id="inputUsers" min="0" max="4000" value="1000" style="width:100%; accent-color:var(--g); cursor:pointer">
       <div style="text-align:center; margin-top:20px; display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
@@ -573,12 +554,12 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       </div>
     </div>
 
-    <!-- LES 6 CARTES DE REVENUS ORIGINELLES -->
+    <!-- LES 6 CARTES DE REVENUS ORIGINELLES (MAINTENANT DYNAMIQUES) -->
     <div class="rev-grid stagger">
       <div class="rev-card fade-up"><span class="rnum">01</span><div class="rev-icon"><i class="fas fa-truck"></i></div>
-        <h3><span class="fr">Abonnements propriétaires</span><span class="en">Owner subscriptions</span></h3>
+        <h3><span class="fr">Abonnements + IoT Sentinel</span><span class="en">Subscriptions + IoT Sentinel</span></h3>
         <div class="hstat-val" style="font-size:1.4rem; color:var(--g); margin:8px 0" id="revSubs">0</div>
-        <p><span class="fr">Moyenne pondérée : ~32 000 FCFA/mois.</span><span class="en">Weighted avg: ~32,000 FCFA/month.</span></p>
+        <p><span class="fr">Propriétaires payants (SaaS + Télémétrie).</span><span class="en">Paying owners (SaaS + Telemetry).</span></p>
       </div>
       <div class="rev-card fade-up"><span class="rnum">02</span><div class="rev-icon or"><i class="fas fa-user-tie"></i></div>
         <h3><span class="fr">Commission CVthèque BTP</span><span class="en">CV library commission</span></h3>
@@ -586,24 +567,24 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
         <p><span class="fr">Mise en relation d'experts (Forfait).</span><span class="en">Expert matching (Fixed fee).</span></p>
       </div>
       <div class="rev-card fade-up"><span class="rnum">03</span><div class="rev-icon"><i class="fas fa-bullhorn"></i></div>
-        <h3><span class="fr">Publicité annonceurs</span><span class="en">Advertiser display</span></h3>
+        <h3><span class="fr">Ads & API MobiScore</span><span class="en">Ads & MobiScore API</span></h3>
         <div class="hstat-val" style="font-size:1.4rem; margin:8px 0" id="revAds">0</div>
-        <p><span class="fr">Bannières pour marques et fournisseurs.</span><span class="en">Banners for brands and suppliers.</span></p>
+        <p><span class="fr">Pubs fournisseurs & Accès API Banques.</span><span class="en">Supplier ads & Bank API Access.</span></p>
       </div>
       <div class="rev-card fade-up"><span class="rnum">04</span><div class="rev-icon or"><i class="fas fa-newspaper"></i></div>
-        <h3><span class="fr">Blog "Entreprise du mois"</span><span class="en">"Company of the month" blog</span></h3>
+        <h3><span class="fr">Blog Premium</span><span class="en">Premium Blog</span></h3>
         <div class="hstat-val" style="font-size:1.4rem; margin:8px 0" id="revBlog">0</div>
-        <p><span class="fr">Visibilité PME BTP (Sponsoring).</span><span class="en">BTP SME visibility (Sponsorship).</span></p>
+        <p><span class="fr">Sponsoring PME (Visibilité).</span><span class="en">SME Sponsorship (Visibility).</span></p>
       </div>
       <div class="rev-card fade-up"><span class="rnum">05</span><div class="rev-icon"><i class="fas fa-school"></i></div>
-        <h3><span class="fr">Visibilité écoles &amp; formations</span><span class="en">Schools &amp; training visibility</span></h3>
+        <h3><span class="fr">Écoles & Formations</span><span class="en">Schools & Training</span></h3>
         <div class="hstat-val" style="font-size:1.4rem; margin:8px 0" id="revSchools">0</div>
-        <p><span class="fr">Abonnement annuel recrutement.</span><span class="en">Annual recruitment subscription.</span></p>
+        <p><span class="fr">Abonnement annuel visibilité.</span><span class="en">Annual visibility subscription.</span></p>
       </div>
       <div class="rev-card fade-up"><span class="rnum">06</span><div class="rev-icon or"><i class="fas fa-star"></i></div>
         <h3><span class="fr">Annuaire Fret VIP</span><span class="en">VIP Freight Directory</span></h3>
         <div class="hstat-val" style="font-size:1.4rem; margin:8px 0" id="revVip">0</div>
-        <p><span class="fr">Accès contacts portuaires.</span><span class="en">Port contacts access.</span></p>
+        <p><span class="fr">Accès privilégié zones portuaires.</span><span class="en">Privileged port zones access.</span></p>
       </div>
     </div>
 
@@ -631,8 +612,8 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     <div class="charts-grid fade-up">
       <div class="chart-card">
         <h3><span class="fr">Répartition des revenus</span><span class="en">Revenue breakdown</span></h3>
-        <div class="csub fr">Projection dynamique Mobilix</div>
-        <div class="csub en">Dynamic Mobilix projection</div>
+        <div class="csub fr">Mise à jour en temps réel selon le simulateur</div>
+        <div class="csub en">Real-time update based on simulator</div>
         <div class="chart-legend" id="revLegend"></div>
         <div style="position:relative;height:260px;margin-top:16px">
           <canvas id="revenueChart"></canvas>
@@ -663,7 +644,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-shield-alt"></i></div><h3><span class="fr">Assurance simplifiée</span><span class="en">Simplified insurance</span></h3><p><span class="fr">Souscription rapide directement depuis la plateforme, sans paperasse.</span><span class="en">Quick subscription directly from the platform, no paperwork.</span></p></div>
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-truck"></i></div><h3><span class="fr">Protection équipements</span><span class="en">Equipment protection</span></h3><p><span class="fr">Couverture adaptée aux réalités des chantiers et du transport au Bénin.</span><span class="en">Coverage tailored to the realities of construction sites and transport in Benin.</span></p></div>
       <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-user-check"></i></div><h3><span class="fr">Validation des partenaires</span><span class="en">Partner validation</span></h3><p><span class="fr">Vérification des profils et renforcement de la confiance entre les acteurs.</span><span class="en">Profile verification and trust-building between all parties.</span></p></div>
-      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit 10% sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns 10% on every contract generated through the platform.</span></p></div>
+      <div class="protect-card fade-up"><div class="protect-ico"><i class="fas fa-coins"></i></div><h3><span class="fr">Commission stratégique</span><span class="en">Strategic commission</span></h3><p><span class="fr">Mobilix perçoit une commission sur chaque contrat généré via la plateforme.</span><span class="en">Mobilix earns a commission on every contract generated through the platform.</span></p></div>
     </div>
   </div>
 </section>
@@ -692,72 +673,56 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
   </div>
 </section>
 
-<!-- POURQUOI MAINTENANT -->
-<section class="section" id="whynow">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="slabel orange"><i class="fas fa-fire"></i> <span class="fr">Pourquoi maintenant ?</span><span class="en">Why now?</span></span>
-      <h2><span class="fr">Un marché immense<br><span style="color:var(--g)">encore peu structuré numériquement</span></span><span class="en">A massive market<br><span style="color:var(--g)">still barely digitised</span></span></h2>
-    </div>
-    <div class="why-grid stagger">
-      <div class="why-card fade-up"><div class="why-ico">🏗️</div><h4><span class="fr">Explosion du BTP</span><span class="en">Construction boom</span></h4><p><span class="fr">Boom de la construction résidentielle et infrastructurelle au Bénin.</span><span class="en">Residential and infrastructure construction boom in Benin.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">🏙️</div><h4><span class="fr">Urbanisation rapide</span><span class="en">Rapid urbanisation</span></h4><p><span class="fr">Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou en expansion constante.</span><span class="en">Cotonou, Abomey-Calavi, Porto-Novo, Bohicon and Parakou in constant expansion.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">📱</div><h4><span class="fr">Digitalisation</span><span class="en">Digitalisation</span></h4><p><span class="fr">Adoption croissante du mobile money et des services numériques.</span><span class="en">Growing adoption of mobile money and digital services.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">🕳️</div><h4><span class="fr">Marché vierge</span><span class="en">Untapped market</span></h4><p><span class="fr">Aucun acteur digital dominant dans le BTP et la logistique au Bénin.</span><span class="en">No dominant digital player in construction and logistics in Benin.</span></p></div>
-      <div class="why-card fade-up"><div class="why-ico">🤝</div><h4><span class="fr">Soutien institutionnel</span><span class="en">Institutional support</span></h4><p><span class="fr">Programmes d'incubation (Sèmè City, FAEN) actifs pour startups digitales.</span><span class="en">Active incubation programmes (Sèmè City, FAEN) for digital startups.</span></p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ROADMAP -->
-<section class="section" id="roadmap" style="background:var(--bk2)">
+<section class="section" id="roadmap">
   <div class="container">
     <div class="section-head fade-up">
       <span class="slabel"><i class="fas fa-road"></i> Roadmap</span>
       <h2><span class="fr">Construire l'infrastructure<br><span style="color:var(--g)">digitale du BTP</span></span><span class="en">Building the<br><span style="color:var(--g)">digital construction infrastructure</span></span></h2>
+      <p><span class="fr">La technologie est prête. Voici le plan d'exécution.</span><span class="en">The technology is ready. Here is the execution plan.</span></p>
     </div>
     <div style="max-width:700px;margin:0 auto" class="fade-up">
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <span class="tl-year">2026</span>
-          <h3><span class="fr">Lancement &amp; Acquisition</span><span class="en">Launch &amp; Acquisition</span></h3>
-          <p><span class="fr">Déploiement Mobilix au Bénin. Onboarding des premiers engins, entreprises BTP et experts métiers sur Cotonou, Abomey-Calavi, Porto-Novo, Bohicon et Parakou.</span><span class="en">Mobilix launch in Benin. Onboarding first equipment, construction companies and trade experts across Cotonou, Abomey-Calavi, Porto-Novo, Bohicon and Parakou.</span></p>
+          <span class="tl-year">Mois 1 — 6</span>
+          <h3><span class="fr">Go-To-Market & Acquisition</span><span class="en">Go-To-Market & Acquisition</span></h3>
+          <p><span class="fr">Déploiement force de vente sur Cotonou, Calavi, Porto-Novo, Bohicon, Parakou. Conversion agressive via les modules Marketplace.</span><span class="en">Salesforce deployment in main hubs. Aggressive conversion via Marketplace modules.</span></p>
           <div class="tl-tags"><span class="tl-tag fr">Catalogue engins</span><span class="tl-tag en">Equipment catalogue</span><span class="tl-tag">CVthèque</span><span class="tl-tag">Fret VIP</span><span class="tl-tag fr">Agents terrain</span><span class="tl-tag en">Field agents</span></div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <span class="tl-year">2027</span>
-          <h3>Mobilix Protect &amp; <span class="fr">Paiement</span><span class="en">Payment</span></h3>
-          <p><span class="fr">Intégration assurance partenaire, validation des profils, scoring prestataires. Déploiement Mobile Money et paiement sécurisé escrow.</span><span class="en">Partner insurance integration, profile validation, provider scoring. Mobile Money deployment and secure escrow payment.</span></p>
-          <div class="tl-tags"><span class="tl-tag fr">Assurance BTP</span><span class="tl-tag en">Construction insurance</span><span class="tl-tag">Mobile Money</span><span class="tl-tag">Scoring</span><span class="tl-tag fr">Dashboard propriétaires</span><span class="tl-tag en">Owner dashboard</span></div>
+          <span class="tl-year">Mois 6 — 12</span>
+          <h3>Mobilix Protect & IoT Sentinel</h3>
+          <p><span class="fr">Distribution des boîtiers GPS anti-siphonnage. Lancement de la couche d'assurance partenaire pour sécuriser la plateforme et déploiement du paiement sécurisé.</span><span class="en">Distribution of anti-theft GPS boxes. Launch of partner insurance layer to secure the platform and secure payment deployment.</span></p>
+          <div class="tl-tags"><span class="tl-tag fr">Assurance BTP</span><span class="tl-tag en">Construction insurance</span><span class="tl-tag">Mobile Money</span><span class="tl-tag">IoT Hardware</span><span class="tl-tag fr">Dashboard</span><span class="tl-tag en">Dashboard</span></div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <span class="tl-year">2028</span>
-          <h3><span class="fr">Suivi flotte &amp; données</span><span class="en">Fleet tracking &amp; data</span></h3>
-          <p><span class="fr">Outils analytiques, suivi de flotte en temps réel, API logistique, contrats B2B avec entreprises BTP.</span><span class="en">Analytics tools, real-time fleet tracking, logistics API, B2B contracts with construction firms.</span></p>
-          <div class="tl-tags"><span class="tl-tag">API logistique</span><span class="tl-tag fr">Suivi flotte</span><span class="tl-tag en">Fleet tracking</span><span class="tl-tag">B2B</span></div>
+          <span class="tl-year">Mois 12 — 18</span>
+          <h3><span class="fr">MobiScore API & B2B</span><span class="en">MobiScore API & B2B</span></h3>
+          <p><span class="fr">Vente des accès API aux Banques pour le scoring de crédit. Contrats logistiques B2B avec les cimenteries et le Port.</span><span class="en">Selling API access to Banks for credit scoring. B2B logistics contracts with cement plants and the Port.</span></p>
+          <div class="tl-tags"><span class="tl-tag">API logistique</span><span class="tl-tag fr">Credit Scoring</span><span class="tl-tag en">Credit Scoring</span><span class="tl-tag">B2B</span></div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <span class="tl-year">2029</span>
-          <h3><span class="fr">Expansion régionale</span><span class="en">Regional expansion</span></h3>
-          <p><span class="fr">Déploiement Afrique de l'Ouest — Togo, Côte d'Ivoire, Niger. Marketplace régionale et financement d'équipements.</span><span class="en">West Africa deployment — Togo, Côte d'Ivoire, Niger. Regional marketplace and equipment financing.</span></p>
-          <div class="tl-tags"><span class="tl-tag">Togo</span><span class="tl-tag">Côte d'Ivoire</span><span class="tl-tag fr">Financement équipements</span><span class="tl-tag en">Equipment financing</span></div>
+          <span class="tl-year">Mois 18 — 24</span>
+          <h3><span class="fr">Expansion régionale & Financement</span><span class="en">Regional expansion & Financing</span></h3>
+          <p><span class="fr">Déploiement Afrique de l'Ouest — Togo, Côte d'Ivoire, Niger. Utilisation des données Mobilix pour garantir le financement (leasing) de nouveaux engins.</span><span class="en">West Africa deployment — Togo, Côte d'Ivoire, Niger. Using Mobilix data to guarantee financing (leasing) for new equipment.</span></p>
+          <div class="tl-tags"><span class="tl-tag">Togo</span><span class="tl-tag">Côte d'Ivoire</span><span class="tl-tag fr">Financement (Leasing)</span><span class="tl-tag en">Financing (Leasing)</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BUDGET DYNAMIQUE -->
-<section class="section" id="budget">
+<!-- BUDGET -->
+<section class="section" id="budget" style="background:var(--bk2)">
   <div class="container">
     <div class="section-head fade-up">
       <span class="slabel orange"><i class="fas fa-wallet"></i> <span class="fr">Utilisation des fonds</span><span class="en">Use of funds</span></span>
       <h2><span class="dyn-investment-val-full">0</span> FCFA —<br><span style="color:var(--g)"><span class="fr">chaque franc justifié</span><span class="en">every franc accounted for</span></span></h2>
-      <p><span class="fr">Budget d'amorçage calculé dynamiquement pour valider le Product-Market Fit.</span><span class="en">Seed budget calculated dynamically to validate Product-Market Fit.</span></p>
+      <p><span class="fr">Budget d'amorçage calculé dynamiquement pour dominer le marché sans frais de développement.</span><span class="en">Seed budget calculated dynamically to dominate the market with zero development costs.</span></p>
     </div>
     <div class="fade-up" style="max-width:760px;margin:0 auto">
       <div style="position:relative;height:280px;margin-bottom:36px">
@@ -766,20 +731,20 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <table class="budget-table">
         <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
         <tbody id="budgetBody">
-          <!-- Rempli par le JS -->
+          <!-- Rempli par le JS de manière dynamique -->
         </tbody>
       </table>
       <div class="budget-total">
         <span><span class="fr">Total sollicité</span><span class="en">Total sought</span></span>
         <span class="dyn-investment-val-full" style="color:var(--g)">0 FCFA</span>
       </div>
-      <p style="font-size:.82rem;color:var(--tx2);margin-top:16px;text-align:center"><span class="fr">Zéro frais de développement — l'application est <strong style="color:var(--g)">déjà développée et en ligne</strong>. 100% des fonds servent à acquérir les utilisateurs et sécuriser la plateforme.</span><span class="en">Zero development costs — the app is <strong style="color:var(--g)">already built and live</strong>. 100% of funds go toward user acquisition and platform security.</span></p>
+      <p style="font-size:.82rem;color:var(--tx2);margin-top:16px;text-align:center"><span class="fr">Zéro frais de développement — l'application, l'API et l'IoT sont <strong style="color:var(--g)">déjà codés</strong>. 100% des fonds servent à l'acquisition, au hardware initial et aux opérations.</span><span class="en">Zero development costs — the app, API, and IoT are <strong style="color:var(--g)">already coded</strong>. 100% of funds go toward acquisition, initial hardware, and operations.</span></p>
     </div>
   </div>
 </section>
 
 <!-- ÉQUIPE -->
-<section class="section" id="equipe" style="background:var(--bk2)">
+<section class="section" id="equipe">
   <div class="container">
     <div class="section-head fade-up">
       <span class="slabel"><i class="fas fa-users"></i> <span class="fr">L'équipe</span><span class="en">The team</span></span>
@@ -802,8 +767,8 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <span class="initials" style="display:none;">IZ</span>
         </div>
         <h3>Frank Ismaël ZOKPADAN</h3>
-        <div class="team-role">COO, <span class="fr">CO-FONDATEUR</span><span class="en">CO-FOUNDER</span>, Communication &amp; Branding</div>
-        <p><span class="fr">Serial entrepreneur et dirigeant d'une entreprise de BTP adjudicataire de marchés publics. Expert des réalités du terrain, il pilote l'exécution opérationnelle et le réseau de partenaires stratégiques. Il est responsable de la stratégie de communication, de l'image de marque de Mobilix.</span><span class="en">Serial entrepreneur and CEO of a construction firm that wins public contracts. Expert in field realities, he drives operational execution and the strategic partner network, and owns Mobilix's communication strategy and brand.</span></p>
+        <div class="team-role">COO, <span class="fr">CO-FONDATEUR</span><span class="en">CO-FOUNDER</span>, Branding</div>
+        <p><span class="fr">Serial entrepreneur et dirigeant d'une entreprise de BTP adjudicataire de marchés publics. Expert des réalités du terrain, il pilote l'exécution opérationnelle et le réseau de partenaires stratégiques. Il gère l'image de marque de Mobilix.</span><span class="en">Serial entrepreneur and CEO of a construction firm that wins public contracts. Expert in field realities, he drives operational execution and the strategic partner network, and owns Mobilix's communication strategy.</span></p>
       </div>
       <div class="team-card fade-up" style="border: 1px dashed rgba(0, 192, 96, 0.3);">
         <div class="team-avatar" style="background: rgba(0, 192, 96, 0.05); border: 1px dashed var(--g); display: flex;">
@@ -818,7 +783,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 </section>
 
 <!-- CTA INVESTIR -->
-<section class="section" id="investir">
+<section class="section" id="investir" style="background:var(--bk2)">
   <div class="container">
     <div class="cta-invest fade-up">
       <span class="slabel" style="margin-bottom:22px"><i class="fas fa-handshake"></i> <span class="fr">Opportunité d'investissement</span><span class="en">Investment opportunity</span></span>
@@ -910,28 +875,45 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
 <script>
 /**
  * ─────────────────────────────────────────────────────────────────
- * CONFIGURATION GLOBALE - MODIFIEZ INVESTMENT_TARGET ICI 
+ * 🧠 CERVEAU DYNAMIQUE MOBILIX
+ * Vous pouvez modifier librement les valeurs ci-dessous.
+ * Le design, les textes, les tableaux et les graphiques
+ * s'adapteront automatiquement.
  * ─────────────────────────────────────────────────────────────────
  */
 const GLOBAL_CONFIG = {
-    INVESTMENT_TARGET: 12000000, // <--- MODIFIEZ CE CHIFFRE ICI 
-    AVG_SUB_PRICE: 32000,
-    FIXED_COSTS_YEAR: 6000000,
-    VAR_COST_USER: 2000,
+    INVESTMENT_TARGET: 12000000,   // Montant recherché (ex: 12M ou 30M)
+    
+    // Tarification de vos services
+    AVG_SUB_PRICE: 32000,          // Prix moyen abonnement propriétaire (Mensuel)
+    IOT_PRICE: 3500,               // Prix abonnement IoT Sentinel (Mensuel)
+    API_PRICE: 50000,              // Prix abonnement API MobiScore pour Banques (Mensuel)
+    BLOG_PRICE: 150000,            // Prix sponsoring Blog (Mensuel)
+    SCHOOL_PRICE: 500000,          // Prix abonnement Ecoles BTP (Annuel)
+    VIP_PRICE: 5000,               // Prix Fret VIP (Mensuel)
+    CV_PRICE: 5000,                // Prix CVthèque par expert (Forfait unique annuel)
+
+    // Charges Opérationnelles (OPEX)
+    FIXED_COSTS_YEAR: 6000000,     // Frais fixes (Salaires de base, locaux)
+    VAR_COST_USER: 2000,           // Coût serveur & SMS par utilisateur
+
+    // Répartition du Budget d'Investissement (doit faire 100%)
     BUDGET_SPLIT: [
-        { label: "Acquisition & B2B", pct: 38, fr: "Prospection, events, flyers", en: "Canvassing, events, flyers" },
-        { label: "Marketing Digital", pct: 25, fr: "Meta Ads, Video, SEO local", en: "Meta Ads, Video, local SEO" },
-        { label: "Siège & Aménagement", pct: 15, fr: "Loyer, mobilier, équipement", en: "Rent, furniture, equipment" },
-        { label: "Infrastructure", pct: 12, fr: "Serveurs, API, Juridique", en: "Servers, API, Legal" },
-        { label: "Réserve", pct: 10, fr: "Trésorerie de sécurité", en: "Emergency cash" }
+        { label: "Talents & Opérations", pct: 35, fr: "Salaires 18 mois, Force de vente", en: "18mo Salaries, Sales force" },
+        { label: "Acquisition B2B", pct: 25, fr: "Ads, Évènements syndicats, Stickers", en: "Ads, Events, Truck Stickers" },
+        { label: "Hardware IoT", pct: 15, fr: "Stock initial 200 boîtiers & SIMs M2M", en: "Initial stock GPS boxes & M2M SIMs" },
+        { label: "Siège & Serveurs", pct: 15, fr: "Bureau Cotonou, Matériel, Cloud", en: "Office, Hardware, Cloud Servers" },
+        { label: "Réserve Sécurité", pct: 10, fr: "Imprévus opérationnels (3 mois)", en: "Operational contingency" }
     ]
 };
 
-// ── VARIABLES GLOBALES GRAPHIQUES
+// ── VARIABLES POUR GRAPHIQUES
 let revenueChartInstance = null;
 let budgetChartInstance = null;
+const revLabels = ['Abonnements & IoT', 'CVthèque Premium', 'Ads & API', 'Blog Premium', 'Écoles BTP', 'Fret VIP'];
+const revColors = ['#00C060', '#FF7A00', '#1ee075', '#006e35', '#ffb347', '#2a3a30'];
 
-// ── BILINGUISME
+// ── FONCTIONS BILINGUES
 function setLang(lang) {
   document.body.classList.toggle('lang-en', lang === 'en');
   document.getElementById('btnFR').classList.toggle('active', lang === 'fr');
@@ -941,93 +923,110 @@ function setLang(lang) {
   localStorage.setItem('mobilix_lang', lang);
 }
 
-// ── INITIALISATION SÉCURISÉE (DOM LOADED)
+function buildLegend(id, labels, colors, data) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = labels.map((l, i) => `<span class="cl-item"><span class="cl-dot" style="background:${colors[i]}"></span>${l} ${data[i]}%</span>`).join('');
+}
+
+// ── EXÉCUTION SÉCURISÉE AU CHARGEMENT DE LA PAGE
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Langue
+    // 1. Appliquer Langue
     const saved = localStorage.getItem('mobilix_lang');
     if (saved === 'en') setLang('en');
 
-    // 2. Sync des textes statiques du Budget
-    document.querySelectorAll('.dyn-investment-counter').forEach(el => el.setAttribute('data-target', GLOBAL_CONFIG.INVESTMENT_TARGET / 1000000));
-    document.querySelectorAll('.dyn-investment-val-full').forEach(el => el.innerText = GLOBAL_CONFIG.INVESTMENT_TARGET.toLocaleString('fr-FR'));
+    // 2. Synchroniser les montants d'investissement textuels
+    const valM = (GLOBAL_CONFIG.INVESTMENT_TARGET / 1000000).toFixed(0);
+    const valFull = GLOBAL_CONFIG.INVESTMENT_TARGET.toLocaleString('fr-FR');
+    document.querySelectorAll('.dyn-investment-counter').forEach(el => el.setAttribute('data-target', valM));
+    document.querySelectorAll('.dyn-investment-val-full').forEach(el => el.innerText = valFull);
 
-    // 3. Initialisation des Graphiques Originels (Vides au début)
-    const revLabels = ['Abonnements','Publicité','CVthèque','Fret VIP','Écoles BTP','Blog Premium'];
-    const revColors = ['#00C060','#FF7A00','#1ee075','#006e35','#ffb347','#2a3a30'];
-    
-    // Légendes des graphiques
-    function buildLegend(id,labels,colors,data){
-        const el=document.getElementById(id);if(!el)return;
-        el.innerHTML=labels.map((l,i)=>`<span class="cl-item"><span class="cl-dot" style="background:${colors[i]}"></span>${l} ${data[i]}%</span>`).join('');
-    }
-
-    revenueChartInstance = new Chart(document.getElementById('revenueChart'),{
-        type:'doughnut',
-        data:{labels:revLabels,datasets:[{data:[0,0,0,0,0,0],backgroundColor:revColors,borderWidth:0,hoverOffset:8}]},
-        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},cutout:'65%'}
+    // 3. Initialiser les Graphiques
+    revenueChartInstance = new Chart(document.getElementById('revenueChart'), {
+        type: 'doughnut',
+        data: { labels: revLabels, datasets: [{ data: [0,0,0,0,0,0], backgroundColor: revColors, borderWidth: 0, hoverOffset: 8 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, cutout: '65%' }
     });
 
-    const months=['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
-    const gData=[5,15,35,60,90,130,180,230,290,360,430,510];
-    const gColors=['#00C060','#FF7A00'];
-    buildLegend('growthLegend',['Utilisateurs cumulés','Objectif mensuel'],[gColors[0],gColors[1]],[510,43]);
+    const months = ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
+    const gData = [5,15,35,60,90,130,180,230,290,360,430,510];
+    const gColors = ['#00C060','#FF7A00'];
+    buildLegend('growthLegend', ['Utilisateurs cumulés', 'Objectif mensuel'], [gColors[0], gColors[1]], [510, 43]);
 
-    new Chart(document.getElementById('growthChart'),{
-        type:'line',
-        data:{labels:months,datasets:[
-            {label:'Utilisateurs cumulés',data:gData,borderColor:gColors[0],backgroundColor:'rgba(0,192,96,.08)',fill:true,tension:.4,pointBackgroundColor:gColors[0],pointRadius:4,pointHoverRadius:6,borderWidth:2},
-            {label:'Objectif mensuel',data:[0,10,20,25,30,40,50,50,60,70,70,80],borderColor:gColors[1],backgroundColor:'transparent',borderDash:[5,5],tension:.4,pointRadius:0,borderWidth:1.5}
+    new Chart(document.getElementById('growthChart'), {
+        type: 'line',
+        data: { labels: months, datasets: [
+            { label: 'Utilisateurs cumulés', data: gData, borderColor: gColors[0], backgroundColor: 'rgba(0,192,96,.08)', fill: true, tension: .4, pointBackgroundColor: gColors[0], pointRadius: 4, pointHoverRadius: 6, borderWidth: 2 },
+            { label: 'Objectif mensuel', data: [0,10,20,25,30,40,50,50,60,70,70,80], borderColor: gColors[1], backgroundColor: 'transparent', borderDash: [5,5], tension: .4, pointRadius: 0, borderWidth: 1.5 }
         ]},
-        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6A8070',font:{size:11}},border:{color:'transparent'}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6A8070',font:{size:11},callback:v=>v},border:{color:'transparent'}}}}
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6A8070', font: { size: 11 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6A8070', font: { size: 11 } } } } }
     });
 
-    // 4. Moteur de Simulation Stratégique
+    // 4. Moteur de Simulation Stratégique (Le Cerveau)
     function updateSimulator() {
         const users = parseInt(document.getElementById('inputUsers').value);
         
-        // Segmentation
+        // --- SEGMENTATION ---
         const nOwners = Math.floor(users * 0.60);
         const nExperts = Math.floor(users * 0.30);
-        const nPartners = Math.floor(users / 100);
+        const nBanks = Math.floor(users / 200); // 1 banque pour 200 users
 
         document.getElementById('countOwners').innerText = nOwners.toLocaleString();
         document.getElementById('countExperts').innerText = nExperts.toLocaleString();
-        document.getElementById('countPartners').innerText = nPartners.toLocaleString();
+        document.getElementById('countPartners').innerText = nBanks.toLocaleString();
 
-        // Calculs Revenus
-        const rSubs = nOwners * GLOBAL_CONFIG.AVG_SUB_PRICE * 12;
-        const rAds = users * 500 * 12;
-        const rBlog = (users >= 300) ? Math.floor(users / 300) * 150000 * 12 : 0;
-        const rSchools = (users >= 500) ? Math.floor(users / 500) * 500000 : 0;
-        const rVip = Math.floor(nOwners * 0.10) * 5000 * 12;
-        const rCv = nExperts * 5000;
+        // --- REVENUS (CALCULS) ---
+        // Carte 1: Abonnements SaaS + IoT Sentinel
+        const rSaaS = nOwners * GLOBAL_CONFIG.AVG_SUB_PRICE * 12;
+        const rIot = Math.floor(nOwners * 0.20) * GLOBAL_CONFIG.IOT_PRICE * 12; // 20% adoptent IoT
+        const rSubs = rSaaS + rIot;
 
-        const totalARR = rSubs + rAds + rBlog + rSchools + rVip + rCv;
+        // Carte 2: CVthèque (Experts)
+        const rCv = nExperts * GLOBAL_CONFIG.CV_PRICE;
+
+        // Carte 3: Publicité + API MobiScore
+        const rAdsPure = users * 500 * 12; // 500 FCFA/mois de valeur pub par user
+        const rApi = nBanks * GLOBAL_CONFIG.API_PRICE * 12;
+        const rAds = rAdsPure + rApi;
+
+        // Carte 4: Blog Premium (1 entreprise sponsorisée par 300 users)
+        const rBlog = (users >= 300) ? Math.floor(users / 300) * GLOBAL_CONFIG.BLOG_PRICE * 12 : 0;
+
+        // Carte 5: Écoles BTP
+        const rSchools = (users >= 500) ? Math.floor(users / 500) * GLOBAL_CONFIG.SCHOOL_PRICE : 0;
+
+        // Carte 6: Fret VIP
+        const rVip = Math.floor(nOwners * 0.10) * GLOBAL_CONFIG.VIP_PRICE * 12;
+
+        // --- AGGREGATION & ROI ---
+        const totalARR = rSubs + rCv + rAds + rBlog + rSchools + rVip;
         const totalOPEX = GLOBAL_CONFIG.FIXED_COSTS_YEAR + (users * GLOBAL_CONFIG.VAR_COST_USER);
         const profit = Math.max(0, totalARR - totalOPEX);
         const roi = (totalARR > 0) ? (profit / GLOBAL_CONFIG.INVESTMENT_TARGET) * 100 : 0;
         const beMonths = (totalARR > 0) ? Math.ceil(GLOBAL_CONFIG.INVESTMENT_TARGET / (totalARR / 12)) : 0;
 
-        // Màj Textes
+        // --- MAJ INTERFACE CARTES ---
         const fmt = v => Math.floor(v).toLocaleString() + " FCFA";
         document.getElementById('revSubs').innerText = fmt(rSubs);
+        document.getElementById('revCv').innerText = fmt(rCv);
         document.getElementById('revAds').innerText = fmt(rAds);
         document.getElementById('revBlog').innerText = fmt(rBlog);
         document.getElementById('revSchools').innerText = fmt(rSchools);
         document.getElementById('revVip').innerText = fmt(rVip);
-        document.getElementById('revCv').innerText = fmt(rCv);
 
+        // --- MAJ RECAPITULATIF ROI ---
         document.getElementById('totalGlobal').innerText = fmt(totalARR);
         document.getElementById('netProfit').innerText = fmt(profit);
         document.getElementById('roiPercent').innerText = roi.toFixed(1) + "%";
-        document.getElementById('breakeven').innerText = (users > 100) ? (beMonths <= 24 ? beMonths + " mois / mo" : "+24 mois") : "-";
+        document.getElementById('breakeven').innerText = (users > 100) ? (beMonths <= 24 ? beMonths + " mois" : "+24 mois") : "-";
 
-        // Màj Camembert
+        // --- MAJ CAMEMBERT ---
         if(totalARR > 0) {
             const pct = (v) => Math.round((v / totalARR) * 100);
-            const dataArr = [pct(rSubs), pct(rAds), pct(rCv), pct(rVip), pct(rSchools), pct(rBlog)];
-            revenueChartInstance.data.datasets[0].data = [rSubs, rAds, rCv, rVip, rSchools, rBlog];
+            const dataArr = [pct(rSubs), pct(rCv), pct(rAds), pct(rBlog), pct(rSchools), pct(rVip)];
+            // L'ordre des données doit matcher revLabels : Abonnements, CVthèque, Ads, Blog, Ecoles, Fret
+            revenueChartInstance.data.datasets[0].data = [rSubs, rCv, rAds, rBlog, rSchools, rVip];
             revenueChartInstance.update();
             buildLegend('revLegend', revLabels, revColors, dataArr);
         } else {
@@ -1038,11 +1037,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById('inputUsers').addEventListener('input', updateSimulator);
-    updateSimulator();
+    updateSimulator(); // Lancer au démarrage
 
-    // 5. Génération du Tableau Budget Dynamique
+    // 5. Tableau et Graphique du Budget Dynamique
     const tbody = document.getElementById('budgetBody');
     const bLabels = [], bDatas = [];
+    
     GLOBAL_CONFIG.BUDGET_SPLIT.forEach(r => {
         const amt = (GLOBAL_CONFIG.INVESTMENT_TARGET * r.pct) / 100;
         bLabels.push(r.label);
@@ -1054,15 +1054,15 @@ document.addEventListener("DOMContentLoaded", () => {
         </tr>`;
     });
 
-    budgetChartInstance = new Chart(document.getElementById('budgetChart'),{
-        type:'bar',
-        data:{ labels:bLabels, datasets:[{data:bDatas, backgroundColor:['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30'], borderRadius:8}] },
-        options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:{display:false},ticks:{color:'#6A8070',font:{size:10}}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6A8070',font:{size:10},callback:v=>(v/1000000).toFixed(1)+'M'}}} }
+    budgetChartInstance = new Chart(document.getElementById('budgetChart'), {
+        type: 'bar',
+        data: { labels: bLabels, datasets: [{ data: bDatas, backgroundColor: ['#00C060','#FF7A00','#00C060','#FF7A00','#2a3a30'], borderRadius: 8 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#6A8070', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#6A8070', font: { size: 10 }, callback: v => (v / 1000000).toFixed(1) + 'M' } } } }
     });
 
-    // 6. Intersection Observers (Compteurs et Fade)
+    // 6. Intersection Observers (Fade & Counters)
     const obsFade = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') }), {threshold:.12});
-    document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el => obsFade.observe(el));
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => obsFade.observe(el));
 
     const obsCount = new IntersectionObserver(es => {
         es.forEach(e => {
@@ -1077,41 +1077,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }, {threshold:.5});
     document.querySelectorAll('.counter').forEach(el => obsCount.observe(el));
 
-    // 7. Nav et Chat
+    // 7. Navigation et Chat
     const nav = document.getElementById('navbar');
-    window.addEventListener('scroll',() => nav.classList.toggle('scrolled', window.scrollY > 40));
-    document.getElementById('ham').onclick = () => document.getElementById('navLinks').classList.toggle('open');
-    document.querySelectorAll('#navLinks a').forEach(a => a.onclick = () => document.getElementById('navLinks').classList.remove('open'));
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    
+    const links = document.getElementById('navLinks');
+    document.getElementById('ham').onclick = () => links.classList.toggle('open');
+    document.querySelectorAll('.nav-links a').forEach(a => a.onclick = () => links.classList.remove('open'));
 
-    const toggle = document.getElementById('chatToggle');
-    const win = document.getElementById('chatWindow');
-    const closeBtn = document.getElementById('chatClose');
-    const notif = document.getElementById('chatNotif');
-    const msgs = document.getElementById('chatMsgs');
-    const input = document.getElementById('chatInput');
-    const sendBtn = document.getElementById('chatSend');
-    const typing = document.getElementById('chatTyping');
+    const toggle = document.getElementById('chatToggle'), win = document.getElementById('chatWindow');
+    const closeBtn = document.getElementById('chatClose'), notif = document.getElementById('chatNotif');
+    const msgs = document.getElementById('chatMsgs'), input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend'), typing = document.getElementById('chatTyping');
 
     let replyIdx = 0;
     const AUTO_REPLIES_FR = ["Merci ! Hilarion reviendra vers vous. 📱", "Pour toute question urgente, WhatsApp : +229 01 43 27 83 22", "L'app est opérationnelle sur mobilix.42web.io"];
     const AUTO_REPLIES_EN = ["Thank you! Hilarion will reply shortly. 📱", "For urgent queries, WhatsApp: +229 01 43 27 83 22", "The app is live at mobilix.42web.io"];
 
-    function addMsg(text,type){
-      const d=document.createElement('div'); d.className='cmsg '+type;
-      d.innerHTML=`<div class="cmsg-bub">${text}</div>`;
-      msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
+    function addMsg(text, type) {
+      const d = document.createElement('div'); d.className = 'cmsg ' + type;
+      d.innerHTML = `<div class="cmsg-bub">${text}</div>`;
+      msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
     }
-    function sendMsg(){
-      const txt=input.value.trim(); if(!txt)return;
-      addMsg(txt,'user'); input.value=''; notif.style.display='none'; typing.classList.add('show');
+
+    function sendMsg() {
+      const txt = input.value.trim(); if(!txt) return;
+      addMsg(txt, 'user'); input.value = ''; notif.style.display = 'none'; typing.classList.add('show');
       const isEn = document.body.classList.contains('lang-en');
       const rep = isEn ? AUTO_REPLIES_EN : AUTO_REPLIES_FR;
-      setTimeout(()=>{ typing.classList.remove('show'); addMsg(rep[replyIdx%rep.length],'agent'); replyIdx++; }, 1400);
+      setTimeout(() => { typing.classList.remove('show'); addMsg(rep[replyIdx % rep.length], 'agent'); replyIdx++; }, 1400);
     }
-    toggle.onclick = () => { win.classList.toggle('open'); notif.style.display='none'; };
+
+    toggle.onclick = () => { win.classList.toggle('open'); notif.style.display = 'none'; };
     closeBtn.onclick = () => win.classList.remove('open');
     sendBtn.onclick = sendMsg;
-    input.onkeydown = (e) => { if(e.key==='Enter') sendMsg(); };
+    input.onkeydown = (e) => { if(e.key === 'Enter') sendMsg(); };
 });
 </script>
 </body>
