@@ -35,15 +35,15 @@ body {
   --r2: 24px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-b);background:var(--bk);color:var(--tx);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;max-width:100%}
+body{font-family:var(--font-b);background:var(--bk);color:var(--tx);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;width:100%;max-width:100%}
 a{color:var(--g);text-decoration:none;transition:.25s}
 a:hover{color:var(--g2)}
 img{max-width:100%;display:block}
 ul{list-style:none}
-.container{max-width:1160px;margin:0 auto;padding:0 28px}
-.section{padding:110px 0}
-.section-sm{padding:70px 0}
+.container{max-width:1160px;margin:0 auto;padding:0 28px;width:100%}
+.section{padding:110px 0;overflow:hidden}
+.section-sm{padding:70px 0;overflow:hidden}
 h1,h2,h3,h4{font-family:var(--font-h);color:var(--wh);line-height:1.1}
 h1{font-size:clamp(2.6rem,5.5vw,4.8rem);font-weight:800;letter-spacing:-0.03em}
 h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;letter-spacing:-0.02em}
@@ -53,7 +53,7 @@ p{font-size:1.02rem;color:var(--tx);line-height:1.8}
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0;transition:.4s}
 nav.scrolled{background:rgba(8,12,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
-.nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between;width:100%}
 .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-h);font-weight:800;font-size:1.2rem;color:var(--wh);z-index: 1001;}
 .nav-logo .dot{width:8px;height:8px;background:var(--g);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,192,96,.6)}50%{box-shadow:0 0 0 8px rgba(0,192,96,0)}}
@@ -75,11 +75,11 @@ body.lang-en .fr{display:none}
 body.lang-en .en{display:revert}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 0 60px}
-.hero-bg{position:absolute;inset:0;z-index:0}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 0 60px;max-width:100vw}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,192,96,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,192,96,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
-.hero-glow{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(0,192,96,.18) 0%,transparent 70%)}
-.hero-glow2{position:absolute;bottom:-10%;right:-10%;width:400px;height:400px;background:radial-gradient(ellipse,rgba(255,122,0,.1) 0%,transparent 70%)}
+.hero-glow{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:min(800px,100vw);height:500px;background:radial-gradient(ellipse,rgba(0,192,96,.18) 0%,transparent 70%)}
+.hero-glow2{position:absolute;bottom:-10%;right:0;max-width:50vw;width:400px;height:400px;background:radial-gradient(ellipse,rgba(255,122,0,.1) 0%,transparent 70%)}
 .hero-content{position:relative;z-index:1;width:100%}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,192,96,.1);border:1px solid rgba(0,192,96,.25);color:var(--g);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:28px}
@@ -169,7 +169,7 @@ body.lang-en .en{display:revert}
 .seg-lbl  { font-size:.7rem; color:var(--tx2); text-transform:uppercase; letter-spacing:.05em; margin-top:4px; }
 
 /* TABLE RESPONSIVE WRAPPER */
-.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom:28px; }
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom:28px; max-width:100%; }
 
 .rev-pro-table { width:100%; border-collapse:collapse; min-width: 600px; }
 .rev-pro-table th { font-size:.7rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--tx2); text-align:left; padding:0 0 14px; border-bottom:1px solid var(--bd); }
@@ -224,7 +224,7 @@ body.lang-en .en{display:revert}
 .tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .tl-tag{font-size:.68rem;color:var(--tx2);background:var(--bk4);border:1px solid var(--bd);padding:3px 10px;border-radius:100px}
 
-/* ── REVENUE CARDS (Les 10 cartes de la V5) ── */
+/* ── REVENUE CARDS ── */
 .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:40px}
 .rev-card{background:var(--bk2);border:1px solid var(--bd);border-radius:var(--r);padding:24px 20px;transition:.35s;position:relative}
 .rev-card:hover{border-color:rgba(0,192,96,.4);box-shadow:0 8px 40px rgba(0,0,0,.4)}
@@ -235,15 +235,15 @@ body.lang-en .en{display:revert}
 .rev-card h3{font-size:1rem;color:var(--wh);margin-bottom:8px; line-height:1.2}
 .rev-card p{font-size:.87rem;color:var(--tx)}
 
-/* ── BUDGET TABLE STANDARD ── */
-.budget-table{width:100%;border-collapse:collapse; min-width: 500px;}
+/* ── BUDGET TABLE ── */
+.budget-table{width:100%;border-collapse:collapse;min-width:500px}
 .budget-table th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);text-align:left;padding:0 0 16px;border-bottom:1px solid var(--bd)}
 .budget-table td{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;vertical-align:middle}
 .budget-table td:last-child{text-align:right;font-family:var(--font-h);font-weight:700;color:var(--wh);white-space:nowrap}
 .bbar-wrap{height:4px;background:var(--bk4);border-radius:2px;width:120px;margin:4px 0}
 .bbar{height:4px;border-radius:2px;background:var(--g);transition:width 1s ease}
 .bbar.or{background:var(--or)}
-.budget-total{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding:20px 28px;background:rgba(0,192,96,.07);border:1px solid rgba(0,192,96,.15);border-radius:14px; flex-wrap: wrap; gap: 10px;}
+.budget-total{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding:20px 28px;background:rgba(0,192,96,.07);border:1px solid rgba(0,192,96,.15);border-radius:14px;flex-wrap:wrap;gap:10px}
 .budget-total span:first-child{font-family:var(--font-h);font-weight:700;color:var(--wh);font-size:1rem}
 .budget-total span:last-child{font-family:var(--font-h);font-weight:800;color:var(--g);font-size:1.4rem}
 
@@ -260,7 +260,7 @@ body.lang-en .en{display:revert}
 
 /* ── TERRAIN QUOTE ── */
 .terrain-section{background:linear-gradient(135deg,rgba(0,192,96,.08),rgba(0,192,96,.02));border:1px solid rgba(0,192,96,.15);border-radius:var(--r2);padding:56px 60px;position:relative;overflow:hidden}
-.terrain-section::before{content:'"';position:absolute;top:-20px;left:24px;font-family:var(--font-h);font-size:12rem;color:rgba(0,192,96,.06);line-height:1}
+.terrain-section::before{content:'"';position:absolute;top:-20px;left:12px;font-family:var(--font-h);font-size:clamp(4rem,20vw,12rem);color:rgba(0,192,96,.06);line-height:1}
 .terrain-section blockquote{position:relative;font-size:1.2rem;color:var(--wh);line-height:1.7;font-weight:400;max-width:720px;font-style:italic}
 .terrain-section cite{display:block;margin-top:20px;font-size:.85rem;color:var(--tx2);font-style:normal}
 .terrain-section cite strong{color:var(--g)}
@@ -290,7 +290,7 @@ body.lang-en .en{display:revert}
 .cta-invest .btn-row{justify-content:center}
 
 /* ── CHAT ── */
-#chatWidget{position:fixed;bottom:28px;right:28px;z-index:9999;font-family:var(--font-b)}
+#chatWidget{position:fixed;bottom:28px;right:max(16px, env(safe-area-inset-right, 16px));z-index:9999;font-family:var(--font-b)}
 .chat-bubble{width:56px;height:56px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 32px rgba(0,192,96,.4);transition:.3s}
 .chat-bubble:hover{transform:scale(1.08)}
 .chat-bubble i{font-size:1.3rem;color:var(--bk)}
@@ -667,7 +667,6 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       </div>
     </div>
 
-    <!-- ═══ CHANGEMENT 3/3 : description mise à jour ═══ -->
     <div class="sim-block fade-up" style="padding:32px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <h3 class="fr">Détail des 10 sources de revenus — ARR annuel</h3>
       <h3 class="en">10 revenue streams breakdown — Annual ARR</h3>
@@ -849,10 +848,12 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
       <div style="position:relative;height:280px;margin-bottom:36px">
         <canvas id="budgetChart"></canvas>
       </div>
-      <table class="budget-table">
-        <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
-        <tbody id="budgetBody"></tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="budget-table">
+          <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th><span class="fr">Description</span><span class="en">Description</span></th><th>FCFA</th></tr></thead>
+          <tbody id="budgetBody"></tbody>
+        </table>
+      </div>
       <div class="budget-total">
         <span><span class="fr">Total sollicité</span><span class="en">Total sought</span></span>
         <span class="dyn-investment-val-full" style="color:var(--g)">0 FCFA</span>
@@ -999,8 +1000,7 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     INVESTMENT : 30000000,
     FIXED_Y    : 12000000,
     VAR_U      : 1500,
-    /* ═══ CHANGEMENT 1/3 : SUB_PRICE 32000 → 30000 ═══ */
-    SUB_PRICE  : 30000,      // Moyenne Standard 25 000 F / Premium 35 000 F
+    SUB_PRICE  : 30000,
     IOT_PRICE  : 4500,
     M2M_MARGIN : 1000,
     CV_AVG     : 6500,
@@ -1072,7 +1072,6 @@ footer p.tagline{font-size:.88rem;color:var(--tx);margin-bottom:6px}
     const be   = arr > 0 ? Math.ceil(CFG.INVESTMENT / (arr/12)) : 0;
     const arpu = arr > 0 && users > 0 ? arr / 12 / users : 0;
 
-    /* ═══ CHANGEMENT 2/3 : note subs mise à jour ═══ */
     const notes = {
       subs    : isEn
         ? `${nSubs} paying (${conv}% conv.) × 30,000 F/mo avg (Standard 25k · Premium 35k)`
